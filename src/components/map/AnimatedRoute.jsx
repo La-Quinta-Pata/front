@@ -7,8 +7,9 @@ import { latLonToVector3, makeArcCurveOnSphere } from "./helpers/coordinates";
 export default function AnimatedRoute({ from, to, color, delay = 0, speed = 1 }) {
     if (!from || !to) return null;
 
-    const a = useMemo(() => latLonToVector3(from.lat, from.lon, 2), [from]);
-    const b = useMemo(() => latLonToVector3(to.lat, to.lon, 2), [to]);
+    const ROUTE_RADIUS = 2.15;
+    const a = useMemo(() => latLonToVector3(from.lat, from.lon, ROUTE_RADIUS), [from]);
+    const b = useMemo(() => latLonToVector3(to.lat, to.lon, ROUTE_RADIUS), [to]);
 
     const points = useMemo(() => makeArcCurveOnSphere(a, b), [a, b]);
 

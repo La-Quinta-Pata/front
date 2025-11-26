@@ -12,12 +12,12 @@ export default function GlobeScene({ mode }) {
   const globeMat = useRef();
 
   const routes = [
-    { from: { lat: -23.55, lon: -46.63 }, to: { lat: 41.38, lon: 2.17 }, color: "#ff6b6b", delay: 200 },
-    { from: { lat: 4.71, lon: -74.07 }, to: { lat: 41.38, lon: 2.17 }, color: "#ffd166", delay: 800 },
-    { from: { lat: -34.60, lon: -58.38 }, to: { lat: 41.38, lon: 2.17 }, color: "#4ecdc4", delay: 1400 },
-    { from: { lat: -12.04, lon: -77.04 }, to: { lat: 41.38, lon: 2.17 }, color: "#a29bfe", delay: 2000 },
-    { from: { lat: -16.48, lon: -68.11 }, to: { lat: 41.38, lon: 2.17 }, color: "#81ecec", delay: 2600 },
-    { from: { lat: -0.18, lon: -78.46 }, to: { lat: 41.38, lon: 2.17 }, color: "#fab1a0", delay: 3200 },
+    { from: { lat: -23.55, lon: -46.63 }, to: { lat: 41.38, lon: 2.17 }, color: "#FF3B30", delay: 200 },   // Rojo brillante
+    { from: { lat: 4.71, lon: -74.07 },   to: { lat: 41.38, lon: 2.17 }, color: "#FF9500", delay: 800 },   // Naranja
+    { from: { lat: -34.60, lon: -58.38 }, to: { lat: 41.38, lon: 2.17 }, color: "#FFCC00", delay: 1400 },  // Amarillo
+    { from: { lat: -12.04, lon: -77.04 }, to: { lat: 41.38, lon: 2.17 }, color: "#34C759", delay: 2000 },  // Verde brillante
+    { from: { lat: -16.48, lon: -68.11 }, to: { lat: 41.38, lon: 2.17 }, color: "#007AFF", delay: 2600 },  // Azul eléctrico
+    { from: { lat: -0.18, lon: -78.46 },  to: { lat: 41.38, lon: 2.17 }, color: "#AF52DE", delay: 3200 },  // Morado vibrante
   ];
 
   const targetGlobal = new THREE.Vector3(0, 0, 6);
