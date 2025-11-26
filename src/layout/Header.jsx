@@ -11,7 +11,6 @@ function Header() {
                 className="flex items-center gap-2 hover:opacity-80 transition-all hover:scale-105">
           <img alt='La Quinta Pata logo'  className="h-16 w-16 object-contain" src='/LaQuintaPataLogo.png'/>
         </button>
-
         <Navbar />
       </div>
     </header>

@@ -14,37 +14,26 @@ export default function GlobeExperience() {
   }, []);
 
   return (
-    <div style={{ width: "100%", height: "100%", position: "relative" }}>
-
-      {/* GLobe / Three.js */}
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          opacity: showMap ? 0 : 1,
-          transition: "opacity 1.4s",
-          pointerEvents: showMap ? "none" : "auto",
-        }}
+    <section className="w-2/3 h-2/3 relative">
+      <section className={`
+          w-full h-full transition-opacity duration-[1400ms]
+          ${showMap ? "opacity-0 pointer-events-none" : "opacity-100"}
+        `}
       >
         <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
           <GlobeScene mode={mode} />
         </Canvas>
-      </div>
+      </section>
 
-      {/* My Maps Overlay */}
       {showMap && (
         <iframe
           src="https://www.google.com/maps/d/u/0/embed?mid=1Q4hgXqEiSO6s6AIG02QB_aKvEo8"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            border: "none",
-            animation: "fadeIn 1.5s ease",
-          }}
+          className="
+            absolute inset-0 w-full h-full border-0
+            animate-fadeIn
+          "
         />
       )}
-    </div>
+    </section>
   );
 }
