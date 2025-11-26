@@ -14,7 +14,7 @@ export default function GlobeExperience() {
   }, []);
 
   return (
-    <section className="w-2/3 h-2/3 relative">
+    <section className="w-full h-full relative">
       <section className={`
           w-full h-full transition-opacity duration-[1400ms]
           ${showMap ? "opacity-0 pointer-events-none" : "opacity-100"}
