@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../hooks/useAuth.js";
 import InputField from "./InputField";
 import Button from "./Button";
 import ErrorMessage from "./ErrorMessage";
@@ -28,7 +28,7 @@ export default function LoginForm() {
         const result = await login(email, password);
         
         if (result.success) {
-            navigate("/dashboard");
+            navigate("/panel");
         } else {
             setError(result.error || "Error al iniciar sesión");
         }
