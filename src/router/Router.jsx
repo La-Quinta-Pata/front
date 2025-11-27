@@ -1,25 +1,36 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router'
-import Layout from '../layout/Layout'
-import Home from '../pages/Home'
-import Catalog from '../pages/Catalog'
-import File from '../pages/File'
-import Contact from '../pages/Contact'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { AuthProvider } from '../context/AuthProvider';
+import PrivateRoute from '../components/PrivateRoute';
+import Layout from '../layout/Layout';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Dashboard from '../pages/Dashboard';
 
-function AppRouter() {
+function Router() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path='/' element={<Home />}/>
-          <Route path='/catalogo' element={<Catalog />}/>
-          <Route path='/archivo/:id' element={<File />}/>
-          <Route path='/contacto' element={<Contact />}/>
-          <Route path="*" element={<div>Page not found</div>} />
-        </Route>
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/iniciar-sesion" element={<Login />} />
+          
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            
+            <Route
+              path="/panel"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
+          </Route>
+          
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
-  )
+  );
 }
 
-export default AppRouter
+export default Router;
