@@ -18,11 +18,11 @@ function Footer() {
           <Link to="/" 
                 className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Home</Link>
           <Link to="/" 
-                className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Acerca</Link>
+                className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Catálogo</Link>
           <Link to="/" 
                 className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Quiénes Somos</Link>
           <Link to="/catalogo" 
-                className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Catálogo</Link>
+                className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Contacto</Link>
         </section>
         <section className="flex gap-2 md:gap-4 items-center">
           <Link 

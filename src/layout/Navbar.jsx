@@ -7,14 +7,14 @@ function Navbar() {
   return (
     <>
       <nav className="hidden md:flex items-center gap-6">
+        <Link to="/catalogo" className="hover:opacity-80 transition-all hover:scale-105">
+          Catálogo
+          </Link>
         <Link to="/" className="hover:opacity-80 transition-all hover:scale-105">
           Quiénes Somos
         </Link>
-        <Link to="/" className="hover:opacity-80 transition-all hover:scale-105">
-          Acerca
-        </Link>
-        <Link to="/catalogo" className="hover:opacity-80 transition-all hover:scale-105">
-          Catálogo
+        <Link to="/contacto" className="hover:opacity-80 transition-all hover:scale-105">
+          Contacto
         </Link>
       </nav>
 
