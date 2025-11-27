@@ -15,18 +15,23 @@ export default function GlobeExperience() {
 
   return (
     <section className="w-full h-full relative">
-      <section className={`
+      <section
+        className={`
           w-full h-full transition-opacity duration-[1400ms]
           ${showMap ? "opacity-0 pointer-events-none" : "opacity-100"}
         `}
       >
-        <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
+        <Canvas
+          data-testid="globe-canvas"
+          camera={{ position: [0, 0, 6], fov: 50 }}
+        >
           <GlobeScene mode={mode} />
         </Canvas>
       </section>
 
       {showMap && (
         <iframe
+          title="mapa"
           src="https://www.google.com/maps/d/u/0/embed?mid=1Q4hgXqEiSO6s6AIG02QB_aKvEo8"
           className="
             absolute inset-0 w-full h-full border-0

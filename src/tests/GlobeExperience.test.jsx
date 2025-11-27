@@ -1,23 +1,30 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import GlobeExperience from "../components/map/GlobeExperience";
-import { vi } from "vitest";
 
 describe("GlobeExperience", () => {
   it("renderiza el canvas de GlobeScene", () => {
     render(<GlobeExperience />);
-    const canvas = screen.getByRole("img", { hidden: true }); // Canvas no tiene role, pero se puede seleccionar con hidden:true
+    const canvas = screen.getByTestId("globe-canvas");
     expect(canvas).toBeInTheDocument();
   });
 
-  it("renderiza el iframe después de showMap", () => {
-    vi.useFakeTimers();
-    render(<GlobeExperience />);
-    
-    vi.advanceTimersByTime(15000); // simulamos que pasan 15s
+  it(
+    "renderiza el iframe después de showMap",
+    async () => {
+      render(<GlobeExperience />);
 
-    const iframe = screen.getByTitle("mapa") || document.querySelector("iframe");
-    expect(iframe).toBeInTheDocument();
+      // esperamos hasta 20s para cubrir el timeout de 14s de showMap
+      const iframe = await waitFor(
+        () => {
+          const el = document.querySelector("iframe");
+          if (!el) throw new Error("iframe no encontrado aún");
+          return el;
+        },
+        { timeout: 20000 }
+      );
 
-    vi.useRealTimers();
-  });
+      expect(iframe).toBeInTheDocument();
+    },
+    25000 // timeout extra para este test
+  );
 });
