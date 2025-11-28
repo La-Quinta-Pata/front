@@ -15,7 +15,7 @@ function Router() {
           
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            
+        
             <Route
               path="/panel"
               element={
