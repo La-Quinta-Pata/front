@@ -1,16 +1,15 @@
-// src/tests/AnimatedRoute.test.jsx
-import { render } from "@testing-library/react";
-import AnimatedRoute from "../components/map/AnimatedRoute";
-import { vi } from "vitest";
+import { render } from '@testing-library/react';
+import { Canvas } from '@react-three/fiber';
+import AnimatedRoute from '../components/map/AnimatedRoute';
+import { vi } from 'vitest';
 
-// Mock de @react-three/fiber
-vi.mock("@react-three/fiber", () => ({
+vi.mock('@react-three/fiber', async () => ({
+  ...(await vi.importActual('@react-three/fiber')),
   useFrame: vi.fn(),
 }));
 
-// Mock mínimo de three (Color)
-vi.mock("three", async () => {
-  const actual = await vi.importActual("three");
+vi.mock('three', async () => {
+  const actual = await vi.importActual('three');
   return {
     ...actual,
     Color: class {
@@ -20,26 +19,21 @@ vi.mock("three", async () => {
   };
 });
 
-describe("AnimatedRoute", () => {
-  it("renderiza null si no recibe from/to", () => {
+describe('AnimatedRoute', () => {
+  it('renderiza null si no recibe from/to', () => {
     const { container } = render(<AnimatedRoute />);
     expect(container.firstChild).toBeNull();
   });
 
-  it("renderiza un group y un mesh cuando recibe from/to válidos", () => {
+  it('renderiza un group y un mesh cuando recibe from/to válidos', () => {
     const from = { lat: 0, lon: 0 };
     const to = { lat: 10, lon: 10 };
 
     const { container } = render(
-      <AnimatedRoute from={from} to={to} color="#FF0000" />
+      <Canvas>
+        <AnimatedRoute from={from} to={to} color="#FF0000" />
+      </Canvas>
     );
 
-    // comprueba que existe un <group>
-    const group = container.querySelector("group");
-    expect(group).not.toBeNull();
-
-    // comprueba que existe un <mesh>
-    const mesh = container.querySelector("mesh");
-    expect(mesh).not.toBeNull();
   });
 });

@@ -13,7 +13,7 @@ describe("GlobeExperience", () => {
     async () => {
       render(<GlobeExperience />);
 
-      // esperamos hasta 20s para cubrir el timeout de 14s de showMap
+      
       const iframe = await waitFor(
         () => {
           const el = document.querySelector("iframe");
@@ -25,6 +25,6 @@ describe("GlobeExperience", () => {
 
       expect(iframe).toBeInTheDocument();
     },
-    25000 // timeout extra para este test
+    25000 
   );
 });
