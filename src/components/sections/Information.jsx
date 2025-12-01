@@ -8,10 +8,14 @@ export default function Information() {
             role="region"
             aria-labelledby="hero-heading">
             <p className="text-xl font-bold">
-                lorem ipsum
+                La Quinta Pata
             </p>
             <p className="text-base md:text-xl max-w-3xl text-gray-800 leading-relaxed px-4">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga ratione nemo aliquid dolores quo, quae architecto eveniet molestias itaque beatae repudiandae porro qui. Quasi corrupti expedita temporibus illo aliquid ipsam!
+                Es una Asociación Cultural generadora de proyectos socioculturales con perspectiva de género, intercultural y decolonial, basados en los valores de la Economía Social y Solidaria.
+
+Trabajamos desde el 2009 desarrollando proyectos que cuestionan y reflexionan en torno a temáticas de migración, diversidad sexual y violencia de género.
+
+Proponemos y estimulamos el empoderamiento de los ciudadanxs en su cotidianidad, desde distintas plataformas y lenguajes que inciten al análisis y acción desde múltiples miradas y abordajes; teniendo como línea metodológica la Pedagogía de lxs Oprimidxs y la aplicación de herramientas arteterapéuticas
             </p>
         </section>
 
