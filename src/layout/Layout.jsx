@@ -5,13 +5,13 @@ import Footer from './Footer'
 
 function Layout() {
   return (
-    <div>
+    <section>
       <Header />
       <main>
           <Outlet />
       </main>
       <Footer />
-    </div>
+    </section>
   )
 }
 
