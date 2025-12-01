@@ -20,6 +20,16 @@ npm install
 ```bash
 npm run dev
 ```
+## 🧪 Testing
+
+### Running Tests
+
+```bash
+
+npm run test
+
+```
+
 ## :flashlight: Tools & Technologies
 
 React.js 19
