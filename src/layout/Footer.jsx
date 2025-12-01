@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 
 function Footer() {
   return (
-    <footer className="border-t border-lime-500 bg-gradient-to-r from-gray-50 to-gray-100 mt-auto p-4 md:p-6">
+    <footer className="border-t border-lime-500 bg-linear-to-r from-gray-50 to-gray-100 mt-auto p-4 md:p-6">
       <div className="flex flex-row justify-between items-center gap-4 md:gap-8">
         <Link 
           to="/" 
