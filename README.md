@@ -1,22 +1,24 @@
-# La Quinta Pata - Front
+# La Quinta Pata  Frontend
 
 ## 🎯 Project Overview
 
-La Muestra Archivo Comunitario de Memorias Migrantes (MACMM) es una plataforma web creada para catalogar y difundir registros audiovisuales que narran experiencias migrantes. Los vídeos están organizados en cinco ejes temáticos: autobiografía, objetos, discriminación por origen, discriminación de género y resistencia. Además del catálogo, la plataforma permite visualizar los desplazamientos de las personas participantes hacia Barcelona en un mapa interactivo y consultar la información general del proyecto y su equipo. Built with React (frontend), Spring Boot (backend), and PostgreSQL (database), the application follows MVC architecture and implements a RESTful API.
+The Community Archive of Migrant Memories Exhibition (MACMM) is a web platform created to catalog and disseminate audiovisual records that narrate migrant experiences. The videos are organized into five thematic axes: autobiography, objects, discrimination based on origin, gender discrimination, and resistance. In addition to the catalog, the platform allows users to view the participants’ journeys to Barcelona on an interactive map and to consult general information about the project and its team. Built with React (frontend), Spring Boot (backend), and PostgreSQL (database), the application follows an MVC architecture and implements a RESTful API.
 
-## ⚡ Instalación y despliegue (Frontend)
+## 🚀 Getting Started
 
-1. **Clonar el repositorio:**
+### Installation Steps 
+
+#### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/La-Quinta-Pata/front.git
 cd front
 ```
-2. **Instalar dependencias:**
+#### 2. Install dependencies
 ```bash
 npm install
 ```
-3. **Iniciar la aplicación en modo desarrollo:**
+#### 3. Start the application in development mode
 ```bash
 npm run dev
 ```
@@ -43,6 +45,8 @@ React Router DOM (navigation)
 TailwindCSS
 
 Figma 
+
+Three.js
 
 
 ## 👥 Team Members
