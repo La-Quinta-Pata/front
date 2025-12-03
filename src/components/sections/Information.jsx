@@ -5,12 +5,13 @@ export default function Information() {
     return (
 
         <section
-            className="w-full bg-white text-center py-6 px-4 flex flex-col items-center justify-center"
+            className="w-full bg-[#ffffff] text-center py-6 px-4 flex flex-col items-center justify-center
+            border-t-4 border-[#000000]"
             role="region"
             aria-labelledby="hero-heading"
         >
 
-<p className="text-lg md:text-2xl max-w-5xl text-gray-800 leading-relaxed px-4 text-justify">
+<p className="text-lg md:text-l max-w-5xl text-gray-800 leading-relaxed px-4 text-justify">
                 Es una Asociación Cultural generadora de proyectos socioculturales con perspectiva de género, intercultural y decolonial, basados en los valores de la Economía Social y Solidaria.
 
                 Trabajamos desde el 2009 desarrollando proyectos que cuestionan y reflexionan en torno a temáticas de migración, diversidad sexual y violencia de género.
