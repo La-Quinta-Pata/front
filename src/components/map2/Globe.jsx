@@ -5,7 +5,7 @@ import * as THREE from "three";
 import MarkerPin from "./MarkerPin";
 import AnimatedRoute from "./AnimatedRoute";
 
-export default function Globe({ onBarcelonaClick }) {
+export default function Globe({ onBarcelonaClick, showPanel }) {
     const earthTexture = useLoader(THREE.TextureLoader, "src/assets/images/map.jpg");
     const globeRef = useRef();
 

@@ -1,5 +1,7 @@
 import { useMemo } from "react";
+import { Html } from "@react-three/drei";
 import { latLonToXYZ } from "../../utils/latLonToXYZ";
+import { Pin } from 'lucide-react';
 
 export default function MarkerPin({ latLon, offsets, onClick }) {
   const pos = useMemo(() => {
@@ -8,23 +10,28 @@ export default function MarkerPin({ latLon, offsets, onClick }) {
   }, [latLon, offsets]);
 
   return (
-    <group
-      position={pos}
-      onPointerDown={(e) => {
-        e.stopPropagation();
-        if (onClick) onClick();
-      }}
-      cursor="pointer"
-    >
-     
-      <mesh position={[0, -0.04, 0]}>
-        <coneGeometry args={[0.035, 0.1, 16]} />
-        <meshStandardMaterial
-          color="#ffffff"
-          emissive="#ffffff"
-          emissiveIntensity={0.4}
-        />
-      </mesh>
+    <group position={pos}>
+      <Html
+        distanceFactor={3}      
+        center
+      >
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick?.();
+          }}
+          className="
+            bg-gray-200 text-black text-xs
+            px-1 py-1 rounded-md shadow-lg
+            border border-black/20
+            hover:bg-black hover:text-white
+            transition-all duration-300
+            cursor-pointer
+          "
+        >
+          <Pin />
+        </div>
+      </Html>
     </group>
   );
 }

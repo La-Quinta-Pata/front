@@ -17,7 +17,7 @@ export default function GlobeExperience() {
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 5, 5]} intensity={1.2} />
 
-        <Globe onBarcelonaClick={() => setShowPanel(true)} />
+        <Globe onBarcelonaClick={() => setShowPanel(true)} showPanel={showPanel}/>
 
         <OrbitControls
           enablePan={false}
