@@ -18,3 +18,5 @@ export function makeArcCurveOnSphere(startVec3, endVec3, heightFactor = 1.25, po
   const curve = new THREE.QuadraticBezierCurve3(startVec3, mid, endVec3);
   return curve.getPoints(points);
 }
+
+

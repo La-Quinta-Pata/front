@@ -16,7 +16,6 @@ export default function AnimatedRoute({ from, to, color, delay = 0, speed = 1 })
     const [progress, setProgress] = useState(0);
     const startTime = useRef(null);
 
-//cancelar render para no tirar errores
     if (!points || points.length < 2) {
         console.warn("AnimatedRoute: curva inválida", { from, to, points });
         return null;

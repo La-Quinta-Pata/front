@@ -11,11 +11,11 @@ export const handleResponse = async (response) => {
 };
 
 export const getAuthHeaders = () => {
-  const token = localStorage.getItem("token");
-  return {
-    Authorization: token ? `Bearer ${token}` : "",
-    "Content-Type": "application/json",
-  };
+    const token = localStorage.getItem("token");
+    return {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json",
+    };
 };
 
 export const getHeaders = () => {

@@ -17,11 +17,11 @@ function Footer() {
         <section className="flex justify-center gap-2 md:gap-4 items-center flex-wrap">
           <Link to="/" 
                 className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Home</Link>
-          <Link to="/" 
+          <Link to="/catalogo" 
                 className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Catálogo</Link>
           <Link to="/" 
                 className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Quiénes Somos</Link>
-          <Link to="/catalogo" 
+          <Link to="/contacto" 
                 className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Contacto</Link>
         </section>
         <section className="flex gap-2 md:gap-4 items-center">

@@ -17,7 +17,7 @@ export default function GlobeExperience() {
     <section className="w-full h-full relative">
       <section
         className={`
-          w-full h-full transition-opacity duration-[1400ms]
+          w-full h-full transition-opacity duration-1400
           ${showMap ? "opacity-0 pointer-events-none" : "opacity-100"}
         `}
       >
@@ -34,11 +34,16 @@ export default function GlobeExperience() {
           title="mapa"
           src="https://www.google.com/maps/d/u/0/embed?mid=1Q4hgXqEiSO6s6AIG02QB_aKvEo8"
           className="
-            absolute inset-0 w-full h-full border-0
-            animate-fadeIn
+          absolute
+          top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          w-[60%] h-[60%]
+          border-10 border-white
+          bg-white shadow-lg rounded-[80px]
+          animate-fadeIn
+          rounded-[40px]
+          m-5
           "
         />
-      )}
-    </section>
+      )} </section>  
   );
 }
