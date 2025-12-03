@@ -45,12 +45,13 @@ export default function Globe({ onBarcelonaClick, showPanel }) {
                     offsets={offsets}
                 />
             ))}
-
-            <MarkerPin
-                latLon={BARCELONA}
-                offsets={offsets}
-                onClick={onBarcelonaClick}
-            />
+            {!showPanel && (
+                <MarkerPin
+                    latLon={BARCELONA}
+                    offsets={offsets}
+                    onClick={onBarcelonaClick}
+                />
+            )}
         </group>
     );
 }
