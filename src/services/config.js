@@ -13,7 +13,7 @@ export const handleResponse = async (response) => {
 export const getAuthHeaders = () => {
     const token = localStorage.getItem("token");
     return {
-        "Authorization": `Bearer ${token}`,
+        "Authorization": token ? `Bearer ${token}` : "",
         "Content-Type": "application/json",
     };
 };
