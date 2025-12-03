@@ -1,19 +1,17 @@
 import React from 'react'
-import GlobeExperience from '../components/map/GlobeExperience';
 import Hero from '../components/sections/Hero';
 import Information from '../components/sections/Information';
+import Team from '../components/sections/Team';
 
 function Home() {
   return (
-    <main>
-      <section style={{ width: "100vw" }}>
-        <Hero />
-      </section>
-      <section className="w-screen h-screen flex justify-center items-center">
-        <GlobeExperience />
-      </section>
-      <section style={{ width: "100vw" }}>
+    <main className="m-0 p-0 w-full">
+      <Hero />
+      <section className="w-screen m-0 p-0">
         <Information />
+      </section>
+      <section className="w-screen m-0 p-0">
+        <Team />
       </section>
     </main>
   );
