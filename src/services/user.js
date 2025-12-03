@@ -1,4 +1,4 @@
-import { API_BASE_URL, handleResponse, getAuthHeaders, getHeaders } from "./config";
+import { API_BASE_URL, handleResponse, getAuthHeaders } from "./config";
 
 export const usersApi = {
     getAll: async () => {
@@ -31,14 +31,34 @@ export const usersApi = {
         return await response.json();
     },
 
-    createAdmin: async (email, password) => {
+    create: async (userData) => {
         const response = await fetch(`${API_BASE_URL}/users`, {
             method: "POST",
-            headers: getHeaders(),
-            body: JSON.stringify({ email, password }),
+            headers: getAuthHeaders(),
+            body: JSON.stringify(userData),
         });
 
         await handleResponse(response);
         return await response.json();
+    },
+
+    update: async (id, userData) => {
+        const response = await fetch(`${API_BASE_URL}/users/${id}`, {
+            method: "PUT",
+            headers: getAuthHeaders(),
+            body: JSON.stringify(userData),
+        });
+
+        await handleResponse(response);
+        return await response.json();
+    },
+
+    remove: async (id) => {
+        const response = await fetch(`${API_BASE_URL}/users/${id}`, {
+            method: "DELETE",
+            headers: getAuthHeaders(),
+        });
+
+        await handleResponse(response);
     },
 };
