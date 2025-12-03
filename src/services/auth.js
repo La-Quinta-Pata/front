@@ -1,40 +1,45 @@
 import { AUTH_URL, handleResponse, getHeaders } from "./config";
 
 export const authService = {
-    login: async (email, password) => {
-        const response = await fetch(`${AUTH_URL}/login`, {
-            method: "POST",
-            headers: getHeaders(),
-            body: JSON.stringify({ email, password }),
-        });
+  login: async (email, password) => {
+    const response = await fetch(`${AUTH_URL}/login`, {
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify({ email, password }),
+    });
 
-        await handleResponse(response);
-        
-        const data = await response.json();
-        
-        if (!data.token) {
-            throw new Error("No se recibió token de autenticación");
-        }
+    await handleResponse(response);
 
-        return data;
-    },
+    const data = await response.json();
 
-    logout: () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-    },
+    let token = response.headers.get("X-Auth-Token");
 
-    getCurrentUser: () => {
-        const userStr = localStorage.getItem("user");
-        return userStr ? JSON.parse(userStr) : null;
-    },
+    if (!token) {
+      throw new Error("No se recibió token de autenticación");
+    }
 
-    isAuthenticated: () => {
-        return !!localStorage.getItem("token");
-    },
+    return {
+      ...data,
+      token: token,
+    };
+  },
 
-    saveUserData: (token, userData) => {
-        localStorage.setItem("token", token);
-        localStorage.setItem("user", JSON.stringify(userData));
-    },
+  logout: () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  },
+
+  getCurrentUser: () => {
+    const userStr = localStorage.getItem("user");
+    return userStr ? JSON.parse(userStr) : null;
+  },
+
+  isAuthenticated: () => {
+    return !!localStorage.getItem("token");
+  },
+
+  saveUserData: (token, userData) => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(userData));
+  },
 };
