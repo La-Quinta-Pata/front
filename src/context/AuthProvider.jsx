@@ -10,9 +10,9 @@ export const AuthProvider = ({ children }) => {
             const data = await authService.login(email, password);
 
             const userData = {
-                email: data.email,
-                role: data.role,
-                name: data.name
+                email: data.user.email,
+                role: data.user.role,
+                name: data.user.name
             };
 
             authService.saveUserData(data.token, userData);
