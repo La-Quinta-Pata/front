@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import Contact from "../pages/Contact";
+import Catalog from '../pages/Catalog';
 
 function Router() {
   return (
@@ -17,7 +18,7 @@ function Router() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/contacto" element={<Contact />} />
-              
+            <Route path="/catalogo" element={<Catalog />}/>
             
             <Route
               path="/panel"
