@@ -58,7 +58,7 @@ export default function RegisterForm({ onSuccess, onCancel }) {
     return (
         <form
             onSubmit={handleSubmit}
-            className="w-full p-6 sm:p-8 md:p-10 
+            className="mx-auto max-w-lg mt-15 p-6 sm:p-8 
             bg-white border-2 border-[#98BD16] rounded-lg shadow-md"
             noValidate
         >
