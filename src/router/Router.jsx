@@ -7,6 +7,8 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import Contact from "../pages/Contact";
 import Catalog from '../pages/Catalog';
+import RegisterForm from '../components/login/RegisterForm';
+import AdminRoute from '../components/AdminRouter';
 
 function Router() {
   return (
@@ -19,16 +21,22 @@ function Router() {
             <Route path="/" element={<Home />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/catalogo" element={<Catalog />}/>
-            
+                                   
             <Route
               path="/panel"
               element={
                 <PrivateRoute>
-                  <Dashboard />
+                  <Dashboard />                  
                 </PrivateRoute>
               }
             />
           </Route>
+
+          <Route path="/registrar"
+          element={<AdminRoute>
+            <RegisterForm/>
+          </AdminRoute>} />
+        
           
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
