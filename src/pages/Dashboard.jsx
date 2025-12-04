@@ -14,13 +14,6 @@ export default function Dashboard() {
         navigate("/iniciar-sesion");
     };
 
-    const handleEditProfile = () => {
-        navigate("/perfil");
-    };
-
-    const handleCreateUser = () => {
-        navigate("/registrar");
-    };
 
     useEffect(() => {
         // videos mockeadosssss, luego consumimos la api
