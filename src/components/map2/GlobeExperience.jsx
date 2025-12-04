@@ -12,7 +12,7 @@ export default function GlobeExperience() {
   };
 
   return (
-    <div className="relative w-full h-full bg-white">
+    <section className="relative w-full h-full bg-transparent cursor-pointer">
       <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
         <ambientLight intensity={0.7} />
         <directionalLight position={[5, 5, 5]} intensity={1.2} />
@@ -30,10 +30,10 @@ export default function GlobeExperience() {
 
       {showPanel && (
         <div className="absolute inset-0 flex justify-end z-50">
-          <div className="w-[90%] sm:w-[400px] h-full bg-white shadow-2xl relative">
+          <div className="w-full sm:w-[400px] h-full bg-white shadow-2xl relative">
             <button
               onClick={() => setShowPanel(false)}
-              className="absolute top-3 left-3 w-9 h-9 bg-black text-white rounded-full flex items-center justify-center text-xl"
+              className="absolute top-3 left-3 w-9 h-9 bg-white text-black rounded-full flex items-center justify-center text-xl"
             >
               ✕
             </button>
@@ -45,6 +45,6 @@ export default function GlobeExperience() {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }
