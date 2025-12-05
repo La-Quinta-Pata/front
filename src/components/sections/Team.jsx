@@ -1,18 +1,82 @@
 export default function Team() {
     return (
-        <section
-            className="w-full px-4 flex flex-col items-center justify-center"
-            role="region"
-            aria-labelledby="hero-heading"
-        >
-            <section className="bg-white rounded-3xl shadow-xl w-full max-w-5xl p-5 mb-5 flex flex-col items-center gap-5">
-
-                <section className="flex justify-center gap-6">
-                    <section className="w-50 h-50 rounded-[20px] bg-gray-700"></section>
-                    <section className="w-50 h-50 rounded-[20px] bg-emerald-500"></section>
-                    <section className="w-50 h-50 rounded-[20px] bg-cyan-500"></section>
-                </section>
+      <section className="w-full flex flex-col items-center justify-center py-12 px-4">
+        
+        <section className="w-full max-w-4xl mx-auto
+            grid grid-cols-1 md:grid-cols-3
+            gap-8 place-items-center md:gap-2
+          ">
+  
+          <section className="relative w-60 h-40">            
+            <section 
+              className="absolute inset-0 -translate-y-3 rounded-xl
+                bg-[radial-gradient(circle_at_top,#D62828,#D6282855)]"/>
+  
+            <section className="relative w-full h-full bg-white 
+                border border-gray-300 rounded-xl 
+                flex flex-col items-center overflow-hidden">
+              <img src="/catalog-placeholder.jpg"
+                alt="Catálogo"
+                className="w-full h-[55%] object-cover"/>
+              <section className="p-2 text-center">
+                <h3 className="text-sm font-semibold text-black mb-1">
+                  Catálogo
+                </h3>
+                <p className="text-xs text-gray-700 leading-tight">
+                  Accede a las Memorias Migrantes</p>
+              </section>
             </section>
+          </section>
+  
+          <section className="relative w-60 h-40">            
+            <section 
+              className="absolute inset-0 -translate-y-3 rounded-xl
+                bg-[radial-gradient(circle_at_top,#F77F00,#F77F0055)]"/>
+            
+            <section className="relative w-full h-full bg-white 
+                border border-gray-300 rounded-xl 
+                flex flex-col items-center overflow-hidden">
+              <img 
+                src="/events-placeholder.jpg"
+                alt="Conócenos"
+                className="w-full h-[55%] object-cover"
+              />
+              <section className="p-2 text-center">
+                <h3 className="text-sm font-semibold text-black mb-1">
+                  Conócenos </h3>
+                <p className="text-xs text-gray-700 leading-tight">
+                  Conoce al equipo de la Quinta Pata</p>
+              </section>
+            </section>
+          </section>
+  
+          <section className="relative w-60 h-40">            
+            <section 
+              className="absolute inset-0 -translate-y-3 rounded-xl
+                bg-[radial-gradient(circle_at_top,#FCBF49,#FCBF4955)]"/>
+            
+            <section 
+              className="
+                relative w-full h-full bg-white border border-gray-300 rounded-xl 
+                flex flex-col items-center overflow-hidden">
+              <img 
+                src="/community-placeholder.jpg"
+                alt="Contacto"
+                className="w-full h-[55%] object-cover"
+              />
+              <div className="p-2 text-center">
+                <h3 className="text-sm font-semibold text-black mb-1">
+                  Contacto
+                </h3>
+                <p className="text-xs text-gray-700 leading-tight">
+                  Envíanos un mensaje si quieres compartir tu historia
+                </p>
+              </div>
+            </section>
+          </section>
+  
         </section>
+      </section>
     );
-}
+  }
+  
