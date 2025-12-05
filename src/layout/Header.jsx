@@ -12,7 +12,7 @@ function Header() {
         <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-all hover:scale-105">
           <img
             alt='Logo memorias migrantes'
-            className="h-16 w-auto sm:h-20 md:h-16 lg:h-20 object-contain drop-shadow-lg"
+            className="h-20 w-auto sm:h-20 md:h-16 lg:h-20 object-contain drop-shadow-lg"
             src={logo}
           />
         </Link>

@@ -109,8 +109,8 @@ export default function LoginForm() {
             <section className="w-full max-w-md sm:max-w-lg md:max-w-xl flex flex-col items-center">
                 
                 <header className="mb-6 sm:mb-8 md:mb-10 w-full">
-                    <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center text-[#003049] leading-tight px-2">
-                        MEMORIAS MIGRATORIAS
+                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center text-[#003049] leading-tight px-2">
+                        MEMORIAS MIGRANTES
                     </h1>
                 </header>
 
