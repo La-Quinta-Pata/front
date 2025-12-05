@@ -39,8 +39,8 @@ function Catalog() {
           <Card
             key={item.id}
             image={item.thumbnailUrl}
-            author={item.migrant?.name}
-            country={item.migrant?.origin?.name}
+            author={item.migrantName}
+            country={item.migrantOrigin}
             description={item.description}
           />
         ))}

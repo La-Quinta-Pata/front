@@ -4,14 +4,14 @@ function Card({ image, author, country, description }) {
       bg-white 
       rounded-sm
       border border-gray-200 
-      overflow-hidden 
-      shadow-sm 
-      hover:shadow-md
+      overflow-hidden
+      shadow-[#003049] shadow-md
+      hover:shadow-lg
       hover:-translate-y-1 
       transition-all 
       duration-300 
       flex flex-col
-      max-w-[220px]   
+      max-w-[330px]   
       mx-auto
 
     ">
@@ -21,8 +21,9 @@ function Card({ image, author, country, description }) {
           src={image} 
           alt={author} 
           className="
-            w-full 
-            h-48 
+            w-full max-w-[300px]
+            h-48
+            p-3
             object-cover 
             transition-transform 
             duration-300 
@@ -36,7 +37,7 @@ function Card({ image, author, country, description }) {
           {author}
         </h3>
 
-        <p className="text-sm font-medium text-lime-600 uppercase tracking-wider">
+        <p className="text-sm font-medium text-[#F77F00] uppercase tracking-wider">
           {country}
         </p>
 

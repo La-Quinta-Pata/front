@@ -32,7 +32,7 @@ export default function Footer() {
           gap-2 md:gap-3 
           text-sm md:text-base
         ">
-          <Link to="/" className="hover:text-[#D25F00] hover:scale-[1.15] transition">Home</Link>
+          <Link to="/" className="hover:text-[#D25F00] hover:scale-[1.15] transition">Inicio</Link>
           <Link to="/catalogo" className="hover:text-[#D25F00] hover:scale-[1.15] transition">Catálogo</Link>
           <Link to="/quienes-somos" className="hover:text-[#D25F00] hover:scale-[1.15] transition">Quiénes Somos</Link>
           <Link to="/contacto" className="hover:text-[#D25F00] hover:scale-[1.15] transition">Contacto</Link>
