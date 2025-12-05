@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
             const data = await authService.login(email, password);
 
             const userData = {
+                id: data.user.id,
                 email: data.user.email,
                 role: data.user.role,
                 name: data.user.name

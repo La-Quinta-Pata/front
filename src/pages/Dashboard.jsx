@@ -1,32 +1,28 @@
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import { getVideosByUser } from "../services/videos.js"
+import getEmbedUrl from "../utils/getEmbedUrl.jsx"
 
-const MOCK_VIDEOS = [
-    {
-        id: 1,
-        title: "Mi viaje a Barcelona",
-        description: "Breve relato visual de mi llegada",
-        url: "https://www.youtube.com/embed/dummy"
-    },
-    {
-        id: 2,
-        title: "Recuerdos de familia",
-        description: "Mis raíces",
-        url: "https://www.youtube.com/embed/dummy2"
-    }
-];
 
 export default function Dashboard() {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
-    const [videos] = useState(MOCK_VIDEOS);
+    const [videos, setVideos] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const handleLogout = () => {
         logout();
         navigate("/iniciar-sesion");
     };
+
+    useEffect(() => {
+        if (!user?.id) return;
+
+        getVideosByUser(user.id).then(setVideos);
+    }, [user]);
 
     return (
         <main className="min-h-screen bg-gray-50">
@@ -49,7 +45,7 @@ export default function Dashboard() {
 
                     <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center gap-1">
 
-                        <Link 
+                        <Link
                             to="/perfil"
                             className="px-4 py-2 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition cursor-pointer"
                         >
@@ -64,7 +60,7 @@ export default function Dashboard() {
                         </button>
 
                         {user?.role === "ADMIN" && (
-                            <Link 
+                            <Link
                                 to="/registrar"
                                 className="px-4 py-2 font-semibold text-white bg-green-600 rounded-lg hover:bg-green-700 transition cursor-pointer"
                             >
@@ -86,7 +82,7 @@ export default function Dashboard() {
                             <article key={video.id} className="border rounded-lg overflow-hidden shadow">
                                 <iframe
                                     className="w-full h-48"
-                                    src={video.url}
+                                    src={getEmbedUrl(video.url)}
                                     title={video.title}
                                     frameBorder="0"
                                     allowFullScreen

@@ -10,18 +10,16 @@ export const authService = {
 
     await handleResponse(response);
 
+    const token = response.headers.get("X-Auth-Token");
     const data = await response.json();
 
-    let token = response.headers.get("X-Auth-Token");
+  
 
-    if (!token) {
-      throw new Error("No se recibió token de autenticación");
+    if (!data.user || !token) {
+      throw new Error("Respuesta inválida del servidor");
     }
-
-    return {
-      ...data,
-      token: token,
-    };
+  
+     return { user: data.user, token };
   },
 
   logout: () => {
