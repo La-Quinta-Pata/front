@@ -1,77 +1,57 @@
-import React, { useState } from 'react'
-import Card from '../components/Card.Jsx';
+import React, { useState, useEffect } from "react";
+import Card from "../components/Card.Jsx";
+import { getCatalog } from "../services/catalogService";
 
-const item_per_page = 12;
+const ITEMS_PER_PAGE = 12;
 
 function Catalog() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [catalog, setCatalog] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); 
+  const [error, setError] = useState(null);
 
-  const totalPages = Math.ceil(catalogData.length / item_per_page);
-  const startIndex = (currentPage - 1) * item_per_page;
-  const displayedItems = catalogData.slice(startIndex, startIndex + item_per_page);
+  useEffect(() => {
+    async function load() {
+      try {
+        const data = await getCatalog();
+        setCatalog(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    load();
+  }, []);
+
+  const totalPages = Math.ceil(catalog.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const displayedItems = catalog.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  if (isLoading) return <section className="text-center mt-20">Cargando catálogo...</section>;
+  if (error) return <section className="text-center mt-20 text-red-500"> {error}</section>;
 
   return (
-    <div className="container mx-auto px-4 py-8">
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {displayedItems.map((item, index) => (
-          <Card 
-            key={index}
-            image={item.image}
-            author={item.author}
-            country={item.country}
+    <section className="container mx-auto px-4 py-8">
+      
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {displayedItems.map((item) => (
+          <Card
+            key={item.id}
+            image={item.thumbnailUrl}
+            author={item.migrant?.name}
+            country={item.migrant?.origin?.name}
             description={item.description}
           />
         ))}
-      </div>
+      </section>
 
       {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-3 mt-10">
-          <button 
-            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-            disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-lg border ${
-              currentPage === 1 
-              ? 'opacity-40 cursor-not-allowed' 
-              : 'hover:bg-gray-100'
-            }`}
-          >
-            ←
-          </button>
-          <div className="flex gap-2">
-            {[...Array(totalPages)].map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentPage(idx + 1)}
-                className={`
-                  px-3 py-1 rounded-md border 
-                  ${currentPage === idx + 1 
-                    ? 'bg-lime-500 text-white border-lime-600' 
-                    : 'hover:bg-gray-100'
-                  }
-                `}
-              >
-                {idx + 1}
-              </button>
-            ))}
-          </div>
-          <button 
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-            disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-lg border ${
-              currentPage === totalPages 
-              ? 'opacity-40 cursor-not-allowed' 
-              : 'hover:bg-gray-100'
-            }`}
-          >
-             →
-          </button>
-
-        </div>
+        <section className="flex justify-center items-center gap-3 mt-10">
+        </section>
       )}
-
-    </div>
-  )
+    </section>
+  );
 }
 
-export default Catalog
+export default Catalog;
