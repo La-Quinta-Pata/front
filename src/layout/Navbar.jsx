@@ -4,28 +4,27 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
-const linkClass = ({ isActive }) =>
-    `block px-6 py-4 text-2xl sm:text-3xl font-grandstander transition-colors ${
-        isActive
+    const linkClass = ({ isActive }) =>
+        `block px-3 py-2 text-base font-grandstander transition-colors ${isActive
             ? "text-black"
             : "text-gray-700 hover:text-black"
-    }`;
+        }`;
 
 
     const mobileLinkClass = ({ isActive }) =>
-        `block px-6 py-4 text-2xl transition-colors ${isActive
+        `block px-3 py-3 text-xs transition-colors
+            ${isActive
             ? "text-black bg-[#FCBF49]/10"
             : "text-gray-700 hover:text-black hover:bg-gray-50"
         }`;
 
     return (
         <nav className="w-full bg-[#FCBF49]/">
-            <section className="container px-4 mx-auto sm:px-6 lg:px-8">
-                <section className="flex items-center justify-between py-4 lg:hidden">
-                    <h3 className="text-xl">Menú</h3>
+            <section className="container px-0 mx-auto sm:px-4 lg:px-4">
+                <section className="flex items-center justify-end lg:hidden">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="p-2 text-gray-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-black"
+                        className="p-0 text-gray-700 hover:text-[#F77F00] focus:outline-none focus:ring-2 focus:ring-[#F77F00] cursor-pointer"
                         aria-label="Toggle menu"
                         aria-expanded={isOpen}
                     >
@@ -36,26 +35,18 @@ const linkClass = ({ isActive }) =>
                             viewBox="0 0 24 24"
                         >
                             {isOpen ? (
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12" />
                             ) : (
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                    d="M4 6h16M4 12h16M4 18h16" />
                             )}
                         </svg>
                     </button>
                 </section>
 
-<ul className="flex-wrap justify-end hidden gap-4 mb-2 lg:flex sm:gap-8">
-                                    <li>
+                <ul className="flex-wrap justify-end hidden gap-2 sm:gap-4 mb-0 lg:flex">
+                    <li>
                         <NavLink to="/" className={linkClass}>
                             Inicio
                         </NavLink>
@@ -66,7 +57,7 @@ const linkClass = ({ isActive }) =>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/" className={linkClass}>
+                        <NavLink to="/quienes-somos" className={linkClass}>
                             Conócenos
                         </NavLink>
                     </li>
@@ -79,8 +70,19 @@ const linkClass = ({ isActive }) =>
                 </ul>
 
                 {isOpen && (
-                    <ul className="border-t border-gray-200 lg:hidden">
-                                            <li>
+                    <section className="relative lg:hidden">
+                    <ul
+                      className="
+                        absolute right-0 mt-2
+                        w-48 
+                        bg-white 
+                        rounded-lg shadow-lg border border-gray-200
+                        text-right
+                        overflow-hidden
+                        animate-[fadeIn_0.2s_ease-out]
+                      "
+                    >
+                        <li>
                             <NavLink
                                 to="/"
                                 className={mobileLinkClass}
@@ -117,6 +119,7 @@ const linkClass = ({ isActive }) =>
                             </NavLink>
                         </li>
                     </ul>
+                    </section>
                 )}
             </section>
         </nav>

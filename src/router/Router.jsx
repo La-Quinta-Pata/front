@@ -21,6 +21,7 @@ function Router() {
             <Route path="/" element={<Home />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/catalogo" element={<Catalog />} />
+            <Route path="/quienes-somos" element={<Contact />} />
             <Route
               path="/panel"
               element={
