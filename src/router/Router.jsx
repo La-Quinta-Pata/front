@@ -16,28 +16,27 @@ function Router() {
       <AuthProvider>
         <Routes>
           <Route path="/iniciar-sesion" element={<Login />} />
-          
+
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/contacto" element={<Contact />} />
-            <Route path="/catalogo" element={<Catalog />}/>
-                                   
+            <Route path="/catalogo" element={<Catalog />} />
             <Route
               path="/panel"
               element={
                 <PrivateRoute>
-                  <Dashboard />                  
+                  <Dashboard />
                 </PrivateRoute>
               }
             />
           </Route>
 
           <Route path="/registrar"
-          element={<AdminRoute>
-            <RegisterForm/>
-          </AdminRoute>} />
-        
-          
+            element={<AdminRoute>
+              <RegisterForm />
+            </AdminRoute>} />
+
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>

@@ -1,57 +1,124 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-function Navbar() {
-  const [open, setOpen] = useState(false);
+export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <>
-      <nav className="hidden md:flex items-center gap-6">
-        <Link to="/catalogo" className="hover:opacity-80 transition-all hover:scale-105">
-          Catálogo
-          </Link>
-        <Link to="/" className="hover:opacity-80 transition-all hover:scale-105">
-          Quiénes Somos
-        </Link>
-        <Link to="/contacto" className="hover:opacity-80 transition-all hover:scale-105">
-          Contacto
-        </Link>
-      </nav>
+const linkClass = ({ isActive }) =>
+    `block px-6 py-4 text-2xl sm:text-3xl font-grandstander transition-colors ${
+        isActive
+            ? "text-black"
+            : "text-gray-700 hover:text-black"
+    }`;
 
-      <button
-        onClick={() => setOpen(!open)}
-        className="md:hidden flex flex-col justify-center gap-1">
-        <span className={`block h-1 w-6 bg-lime-500 transition-all ${open ? "rotate-45 translate-y-2" : ""}`}></span>
-        <span className={`block h-1 w-6 bg-lime-500 transition-all ${open ? "opacity-0" : ""}`}></span>
-        <span className={`block h-1 w-6 bg-lime-500 transition-all ${open ? "-rotate-45 -translate-y-2" : ""}`}></span>
-      </button>
 
-      {open && (
-        <div className="absolute top-20 left-0 w-full bg-white shadow-md flex flex-col items-center py-6 gap-4 md:hidden z-50">
-          <Link 
-            to="/" 
-            onClick={() => setOpen(false)}
-            className="text-lg hover:opacity-80 transition-all hover:scale-105">
-            Quiénes Somos
-          </Link>
+    const mobileLinkClass = ({ isActive }) =>
+        `block px-6 py-4 text-2xl transition-colors ${isActive
+            ? "text-black bg-[#FCBF49]/10"
+            : "text-gray-700 hover:text-black hover:bg-gray-50"
+        }`;
 
-          <Link 
-            to="/" 
-            onClick={() => setOpen(false)}
-            className="text-lg hover:opacity-80 transition-all hover:scale-105">
-            Acerca
-          </Link>
+    return (
+        <nav className="w-full bg-[#FCBF49]/">
+            <section className="container px-4 mx-auto sm:px-6 lg:px-8">
+                <section className="flex items-center justify-between py-4 lg:hidden">
+                    <h3 className="text-xl">Menú</h3>
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="p-2 text-gray-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-black"
+                        aria-label="Toggle menu"
+                        aria-expanded={isOpen}
+                    >
+                        <svg
+                            className="w-8 h-8"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            {isOpen ? (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            ) : (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            )}
+                        </svg>
+                    </button>
+                </section>
 
-          <Link 
-            to="/catalogo" 
-            onClick={() => setOpen(false)}
-            className="text-lg hover:opacity-80 transition-all hover:scale-105">
-            Catálogo
-          </Link>
-        </div>
-      )}
-    </>
-  )
+<ul className="flex-wrap justify-end hidden gap-4 mb-2 lg:flex sm:gap-8">
+                                    <li>
+                        <NavLink to="/" className={linkClass}>
+                            Inicio
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/catalogo" className={linkClass}>
+                            Catálogo
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/" className={linkClass}>
+                            Conócenos
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/contacto" className={linkClass}>
+                            Contacto
+                        </NavLink>
+                    </li>
+                </ul>
+
+                {isOpen && (
+                    <ul className="border-t border-gray-200 lg:hidden">
+                                            <li>
+                            <NavLink
+                                to="/"
+                                className={mobileLinkClass}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Inicio
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/catalogo"
+                                className={mobileLinkClass}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Catálogo
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/"
+                                className={mobileLinkClass}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Conócenos
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/contacto"
+                                className={mobileLinkClass}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Contacto
+                            </NavLink>
+                        </li>
+                    </ul>
+                )}
+            </section>
+        </nav>
+    );
 }
-
-export default Navbar
