@@ -3,7 +3,7 @@ import ImagenInicio from '../../assets/images/img2.jpg';
 
 export default function Hero() {
   return (
-    <main className="w-full min-h-[50vh] flex flex-col-reverse lg:flex-row items-center justify-center px-6 lg:px-10 py-0 bg-white text-black">
+    <main className="w-full min-h-[50vh] flex flex-col lg:flex-row items-center justify-center px-6 lg:px-10 py-0 bg-white text-black">
 
       <section className="relative w-full lg:w-[38%] flex flex-col items-center lg:items-start">
 
@@ -20,7 +20,7 @@ export default function Hero() {
           </figure>
         </section>
 
-        <figcaption className="relative z-10
+        <figcaption className="relative z-5
             w-full max-w-md bg-amber-50 rounded-3xl
             border border-gray-200
             px-7 py-4

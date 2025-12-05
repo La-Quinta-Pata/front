@@ -45,32 +45,8 @@ export default function Navbar() {
                     </button>
                 </section>
 
-                <ul className="flex-wrap justify-end hidden gap-2 sm:gap-4 mb-0 lg:flex">
-                    <li>
-                        <NavLink to="/" className={linkClass}>
-                            Inicio
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/catalogo" className={linkClass}>
-                            Catálogo
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/quienes-somos" className={linkClass}>
-                            Conócenos
-                        </NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink to="/contacto" className={linkClass}>
-                            Contacto
-                        </NavLink>
-                    </li>
-                </ul>
-
                 {isOpen && (
-                    <section className="relative lg:hidden">
+                    <section className="relative z-7 lg:hidden">
                     <ul
                       className="
                         absolute right-0 mt-2
@@ -121,6 +97,32 @@ export default function Navbar() {
                     </ul>
                     </section>
                 )}
+
+                <ul className="flex-wrap justify-end hidden gap-2 sm:gap-4 mb-0 lg:flex">
+                    <li>
+                        <NavLink to="/" className={linkClass}>
+                            Inicio
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/catalogo" className={linkClass}>
+                            Catálogo
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/quienes-somos" className={linkClass}>
+                            Conócenos
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink to="/contacto" className={linkClass}>
+                            Contacto
+                        </NavLink>
+                    </li>
+                </ul>
+
+               
             </section>
         </nav>
     );
