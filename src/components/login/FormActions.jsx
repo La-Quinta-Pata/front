@@ -7,7 +7,7 @@ export default function FormActions({
     cancelText = "Cancelar"
 }) {
     return (
-        <section className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <section className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-5 sm:mt-6 md:mt-8">
             <Button
                 type="submit"
                 loading={loading}

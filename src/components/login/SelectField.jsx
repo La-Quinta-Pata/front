@@ -24,8 +24,8 @@ export default function SelectField({
                 required={required}
                 disabled={disabled}
                 aria-required={required}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border-2 border-[#98BD16] rounded-lg 
-                focus:outline-none focus:ring-2 focus:ring-[#98BD16] focus:border-transparent
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border-2 border-[#003049]] rounded-lg 
+                focus:outline-none focus:ring-2 focus:ring-[#003049]] focus:border-transparent
                 disabled:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-60
                 transition-all duration-200"
             >
