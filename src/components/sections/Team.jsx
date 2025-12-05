@@ -15,9 +15,9 @@ export default function Team() {
             <section className="relative w-full h-full bg-white 
                 border border-gray-300 rounded-xl 
                 flex flex-col items-center overflow-hidden">
-              <img src="/catalog-placeholder.jpg"
+              <img src="/src/assets/images/book.png"
                 alt="Catálogo"
-                className="w-full h-[55%] object-cover"/>
+                className="w-10 h-10 mt-4"/>
               <section className="p-2 text-center">
                 <h3 className="text-sm font-semibold text-black mb-1">
                   Catálogo
@@ -37,9 +37,9 @@ export default function Team() {
                 border border-gray-300 rounded-xl 
                 flex flex-col items-center overflow-hidden">
               <img 
-                src="/events-placeholder.jpg"
+                src="/src/assets/images/us.png"
                 alt="Conócenos"
-                className="w-full h-[55%] object-cover"
+                className="w-10 h-10 mt-4"
               />
               <section className="p-2 text-center">
                 <h3 className="text-sm font-semibold text-black mb-1">
@@ -60,9 +60,9 @@ export default function Team() {
                 relative w-full h-full bg-white border border-gray-300 rounded-xl 
                 flex flex-col items-center overflow-hidden">
               <img 
-                src="/community-placeholder.jpg"
+                src="/src/assets/images/contact.png"
                 alt="Contacto"
-                className="w-full h-[55%] object-cover"
+                className="w-10 h-10 mt-4"
               />
               <div className="p-2 text-center">
                 <h3 className="text-sm font-semibold text-black mb-1">

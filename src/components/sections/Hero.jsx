@@ -1,53 +1,67 @@
 import GlobeExperience from "../map2/GlobeExperience";
-import ImagenInicio from '../../assets/images/ImagenHome.png'
+import ImagenInicio from '../../assets/images/img2.jpg';
 
 export default function Hero() {
   return (
-    <main className="w-full min-h-[80vh] flex flex-col lg:flex-row items-center justify-center p-6 lg:p-10 bg-white text-black">
-      <section className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl gap-10">
-        <article className="relative flex justify-center w-full lg:w-1/2">
+    <main className="w-full min-h-[50vh] flex flex-col-reverse lg:flex-row items-center justify-center px-6 lg:px-10 py-0 bg-white text-black">
 
-          <figcaption
-            className="w-full max-w-xl p-10 lg:p-12 bg-amber-50 rounded-4xl shadow-xl shadow-black/50 border border-gray-200 z-30 
-              flex flex-col items-center justify-center text-center mt-16 lg:mt-20 lg:-translate-y-5">
+      <section className="relative w-full lg:w-[38%] flex flex-col items-center lg:items-start">
 
-            <h1 className="text-2xl lg:text-3xl font-extrabold tracking-wide text-red-600 mb-3">
-              MEMORIAS MIGRANTES
-            </h1>
-
-            <p className="text-sm lg:text-base text-gray-800 leading-relaxed mb-4 text-justify">
-              Un proyecto colaborativo que conecta historias, cultura y creatividad. Nuestro globo es la representación visual de las historias contadas en este página desde la origen - distintos países de Latinoamérica, hacia Barcelona.
-            </p>
-
-            <button
-              className="mt-2 px-8 py-6 rounded-lg w-max text-white font-semibold text-base bg-blue-900 shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer"
-              aria-label="Saber más sobre el proyecto Memorias Migrantes"
-            >
-              Saber más
-            </button>
-          </figcaption>
-<figure 
-  className="absolute z-20 w-64 h-64 lg:w-90 lg:h-90 rounded-lg overflow-hidden shadow-lg
-  top-15 lg:top-0 left-1/2 lg:left-0
-  transform -translate-x-1/2 lg:-translate-x-1/3 -translate-y-1/2">
-  
-  <img
-    src={ImagenInicio}
-    alt="Mujeres de memorias migratorias"
-    className="w-full h-full object-cover"
-  />
-</figure>
-
-
-        </article>
-
-        <section className="w-full lg:w-1/2 h-[300px] lg:h-[500px] mt-10 lg:mt-0 flex items-center justify-center">
-          <section className="w-full h-full max-w-[520px]">
-            <GlobeExperience />
-          </section>
+        <section className="relative z-0 w-66 h-56 lg:w-70 lg:h-60
+            rounded-3xl overflow-hidden
+            bg-white translate-y-8 shadow-[8px_8px_20px_rgba(0,0,0,0.25)]
+          "
+        >
+          <figure className="w-full h-full">
+            <img src={ImagenInicio}
+              alt="Mujeres migrantes"
+              className="w-full h-full object-cover opacity-30"
+            />
+          </figure>
         </section>
 
+        <figcaption className="relative z-10
+            w-full max-w-md bg-amber-50 rounded-3xl
+            border border-gray-200
+            px-7 py-4
+            -mt-20
+            flex flex-col gap-1 text-center
+            mx-auto lg:mx-0 lg:ml-10
+            shadow-[8px_8px_20px_rgba(0,0,0,0.25)]
+          "
+        >
+          <h1
+            className="
+            text-xl lg:text-2xl font-bold tracking-wide 
+            bg-gradient-to-r from-[#D62828] to-[#F77F00]
+            text-transparent bg-clip-text
+            transition-all duration-300
+            hover:scale-[1.03]"
+          >
+            MEMORIAS MIGRANTES
+          </h1>
+
+          <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
+            Un proyecto colaborativo que conecta historias, cultura y creatividad. Nuestro globo representa visualmente las rutas migratorias desde Latinoamérica hasta Barcelona.
+          </p>
+
+          <button
+            className="mt-1 px-6 py-2 rounded-lg mx-auto
+              text-white font-semibold text-sm lg:text-base bg-[#003049]
+              shadow-md hover:shadow-lg hover:scale-[1.03]
+              active:scale-[0.98] transition-all duration-300 cursor-pointer"
+          >
+            Saber más
+          </button>
+        </figcaption>
       </section>
+
+      <section className="w-full lg:w-[70%] flex items-center justify-center mb-6 lg:mb-0">
+        <section className="w-full max-w-[650px] aspect-square">
+          <GlobeExperience />
+        </section>
+      </section>
+
     </main>
   );
 }
