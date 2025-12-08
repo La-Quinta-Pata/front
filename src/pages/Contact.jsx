@@ -1,17 +1,20 @@
+import { t } from 'i18next';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+  const {t} = useTranslation();
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 py-8 sm:px-6 lg:px-8 gap-6 sm:gap-8">
 
       <header className="text-center">
         <h2 className="text-base mb-6 sm:text-2xl md:text-2xl lg:text-3xl font-bold text-[#003049] tracking-tight">
-          ¿Dónde nos encuentras?
+          {t("contact.heading")}
         </h2>
       </header>
 
       <article
-        className="w-full max-w-md bg-gradient-to-br from-[#FFF8DC] to-[#FFE4B5]
+        className="w-full max-w-md bg-linear-to-br from-[#FFF8DC] to-[#FFE4B5]
         border-t-8 border-[#D62828] rounded-[3rem] shadow-xl
         p-8 sm:p-10 md:p-10"
         aria-labelledby="location-heading"
@@ -30,7 +33,7 @@ export default function Contact() {
 
             <li className="flex items-center gap-4 sm:gap-6">
               <MapPin
-                className="w-7 h-auto md:w-10 h-auto text-[#003049] flex-shrink-0"
+                className="w-7 md:w-10 h-auto text-[#003049] shrink-0"
                 aria-hidden="true"
               />
               <span className="text-base">Carrer Robador 25-27 Raval</span>
@@ -38,7 +41,7 @@ export default function Contact() {
 
             <li className="flex items-center gap-4 sm:gap-6">
               <Phone
-                className="w-7 h-auto md:w-10 h-auto text-[#003049] flex-shrink-0"
+                className="w-7 md:w-10 h-auto text-[#003049] shrink-0"
                 aria-hidden="true"
               />
               <a
@@ -51,7 +54,7 @@ export default function Contact() {
 
             <li className="flex items-center gap-4 sm:gap-6">
               <Mail
-                className="w-7 h-auto md:w-10 h-auto text-[#003049] flex-shrink-0"
+                className="w-7 md:w-10 h-auto text-[#003049] shrink-0"
                 aria-hidden="true"
               />
               <a
