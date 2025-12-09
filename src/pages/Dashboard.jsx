@@ -24,6 +24,8 @@ export default function Dashboard() {
         getVideosByUser(user.id).then(setVideos);
     }, [user]);
 
+    
+
     return (
         <main className="min-h-screen bg-gray-50">
             <header className="bg-white shadow-sm">
@@ -47,14 +49,14 @@ export default function Dashboard() {
 
                         <Link
                             to="/perfil"
-                            className="px-4 py-2 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition cursor-pointer"
+                            className="px-4 py-2 font-semibold text-white bg-[#003049] rounded-lg hover:bg-blue-500 transition cursor-pointer"
                         >
                             Editar perfil
                         </Link>
 
                         <button
                             onClick={handleLogout}
-                            className="px-4 py-2 font-semibold text-white bg-red-600 rounded-lg hover:bg-red-700 transition cursor-pointer"
+                            className="px-4 py-2 font-semibold text-white bg-[#D62828] rounded-lg hover:bg-red-900 transition cursor-pointer"
                         >
                             Cerrar sesión
                         </button>
