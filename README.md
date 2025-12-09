@@ -48,6 +48,8 @@ Figma
 
 Three.js
 
+i18n (translation)
+
 
 ## 👥 Team Members
 
