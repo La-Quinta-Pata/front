@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { getVideosByUser } from "../services/videos.js"
 import getEmbedUrl from "../utils/getEmbedUrl.jsx"
+import ConfirmToast from "../components/ConfirmToast.jsx";
+import MyToast from "../components/MyToast.jsx";
+import toast from "react-hot-toast";
+import { usersApi } from "../services/user.js";
 
 
 export default function Dashboard() {
@@ -24,7 +28,44 @@ export default function Dashboard() {
         getVideosByUser(user.id).then(setVideos);
     }, [user]);
 
-    
+    const handleDelete = () => {
+        toast.custom((t) => (
+            <ConfirmToast
+                message="Estás segura que quieres borrar la cuenta?"
+                onConfirm={async () => {
+                    try {
+                        await usersApi.remove(user.id)
+                        logout();
+
+                        toast.custom(
+                            <MyToast
+                                title="Cuenta borrada con éxito"
+                                message="Tu cuenta ha sido borrada con éxito"
+                                type="success"
+                            />
+                        );
+
+                        setTimeout(() => {
+                            window.location.href = "/";
+                        }, 1200);
+
+                    } catch (err) {
+                        console.error("Error al borrar la cuenta:", err);
+
+                        toast.custom(
+                            <MyToast
+                                title="Error al borrar la cuenta"
+                                message="No se ha podido borrar tu cuenta."
+                                type="error"
+                            />
+                        );
+                    }
+                }}
+            />
+        ));
+    };
+
+
 
     return (
         <main className="min-h-screen bg-gray-50">
@@ -70,6 +111,12 @@ export default function Dashboard() {
                             </Link>
                         )}
                     </nav>
+                    <button
+      onClick={handleDelete}
+      className="mt-4 text-sm text-center text-red-600 underline cursor-pointer"
+    >
+      Borrar mi cuenta
+    </button>
                 </article>
 
                 <section className="bg-white shadow-sm rounded-lg p-6">
