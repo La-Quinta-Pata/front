@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card.Jsx";
 import { getCatalog } from "../services/catalogService";
+import VideoModal from "../components/VideoModal";
 
 const ITEMS_PER_PAGE = 12;
 
 function Catalog() {
   const [currentPage, setCurrentPage] = useState(1);
   const [catalog, setCatalog] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
 
   useEffect(() => {
     async function load() {
@@ -33,7 +36,7 @@ function Catalog() {
 
   return (
     <section className="container mx-auto px-4 py-8">
-      
+
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {displayedItems.map((item) => (
           <Card
@@ -42,6 +45,7 @@ function Catalog() {
             author={item.migrantName}
             country={item.migrantOrigin}
             description={item.description}
+            onClick={() => setSelectedVideo(item)}
           />
         ))}
       </section>
@@ -50,7 +54,15 @@ function Catalog() {
         <section className="flex justify-center items-center gap-3 mt-10">
         </section>
       )}
-    </section>
+   
+{selectedVideo && (
+      <VideoModal
+        video={selectedVideo}
+        onClose={() => setSelectedVideo(null)}
+      />
+    )
+  }
+   </section>
   );
 }
 

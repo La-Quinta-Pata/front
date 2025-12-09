@@ -16,7 +16,7 @@ export default function Footer() {
         <section className="flex gap-6 items-center">
           <img
             alt="Logo proyecto"
-            src="/src/assets/images/logom.webp"
+            src="/src/assets/images/Logo_macmm.png"
             className="h-20 w-20 md:h-24 md:w-24 object-contain hover:scale-[1.20] transition"
           />
           <img

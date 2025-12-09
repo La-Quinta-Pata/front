@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Navbar from './Navbar';
-import logo from '../assets/images/logom.webp'
+import logo from '../assets/images/Logo_macmm.png'
 
 function Header() {
   return (
