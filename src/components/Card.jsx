@@ -8,7 +8,7 @@ function Card({ image, author, country, description, onClick }) {
 
       <footer className="p-3">
         <h3 className="font-bold">{author}</h3>
-        <p className="text-sm text-gray-600">{country}</p>
+        <p className="text-sm text-[#F77F00] uppercase tracking-wider">{country}</p>
         <p className="text-xs mt-2 line-clamp-2">{description}</p>
       </footer>
     </article>
