@@ -8,15 +8,15 @@ export default function Hero() {
 <main className="w-full min-h-[50vh] flex flex-col items-center justify-center px-6 lg:px-10 py-8 bg-white text-black">
   <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide text-center mb-8 lg:mb-12 text-[#003049] flex flex-col gap-1">
     <span className="space-x-2">
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">M</span>uestra</span>
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">A</span>rchivo</span>
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">C</span>omunitario</span>
+      <span><span className="font-black text-[1.1em] text-[#001a2e]">M</span>{t("hero.title1")}</span>
+      <span><span className="font-black text-[1.1em] text-[#001a2e]">A</span>{t("hero.title2")}</span>
+      <span><span className="font-black text-[1.1em] text-[#001a2e]">C</span>{t("hero.title3")}</span>
       <span>de</span>
     </span>
     
     <span className="space-x-2">
-      <span><span className="font-black text-[1.4em] text-[#001a2e]">M</span>emorias</span>
-      <span><span className="font-black text-[1.4em] text-[#001a2e]">M</span>igrantes</span>
+      <span><span className="font-black text-[1.4em] text-[#001a2e]">M</span>{t("hero.title4")}</span>
+      <span><span className="font-black text-[1.4em] text-[#001a2e]">M</span>{t("hero.title5")}</span>
     </span>
   </h1>
 
