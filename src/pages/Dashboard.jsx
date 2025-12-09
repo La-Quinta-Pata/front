@@ -8,6 +8,7 @@ import ConfirmToast from "../components/ConfirmToast.jsx";
 import MyToast from "../components/MyToast.jsx";
 import toast from "react-hot-toast";
 import { usersApi } from "../services/user.js";
+import EditProfileForm from "../components/EditProfileForm.jsx";
 
 
 export default function Dashboard() {
@@ -16,6 +17,8 @@ export default function Dashboard() {
     const [videos, setVideos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [editingProfile, setEditingProfile] = useState(false);
+
 
     const handleLogout = () => {
         logout();
@@ -86,14 +89,15 @@ export default function Dashboard() {
                     <p><strong>Email:</strong> {user?.email}</p>
                     <p><strong>Rol:</strong> {user?.role}</p>
 
-                    <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center gap-1">
+                    <section className="max-w-7xl mx-auto px-6 py-6 flex items-center gap-1">
 
-                        <Link
-                            to="/perfil"
+                        <button
+                            onClick={() => setEditingProfile(true)}
                             className="px-4 py-2 font-semibold text-white bg-[#003049] rounded-lg hover:bg-blue-500 transition cursor-pointer"
                         >
                             Editar perfil
-                        </Link>
+                        </button>                
+
 
                         <button
                             onClick={handleLogout}
@@ -110,14 +114,24 @@ export default function Dashboard() {
                                 Crear usuario
                             </Link>
                         )}
-                    </nav>
+                    </section>
                     <button
-      onClick={handleDelete}
-      className="mt-4 text-sm text-center text-red-600 underline cursor-pointer"
-    >
-      Borrar mi cuenta
-    </button>
+                        onClick={handleDelete}
+                        className="mt-4 text-sm text-center text-red-600 underline cursor-pointer"
+                    >
+                        Borrar mi cuenta
+                    </button>
                 </article>
+
+                <section>
+                        {editingProfile && (
+                            <EditProfileForm
+                                user={user}
+                                onClose={() => setEditingProfile(false)}
+                                onSuccess={() => toast.success("Perfil actualizado")}
+                            />
+                        )}
+                    </section>
 
                 <section className="bg-white shadow-sm rounded-lg p-6">
                     <h2 className="text-xl font-semibold mb-6">Videos añadidos por mí</h2>
