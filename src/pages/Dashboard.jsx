@@ -72,9 +72,9 @@ export default function Dashboard() {
 
     return (
         <main className="min-h-screen bg-gray-50">
-            <header className="bg-white shadow-sm">
-                <section className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-                    <p className="text-center md:text-right text-gray-700">
+            <header className="bg-white shadow-sm items-center">
+                <section className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-center">
+                    <p className="text-center md:text-center text-gray-700">
                         Hola, {user?.name || user?.email}
                     </p>
                 </section>
@@ -82,21 +82,22 @@ export default function Dashboard() {
 
             <section className="max-w-7xl mx-auto px-6 py-10 flex flex-col gap-10">
 
-                <article className="bg-white shadow-sm rounded-lg p-6">
+                <article className="bg-white shadow-sm rounded-lg p-8 flex flex-col items-center text-center">
                     <h2 className="text-xl font-semibold mb-4">Mi perfil</h2>
-
+                    
+                    <section className="space-y-2 mb-6">
                     <p><strong>Nombre:</strong> {user?.name}</p>
                     <p><strong>Email:</strong> {user?.email}</p>
                     <p><strong>Rol:</strong> {user?.role}</p>
+                    </section>
 
-                    <section className="max-w-7xl mx-auto px-6 py-6 flex items-center gap-1">
-
+                    <section className="flex flex-col sm:flex-row gap-3 mb-6">
                         <button
                             onClick={() => setEditingProfile(true)}
                             className="px-4 py-2 font-semibold text-white bg-[#003049] rounded-lg hover:bg-blue-500 transition cursor-pointer"
                         >
                             Editar perfil
-                        </button>                
+                        </button>
 
 
                         <button
@@ -124,14 +125,14 @@ export default function Dashboard() {
                 </article>
 
                 <section>
-                        {editingProfile && (
-                            <EditProfileForm
-                                user={user}
-                                onClose={() => setEditingProfile(false)}
-                                onSuccess={() => toast.success("Perfil actualizado")}
-                            />
-                        )}
-                    </section>
+                    {editingProfile && (
+                        <EditProfileForm
+                            user={user}
+                            onClose={() => setEditingProfile(false)}
+                            onSuccess={() => toast.success("Perfil actualizado")}
+                        />
+                    )}
+                </section>
 
                 <section className="bg-white shadow-sm rounded-lg p-6">
                     <h2 className="text-xl font-semibold mb-6">Videos añadidos por mí</h2>
