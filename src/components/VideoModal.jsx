@@ -12,7 +12,7 @@ export default function VideoModal({ video, onClose }) {
                 className="bg-white max-w-3xl w-[90%] rounded-xl shadow-xl overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="aspect-video w-full">
+                <section className="aspect-video w-full">
                     <iframe
                         className="w-full h-full"
                         src={getEmbedUrl(video.url)}
@@ -20,17 +20,17 @@ export default function VideoModal({ video, onClose }) {
                         frameBorder="0"
                         allowFullScreen
                     />
-                </div>
+                </section>
 
-                <div className="p-6 flex flex-col gap-3">
+                <section className="p-6 flex flex-col gap-3">
                     <h2 className="text-2xl font-bold">{video.title}</h2>
                     <p className="text-sm text-gray-600">{video.description}</p>
 
-                    <div className="text-sm">
+                    <section className="text-sm">
                         <strong>Autor:</strong> {video.migrantName}<br />
                         <strong>País:</strong> {video.migrantOrigin}<br />
                         <strong>Eje:</strong> {video.axisType}
-                    </div>
+                    </section>
 
                     <button
                         className="mt-6 px-4 py-2 bg-[#D62828] text-white rounded-lg hover:bg-red-900 transition cursor-pointer"
@@ -38,7 +38,7 @@ export default function VideoModal({ video, onClose }) {
                     >
                         Cerrar
                     </button>
-                </div>
+                </section>
             </section>
         </section>
     );
