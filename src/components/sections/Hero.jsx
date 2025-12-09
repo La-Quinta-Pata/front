@@ -49,11 +49,11 @@ export default function Hero() {
             "
           >
             <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
-              Un proyecto colaborativo que conecta historias, cultura y creatividad.
+              {t("hero.p1")}
             </p>
             
             <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
-              Nuestro globo es la representación visual de las historias contadas en este página desde la origen - distintos países de Latinoamérica, hacia Barcelona.
+              {t("hero.p2")}
             </p>
 
             <button

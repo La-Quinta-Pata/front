@@ -16,7 +16,9 @@
     "hero":{
         "title": "MEMORIAS MIGRANTES",
         "subtitle": "Un proyecto colaborativo que conecta historias, cultura y creatividad. Nuestro globo representa visualmente las rutas migratorias desde Latinoamérica hasta Barcelona.",
-        "button" : "Saber más"
+        "button" : "Saber más", 
+        "p1" : "Un proyecto colaborativo que conecta historias, cultura y creatividad.",
+        "p2" : "Nuestro globo es la representación visual de las historias contadas en este página desde la origen - distintos países de Latinoamérica, hacia Barcelona."
     },
     "team": {
   "catalog": {

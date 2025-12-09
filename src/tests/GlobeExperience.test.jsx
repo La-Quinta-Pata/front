@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import GlobeExperience from "../components/map/GlobeExperience";
 
+
 describe("GlobeExperience", () => {
   it("renderiza el canvas de GlobeScene", () => {
     render(<GlobeExperience />);
