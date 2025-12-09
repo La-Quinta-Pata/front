@@ -13,19 +13,18 @@ function LanguageSwitcher() {
       onClick={toggleLang}
       className="
         flex items-center gap-2 px-2 py-1 rounded-md border text-xs transition-all w-20 justify-between
-        border-gray-400 text-gray-700 hover:bg-gray-100
-      "
+        border-gray-400 text-gray-700 hover:bg-gray-100 cursor-pointer"
       aria-label="Change language"
     >
       {i18n.language === "es" ? (
         <>
-          <span>ES</span>
+          <span>CAT</span>
           <span className="w-2 h-2 bg-black rounded-full transition-all"></span>
         </>
       ) : (
         <>
           <span className="w-2 h-2 bg-black rounded-full transition-all"></span>
-          <span>CAT</span>
+          <span>ES</span>
         </>
       )}
     </button>
