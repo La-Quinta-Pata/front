@@ -84,11 +84,10 @@ export default function Dashboard() {
 
                 <article className="bg-white shadow-sm rounded-lg p-8 flex flex-col items-center text-center">
                     <h2 className="text-xl font-semibold mb-4">Mi perfil</h2>
-                    
+
                     <section className="space-y-2 mb-6">
-                    <p><strong>Nombre:</strong> {user?.name}</p>
-                    <p><strong>Email:</strong> {user?.email}</p>
-                    <p><strong>Rol:</strong> {user?.role}</p>
+                        <p><strong>Nombre:</strong> {user?.name}</p>
+                        <p><strong>Email:</strong> {user?.email}</p>
                     </section>
 
                     <section className="flex flex-col sm:flex-row gap-3 mb-6">
