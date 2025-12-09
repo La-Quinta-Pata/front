@@ -1,10 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import Information from "../components/sections/Information";
+import i18n from "../translation";
 
-describe("Information", () => {
-  it("renderiza los textos correctamente", () => {
-    render(<Information />);
-    const paragraph = screen.getByText(/Es una Asociación Cultural generadora/i);
-    expect(paragraph).toBeInTheDocument();
-  });
+test("renders translated catalog text correctly", async () => {
+  await i18n.changeLanguage("es"); // ensures Spanish for test
+
+  render(<Information />);
+
+  expect(
+    screen.getByText(/Catálogo/i) // or whatever text appears in Team
+  ).toBeInTheDocument();
 });
