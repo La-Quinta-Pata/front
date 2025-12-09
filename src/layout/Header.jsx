@@ -1,16 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Navbar from './Navbar';
+import logo from '../assets/images/Logo_macmm.png'
 
 function Header() {
   return (
-    <header className="border-b-4 border-lime-500 bg-white/95 backdrop-blur-sm shadow-sm relative">
-      <section className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="bg-[#FCBF49]/30 relative">
+      <section className="w-full h-2 bg-[#FCBF49]/"></section>
+
+      <section className="container mx-auto px-0 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-all hover:scale-105">
-          <img 
-            alt='La Quinta Pata logo'  
-            className="h-16 w-16 object-contain" 
-            src='/logo5_pata.png'
+          <img
+            alt='Logo memorias migrantes'
+            className="h-20 w-auto md:h-16 lg:h-22 object-contain drop-shadow-lg"
+            src={logo}
           />
         </Link>
         <Navbar />

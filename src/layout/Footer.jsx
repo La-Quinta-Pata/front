@@ -1,56 +1,75 @@
-import { SiFacebook, SiInstagram, SiYoutube } from '@icons-pack/react-simple-icons'
-import React from 'react'
-import { Link } from 'react-router'
+import { SiFacebook, SiInstagram, SiYoutube } from '@icons-pack/react-simple-icons';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-function Footer() {
+export default function Footer() {
+  const { t } = useTranslation();
   return (
-    <footer className="border-t border-lime-500 bg-linear-to-r from-gray-50 to-gray-100 mt-auto p-4 md:p-6">
-      <div className="flex flex-row justify-between items-center gap-4 md:gap-8">
-        <Link 
-          to="/" 
-          className="flex items-center gap-2 hover:opacity-80 transition-all hover:scale-105">
-          <img 
-            alt='La Quinta Pata logo' 
-            className="h-20 w-20 md:h-28 md:w-28 object-contain" 
-            src='/logo5_pata.png' />
-        </Link>
-        <section className="flex justify-center gap-2 md:gap-4 items-center flex-wrap">
-          <Link to="/" 
-                className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Home</Link>
-          <Link to="/catalogo" 
-                className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Catálogo</Link>
-          <Link to="/" 
-                className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Quiénes Somos</Link>
-          <Link to="/contacto" 
-                className="text-xs md:text-base hover:opacity-80 transition-all hover:scale-105">Contacto</Link>
+    <footer className="bg-[#F5F5F5] p-8 mt-auto">
+      
+      <section className="
+        max-w-6xl mx-auto 
+        flex flex-col md:flex-row 
+        items-center md:items-start 
+        justify-between 
+        gap-10
+      ">
+
+        <section className="flex gap-6 items-center">
+          <img
+            alt="Logo proyecto"
+            src="/src/assets/images/Logo_macmm.png"
+            className="h-20 w-20 md:h-24 md:w-24 object-contain hover:scale-[1.20] transition"
+          />
+          <img
+            alt="Logo La Quinta Pata"
+            src="/logo5_pata.png"
+            className="h-20 w-20 md:h-24 md:w-24 object-contain hover:scale-[1.20] transition"
+          />
         </section>
-        <section className="flex gap-2 md:gap-4 items-center">
-          <Link 
-            to="https://www.facebook.com/asociacionlaquintapata" 
-            target="_blank" 
+
+        <nav className="
+          flex flex-col 
+          text-center text-[#003049] md:text-center
+          gap-2 md:gap-3 
+          text-sm md:text-base
+        ">
+          <Link to="/" className="hover:text-[#D25F00] hover:scale-[1.15] transition">{t("common.home")}</Link>
+          <Link to="/catalogo" className="hover:text-[#D25F00] hover:scale-[1.15] transition">{t("common.catalog")}</Link>
+          <Link to="/quienes-somos" className="hover:text-[#D25F00] hover:scale-[1.15] transition">{t("common.about")}</Link>
+          <Link to="/contacto" className="hover:text-[#D25F00] hover:scale-[1.15] transition">{t("common.contact")}</Link>
+        </nav>
+
+        <section className="flex gap-4 text-[#0C1D36]">
+          <Link
+            to="https://www.facebook.com/asociacionlaquintapata"
+            target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-all hover:scale-105">
-            <SiFacebook size={28} className="w-7 h-7 md:w-10 md:h-10" />
+            className="hover:opacity-80 transition hover:scale-105"
+          >
+            <SiFacebook size={28} />
           </Link>
-          <Link 
-            to="https://www.instagram.com/laquintapataasociacion" 
-            target="_blank" 
+          
+          <Link
+            to="https://www.instagram.com/laquintapataasociacion"
+            target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-all hover:scale-105">
-            <SiInstagram size={28} className="w-7 h-7 md:w-10 md:h-10" />
+            className="hover:opacity-80 transition hover:scale-105"
+          >
+            <SiInstagram size={28} />
           </Link>
-          <Link 
-            to="https://www.youtube.com/@quintapata781" 
-            target="_blank" 
+
+          <Link
+            to="https://www.youtube.com/@quintapata781"
+            target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-all hover:scale-105">
-            <SiYoutube size={28} className="w-7 h-7 md:w-10 md:h-10" />
+            className="hover:opacity-80 transition hover:scale-105"
+          >
+            <SiYoutube size={28} />
           </Link>
         </section>
 
-      </div>
+      </section>
     </footer>
-  )
+  );
 }
-
-export default Footer
