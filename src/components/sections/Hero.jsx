@@ -1,7 +1,9 @@
 import GlobeExperience from "../map2/GlobeExperience";
 import ImagenInicio from '../../assets/images/img2.jpg';
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const {t} = useTranslation();
   return (
     <main className="w-full min-h-[50vh] flex flex-col lg:flex-row items-center justify-center px-6 lg:px-10 py-0 bg-white text-black">
 
@@ -14,7 +16,7 @@ export default function Hero() {
         >
           <figure className="w-full h-full">
             <img src={ImagenInicio}
-              alt="Mujeres migrantes"
+              alt={t("hero.title")}
               className="w-full h-full object-cover opacity-30"
             />
           </figure>
@@ -33,16 +35,16 @@ export default function Hero() {
           <h1
             className="
             text-xl lg:text-2xl font-bold tracking-wide 
-            bg-gradient-to-r from-[#D62828] to-[#F77F00]
+            bg-linear-to-r from-[#D62828] to-[#F77F00]
             text-transparent bg-clip-text
             transition-all duration-300
             hover:scale-[1.03]"
           >
-            MEMORIAS MIGRANTES
+            {t("hero.title")}
           </h1>
 
           <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
-            Un proyecto colaborativo que conecta historias, cultura y creatividad. Nuestro globo representa visualmente las rutas migratorias desde Latinoamérica hasta Barcelona.
+            {t("hero.subtitle")}
           </p>
 
           <button
@@ -51,7 +53,7 @@ export default function Hero() {
               shadow-md hover:shadow-lg hover:scale-[1.03]
               active:scale-[0.98] transition-all duration-300 cursor-pointer"
           >
-            Saber más
+            {t("hero.button")}
           </button>
         </figcaption>
       </section>

@@ -1,0 +1,37 @@
+{
+    "common" :{
+        "home": "Inici",
+        "catalog" : "Catàleg",
+        "contact" : "Contacte",
+        "about" : "Coneix-nos"
+
+    },
+    "nav":{
+        
+        
+    },
+    "footer" : {
+    },
+    "hero":{
+        "title": "MEMÒRIES MIGRANTS",
+        "subtitle": "Un projecte col·laboratiu que connecta històries, cultura i creativitat. El nostre globus representa visualment les rutes migratòries des d'Amèrica Llatina fins a Barcelona.",
+        "button" : "Saber més"
+    },
+    "team": {
+  "catalog": {
+    "title": "Catàleg",
+    "desc": "Accedeix a les Memòries Migrants"
+  },
+  "about": {
+    "title": "Coneix-nos",
+    "desc": "Coneix l’equip de la Quinta Pata"
+  },
+  "contact": {
+    "title": "Contacte",
+    "desc": "Envia’ns un missatge si vols compartir la teva història"
+  }
+},
+"contact" : {
+    "heading" : "on ens Trobes?"
+}
+}

@@ -1,0 +1,39 @@
+{
+    "common" :{
+        "home": "Inicio",
+        "catalog" : "Catálogo",
+        "contact" : "Contacto",
+        "about" : "Conócenos"
+
+    },
+    "nav":{
+        
+        
+    },
+    "footer" : {
+        
+    },
+    "hero":{
+        "title": "MEMORIAS MIGRANTES",
+        "subtitle": "Un proyecto colaborativo que conecta historias, cultura y creatividad. Nuestro globo representa visualmente las rutas migratorias desde Latinoamérica hasta Barcelona.",
+        "button" : "Saber más"
+    },
+    "team": {
+  "catalog": {
+    "title": "Catálogo",
+    "desc": "Accede a las Memorias Migrantes"
+  },
+  "about": {
+    "title": "Conócenos",
+    "desc": "Conoce al equipo de la Quinta Pata"
+  },
+  "contact": {
+    "title": "Contacto",
+    "desc": "Envíanos un mensaje si quieres compartir tu historia"
+  }
+},
+"contact": {
+    "heading": "¿Dónde nos encuentras?"
+}
+
+}

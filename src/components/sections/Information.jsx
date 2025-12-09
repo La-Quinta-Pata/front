@@ -10,7 +10,7 @@ export default function Information() {
             text-center 
             py-22 px-4 
             flex flex-col items-center justify-center
-            bg-gradient-to-b 
+            bg-linear-to-b 
             from-[rgba(253,240,213,0.5)] 
             to-[#F77F00]
           "

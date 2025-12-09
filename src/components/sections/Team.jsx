@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export default function Team() {
+  const {t} = useTranslation();
     return (
       <section className="w-full flex flex-col items-center justify-center py-12 px-4">
         
@@ -16,14 +19,14 @@ export default function Team() {
                 border border-gray-300 rounded-xl 
                 flex flex-col items-center overflow-hidden">
               <img src="/src/assets/images/book.png"
-                alt="Catálogo"
+                alt={t("team.catalog.title")}
                 className="w-10 h-10 mt-4"/>
               <section className="p-2 text-center">
                 <h3 className="text-sm font-semibold text-black mb-1">
-                  Catálogo
+                  {t("team.catalog.title")}
                 </h3>
                 <p className="text-xs text-gray-700 leading-tight">
-                  Accede a las Memorias Migrantes</p>
+                  {t("team.catalog.desc")}</p>
               </section>
             </section>
           </section>
@@ -38,14 +41,14 @@ export default function Team() {
                 flex flex-col items-center overflow-hidden">
               <img 
                 src="/src/assets/images/us.png"
-                alt="Conócenos"
+                alt={t("team.about.title")}
                 className="w-10 h-10 mt-4"
               />
               <section className="p-2 text-center">
                 <h3 className="text-sm font-semibold text-black mb-1">
-                  Conócenos </h3>
+                  {t("team.about.title")} </h3>
                 <p className="text-xs text-gray-700 leading-tight">
-                  Conoce al equipo de la Quinta Pata</p>
+                  {t("team.about.desc")}</p>
               </section>
             </section>
           </section>
@@ -61,15 +64,15 @@ export default function Team() {
                 flex flex-col items-center overflow-hidden">
               <img 
                 src="/src/assets/images/contact.png"
-                alt="Contacto"
+                alt={t("team.contact.title")}
                 className="w-10 h-10 mt-4"
               />
               <div className="p-2 text-center">
                 <h3 className="text-sm font-semibold text-black mb-1">
-                  Contacto
+                  {t("team.contact.title")}
                 </h3>
                 <p className="text-xs text-gray-700 leading-tight">
-                  Envíanos un mensaje si quieres compartir tu historia
+                  {t("team.contact.desc")}
                 </p>
               </div>
             </section>

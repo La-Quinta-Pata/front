@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import "./translation";
 
 class ResizeObserver {
   constructor(callback) {
