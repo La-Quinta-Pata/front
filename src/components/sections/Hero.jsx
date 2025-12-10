@@ -12,12 +12,14 @@ export default function Hero() {
           <figcaption className="relative z-5
               w-full max-w-md bg-[#f7e7f9] rounded-3xl
               border border-gray-100
-              p-15
+              p-7
               flex flex-col gap-7 text-center
               mx-auto lg:mx-0 lg:ml-10
               shadow-[0px_4px_8px_rgba(0,0,0,0.25)]
             "
-          >
+          > <p className="text-sm lg:text-xl text-[#4b1252] font-fira font-bold leading-relaxed text-center">
+              {t("hero.title")}
+            </p>
             <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
               {t("hero.p1")}
             </p>

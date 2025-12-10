@@ -1,4 +1,5 @@
 
+import Description from "./Description.jsx"
 import Team from "./Team.jsx"
 
 export default function Information() {
@@ -24,18 +25,15 @@ export default function Information() {
                     />
                 </svg>
             </section>
-            <section
-            className=" w-full
-            text-center
-            py-22 px-4
-            flex flex-col items-center justify-center
-            bg-[#f7e7f9] border-b-4 border-[#4b1252]"
+            <section className=" w-full text-center py-22 px-4 flex flex-col items-center justify-center
+            bg-[#f7e7f9] border-b-4 border-[#4b1252] shadow-[0_4px_10px_rgba(0,0,0,0.12)]"
             role="region"
             aria-labelledby="hero-heading"
-            >
-
+            > <Description />
+            </section>
+            <section>
                 <Team />
-            </section> </>
+            </section></>
 
 
     );
