@@ -9,27 +9,14 @@ export default function Hero() {
       <section className="w-full flex flex-col lg:flex-row items-center justify-center">
         <section className="relative w-full lg:w-[38%] flex flex-col items-center lg:items-start">
 
-          <section className="relative z-0 w-72 h-64 lg:w-80 lg:h-72
-              rounded-3xl overflow-hidden
-              bg-white translate-y-4 shadow-[8px_8px_20px_rgba(0,0,0,0.25)]
-            "
-          >
-            <figure className="w-full h-full">
-              <img src={ImagenInicio}
-                alt={t("hero.title")}
-                className="w-full h-full object-cover opacity-30"
-              />
-            </figure>
-          </section>
-
           <figcaption className="relative z-5
-              w-full max-w-md bg-amber-50 rounded-3xl
-              border border-gray-200
-              px-7 py-4
+              w-full max-w-md bg-[#f7e7f9] rounded-3xl
+              border border-gray-100
+              p-20
               -mt-24
               flex flex-col gap-1 text-center
               mx-auto lg:mx-0 lg:ml-10
-              shadow-[8px_8px_20px_rgba(0,0,0,0.25)]
+              shadow-[0px_4px_8px_rgba(0,0,0,0.25)]
             "
           >
             <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
@@ -51,7 +38,7 @@ export default function Hero() {
           </figcaption>
         </section>
 
-        <section className="w-full lg:w-[70%] flex items-center justify-center mb-6 lg:mb-0">
+        <section className="w-full lg:w-[70%] flex items-center justify-center lg:mb-0">
           <section className="w-full max-w-[650px] aspect-square">
             <GlobeExperience />
           </section>

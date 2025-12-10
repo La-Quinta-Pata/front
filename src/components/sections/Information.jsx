@@ -5,7 +5,7 @@ export default function Information() {
 
     return (
         <>
-        <section className="relative w-full overflow-hidden leading-none -mb-8">
+        <section className="relative w-full overflow-hidden leading-none">
         <svg
           className="block w-full h-[80px] filter"
           viewBox="0 0 1440 200"
