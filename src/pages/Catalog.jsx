@@ -50,6 +50,7 @@ function Catalog() {
               image={item.thumbnailUrl}
               author={item.migrantName}
               country={item.migrantOrigin}
+              axis={item.axisType}
               description={item.description}
               onClick={() => setSelectedVideo(item)}
             />
