@@ -14,7 +14,7 @@ export default function AxisSidebar({
             }`}
             onClick={() => onSelectAxis(null)}
           >
-            Todos
+            todos
           </button>
   
           {axisOptions.map((axis) => (
@@ -33,7 +33,7 @@ export default function AxisSidebar({
         </div>
   
         <aside className="hidden md:flex flex-col w-52 shrink-0 border-r pr-6">
-          <h3 className="font-bold text-[#003049] mb-4">Filtrar por eje</h3>
+          <h3 className="font-bold text-[#4b1252] font-fira uppercase mb-4">Filtrar por eje</h3>
   
           <button
             className={`text-left py-2 px-2 rounded transition cursor-pointer ${

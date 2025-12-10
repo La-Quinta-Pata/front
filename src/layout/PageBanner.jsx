@@ -2,7 +2,7 @@ import ImagenTitulo from '../assets/images/ImagenTitulo.png';
 
 export default function PageBanner() {
     return (
-<section className="relative w-full h-32 sm:h-40 md:h-48 lg:h-30 overflow-hidden bg-[#4b1252]">
+<section className="relative w-full h-25 sm:h-40 md:h-48 lg:h-30 overflow-hidden bg-[#4b1252]">
     <figure className="absolute inset-0 w-full h-full">
         <img
             src={ImagenTitulo}
