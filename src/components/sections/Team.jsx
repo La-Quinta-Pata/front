@@ -13,14 +13,16 @@ export default function Team() {
         <section className="relative w-60 h-40">
           <section
             className="absolute inset-0 -translate-y-3 rounded-xl
-                bg-[radial-gradient(circle_at_top,#D62828,#D6282855)]"/>
+                bg-[radial-gradient(circle_at_top,#AF52DE,#4b1252)]"/>
 
           <section className="relative w-full h-full bg-white 
                 border border-gray-300 rounded-xl 
                 flex flex-col items-center overflow-hidden">
             <img src="/src/assets/images/book.png"
               alt={t("team.catalog.title")}
-              className="w-10 h-10 mt-4" />
+              className="w-10 h-10 mt-4
+              filter grayscale sepia hue-rotate-[-25deg] saturate-[300%] brightness-90
+" />
             <section className="p-2 text-center">
               <h3 className="text-sm font-semibold text-black mb-1">
                 {t("team.catalog.title")}
@@ -34,7 +36,7 @@ export default function Team() {
         <section className="relative w-60 h-40">
           <section
             className="absolute inset-0 -translate-y-3 rounded-xl
-                bg-[radial-gradient(circle_at_top,#F77F00,#F77F0055)]"/>
+                bg-[radial-gradient(circle_at_top,#dc034e,#fcd249)]"/>
 
           <section className="relative w-full h-full bg-white 
                 border border-gray-300 rounded-xl 
@@ -42,7 +44,9 @@ export default function Team() {
             <img
               src="/src/assets/images/us.png"
               alt={t("team.about.title")}
-              className="w-10 h-10 mt-4"
+              className="w-10 h-10 mt-4
+              filter grayscale sepia hue-rotate-[-25deg] saturate-[300%] brightness-90
+"
             />
             <section className="p-2 text-center">
               <h3 className="text-sm font-semibold text-black mb-1">
@@ -56,7 +60,7 @@ export default function Team() {
         <section className="relative w-60 h-40">
           <section
             className="absolute inset-0 -translate-y-3 rounded-xl
-                bg-[radial-gradient(circle_at_top,#FCBF49,#FCBF4955)]"/>
+                bg-[radial-gradient(circle_at_top,#3d506d,#007AFF)]"/>
 
           <section
             className="
@@ -65,7 +69,9 @@ export default function Team() {
             <img
               src="/src/assets/images/contact.png"
               alt={t("team.contact.title")}
-              className="w-10 h-10 mt-4"
+              className="w-10 h-10 mt-4
+              filter grayscale sepia hue-rotate-[-25deg] saturate-[300%] brightness-90
+              "
             />
             <div className="p-2 text-center">
               <h3 className="text-sm font-semibold text-black mb-1">

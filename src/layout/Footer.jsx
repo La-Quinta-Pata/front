@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
 
-      <footer className="bg-[#7e3488] p-5">
+      <footer className="bg-[#7e3488] p-5 border-t-4 border-[#4b1252] shadow-[0_-6px_14px_rgba(0,0,0,0.12)]">
         <section className="
         max-w-6xl mx-auto 
         flex flex-col md:flex-row 

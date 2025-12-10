@@ -3,6 +3,7 @@ import Card from "../components/Card.Jsx";
 import { getCatalog } from "../services/catalogService";
 import VideoModal from "../components/VideoModal";
 import PageBanner from "../layout/PageBanner";
+import Wave from "../components/Wave";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -37,7 +38,10 @@ function Catalog() {
   return (
     <>
       <PageBanner />
-      
+      <section className="relative w-full overflow-hidden leading-none -mb-8">
+        <Wave />
+      </section>
+
       <section className="container mx-auto px-4 py-8">
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {displayedItems.map((item) => (
@@ -56,7 +60,7 @@ function Catalog() {
           <section className="flex justify-center items-center gap-3 mt-10">
           </section>
         )}
-     
+
         {selectedVideo && (
           <VideoModal
             video={selectedVideo}

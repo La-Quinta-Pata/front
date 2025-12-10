@@ -1,7 +1,7 @@
 function Card({ image, author, country, description, onClick }) {
   return (
     <article
-      className="cursor-pointer shadow-[#003049] shadow-md rounded-lg overflow-hidden hover:shadow-lg transition"
+      className="cursor-pointer shadow shadow-md rounded-lg overflow-hidden hover:shadow-xl transition"
       onClick={onClick}
     >
       <img src={image} alt={author} className="w-full h-48 object-cover p-4"/>

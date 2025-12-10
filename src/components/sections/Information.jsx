@@ -15,18 +15,15 @@ export default function Information() {
                 >
                     <path
                         fill="#f7e7f9"
-                        d="
-        M0,60
-        C360,0 1080,200 1440,60
-        L1440,200
-        L0,200
-        Z
-      "
-                    />
+                        d="M0,60
+                        C360,0 1080,200 1440,60
+                        L1440,200
+                        L0,200
+                        Z"/>
                 </svg>
             </section>
             <section className=" w-full text-center py-22 px-4 flex flex-col items-center justify-center
-            bg-[#f7e7f9] border-b-4 border-[#4b1252] shadow-[0_4px_10px_rgba(0,0,0,0.12)]"
+            bg-[#f7e7f9]  shadow-[0_4px_10px_rgba(0,0,0,0.12)]"
             role="region"
             aria-labelledby="hero-heading"
             > <Description />
