@@ -5,16 +5,15 @@ import { useTranslation } from "react-i18next";
 export default function Hero() {
   const { t } = useTranslation();
   return (
-    <main className="w-full min-h-[50vh] flex flex-col items-center justify-center px-6 lg:px-10 py-8 bg-white text-black">
+    <main className="w-full min-h-[40vh] flex flex-col items-center justify-center px-6 lg:px-15 py-0 bg-white text-black">
       <section className="w-full flex flex-col lg:flex-row items-center justify-center">
-        <section className="relative w-full lg:w-[38%] flex flex-col items-center lg:items-start">
+        <section className="relative w-full flex flex-col items-center lg:items-center">
 
           <figcaption className="relative z-5
               w-full max-w-md bg-[#f7e7f9] rounded-3xl
               border border-gray-100
-              p-20
-              -mt-24
-              flex flex-col gap-1 text-center
+              p-15
+              flex flex-col gap-7 text-center
               mx-auto lg:mx-0 lg:ml-10
               shadow-[0px_4px_8px_rgba(0,0,0,0.25)]
             "
