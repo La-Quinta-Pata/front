@@ -2,15 +2,15 @@ import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { getVideosByUser } from "../services/videos.js"
-import getEmbedUrl from "../utils/getEmbedUrl.jsx"
+import { getVideosByUser, updateVideo, deleteVideo } from "../services/videos.js"
 import ConfirmToast from "../components/ConfirmToast.jsx";
 import MyToast from "../components/MyToast.jsx";
 import toast from "react-hot-toast";
 import { usersApi } from "../services/user.js";
 import EditProfileForm from "../components/EditProfileForm.jsx";
-
-
+import Card from "../components/Card.jsx";
+import VideoActions
+ from "../components/VideoActions.jsx";
 export default function Dashboard() {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
@@ -68,6 +68,31 @@ export default function Dashboard() {
         ));
     };
 
+    async function handleDeleteVideo(id) {
+        try {
+          await deleteVideo(id);
+      
+          setVideos(prev => prev.filter(video => video.id !== id));
+      
+          toast.custom(
+            <MyToast
+              title="Video eliminado"
+              message="Se borró correctamente"
+              type="success"
+            />
+          );
+        } catch (err) {
+          console.error(err);
+          toast.custom(
+            <MyToast
+              title="Error"
+              message="No se pudo eliminar el video"
+              type="error"
+            />
+          );
+        }
+      }
+      
 
 
     return (
@@ -84,11 +109,11 @@ export default function Dashboard() {
 
                 <article className="bg-white shadow-sm rounded-lg p-8 flex flex-col items-center text-center">
                     <h2 className="text-xl font-semibold mb-4">Mi perfil</h2>
-                    
+
                     <section className="space-y-2 mb-6">
-                    <p><strong>Nombre:</strong> {user?.name}</p>
-                    <p><strong>Email:</strong> {user?.email}</p>
-                    
+                        <p><strong>Nombre:</strong> {user?.name}</p>
+                        <p><strong>Email:</strong> {user?.email}</p>
+
                     </section>
 
                     <section className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -143,20 +168,22 @@ export default function Dashboard() {
 
                     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {videos.map((video) => (
-                            <article key={video.id} className="border rounded-lg overflow-hidden shadow">
-                                <iframe
-                                    className="w-full h-48"
-                                    src={getEmbedUrl(video.url)}
-                                    title={video.title}
-                                    frameBorder="0"
-                                    allowFullScreen
-                                />
-
-                                <footer className="p-4">
-                                    <h3 className="font-semibold text-md truncate">{video.title}</h3>
-                                    <p className="text-sm text-gray-600">{video.description}</p>
-                                </footer>
-                            </article>
+                            <Card
+                                key={video.id}
+                                image={video.thumbnailUrl}
+                                author={video.title}
+                                description={video.description}
+                                onClick={() => setSelectedVideo(video)}
+                                actions={
+                                    <VideoActions
+                                        video={video}
+                                        onEdit={() => {
+                                            setEditingVideo(video);
+                                        }}
+                                        onDelete={handleDeleteVideo}
+                                    />
+                                }
+                            />
                         ))}
                     </section>
                 </section>

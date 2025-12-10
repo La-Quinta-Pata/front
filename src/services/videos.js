@@ -12,3 +12,33 @@ export async function getVideosByUser(userId) {
   await handleResponse(response);
   return response.json();
 }
+
+export async function updateVideo(videoId, data) {
+  const response = await fetch(
+    `${API_BASE_URL}/videos/${videoId}`,
+    {
+      method: "PUT",
+      headers: {
+        ...getAuthHeaders(),
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data),
+    }
+  );
+
+  await handleResponse(response);
+  return response.json();
+}
+
+export async function deleteVideo(videoId) {
+  const response = await fetch(
+    `${API_BASE_URL}/videos/${videoId}`,
+    {
+      method: "DELETE",
+      headers: getAuthHeaders(),
+    }
+  );
+
+  await handleResponse(response);
+  return response.json();
+}
