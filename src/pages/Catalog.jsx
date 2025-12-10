@@ -4,6 +4,7 @@ import { getCatalog } from "../services/catalogService";
 import VideoModal from "../components/VideoModal";
 import PageBanner from "../layout/PageBanner";
 import Wave from "../components/Wave";
+import AxisSidebar from "../components/AxisSidebar";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -13,6 +14,9 @@ function Catalog() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const [selectedAxis, setSelectedAxis] = useState(null);
+  const axisOptions = [...new Set(catalog.map(item => item.axisType))];
 
   useEffect(() => {
     async function load() {
@@ -28,9 +32,13 @@ function Catalog() {
     load();
   }, []);
 
-  const totalPages = Math.ceil(catalog.length / ITEMS_PER_PAGE);
+  const filteredCatalog = selectedAxis
+  ? catalog.filter(item => item.axisType === selectedAxis)
+  : catalog;
+
+  const totalPages = Math.ceil(filteredCatalog.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const displayedItems = catalog.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const displayedItems = filteredCatalog.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   if (isLoading) return <section className="text-center mt-20">Cargando catálogo...</section>;
   if (error) return <section className="text-center mt-20 text-red-500">{error}</section>;
@@ -43,31 +51,41 @@ function Catalog() {
       </section>
 
       <section className="container mx-auto px-4 py-8">
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {displayedItems.map((item) => (
-            <Card
-              key={item.id}
-              image={item.thumbnailUrl}
-              author={item.migrantName}
-              country={item.migrantOrigin}
-              axis={item.axisType}
-              description={item.description}
-              onClick={() => setSelectedVideo(item)}
-            />
-          ))}
-        </section>
-
-        {totalPages > 1 && (
-          <section className="flex justify-center items-center gap-3 mt-10">
-          </section>
-        )}
-
-        {selectedVideo && (
-          <VideoModal
-            video={selectedVideo}
-            onClose={() => setSelectedVideo(null)}
+        <section className="flex flex-col md:flex-row gap-6">
+          <AxisSidebar
+            axisOptions={axisOptions}
+            selectedAxis={selectedAxis}
+            onSelectAxis={(axis) => {
+              setSelectedAxis(axis);
+              setCurrentPage(1);
+            }}
           />
-        )}
+          <section className="flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {displayedItems.map((item) => (
+              <Card
+                key={item.id}
+                image={item.thumbnailUrl}
+                author={item.migrantName}
+                country={item.migrantOrigin}
+                axis={item.axisType}
+                description={item.description}
+                onClick={() => setSelectedVideo(item)}
+              />
+            ))}
+          </section>
+          </section>
+
+          {totalPages > 1 && (
+            <section className="flex justify-center items-center gap-3 mt-10">
+            </section>
+          )}
+
+          {selectedVideo && (
+            <VideoModal
+              video={selectedVideo}
+              onClose={() => setSelectedVideo(null)}
+            />
+          )}
       </section>
     </>
   );
