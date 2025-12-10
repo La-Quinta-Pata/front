@@ -7,9 +7,9 @@ function Card({ image, author, country, description, onClick }) {
       <img src={image} alt={author} className="w-full h-48 object-cover p-4"/>
 
       <section className="p-3">
-        <h3 className="font-bold">{author}</h3>
-        <p className="text-sm text-[#fcd249] uppercase tracking-wider">{country}</p>
-        <p className="text-xs mt-2 line-clamp-2">{description}</p>
+        <h3 className="font-bold text-[#4b1252] font-fira uppercase">{author}</h3>
+        <p className="text-sm text-[#b05e00] font-fira tracking-wider">{country}</p>
+        <p className="text-xs text-[#4b1252] mt-2 line-clamp-2">{description}</p>
       </section>
     </article>
   );
