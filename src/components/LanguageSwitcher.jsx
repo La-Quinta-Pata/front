@@ -12,8 +12,8 @@ function LanguageSwitcher() {
     <button
       onClick={toggleLang}
       className="
-        flex items-center gap-2 px-2 py-1 rounded-md border text-xs transition-all w-20 justify-between
-        border-gray-400 text-gray-700 hover:bg-gray-100 cursor-pointer"
+        flex items-center gap-2 px-2 py-1 rounded-md shadow-md text-xs transition-all w-20 justify-between
+        bg-[#fcd249] text-gray-900 hover:bg-[#fcd249]/50 cursor-pointer"
       aria-label="Change language"
     >
       {i18n.language === "es" ? (
