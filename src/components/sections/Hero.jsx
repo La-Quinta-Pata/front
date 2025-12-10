@@ -5,53 +5,23 @@ import { useTranslation } from "react-i18next";
 export default function Hero() {
   const { t } = useTranslation();
   return (
-<main className="w-full min-h-[50vh] flex flex-col items-center justify-center px-6 lg:px-10 py-8 bg-white text-black">
-  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide text-center mb-8 lg:mb-12 text-[#003049] flex flex-col gap-1">
-    <span className="space-x-2">
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">M</span>{t("hero.title1")}</span>
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">A</span>{t("hero.title2")}</span>
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">C</span>{t("hero.title3")}</span>
-      <span>de</span>
-    </span>
-    
-    <span className="space-x-2">
-      <span><span className="font-black text-[1.4em] text-[#001a2e]">M</span>{t("hero.title4")}</span>
-      <span><span className="font-black text-[1.4em] text-[#001a2e]">M</span>{t("hero.title5")}</span>
-    </span>
-  </h1>
-
-
-
+    <main className="w-full min-h-[40vh] flex flex-col items-center justify-center px-6 lg:px-15 py-0 bg-white text-black">
       <section className="w-full flex flex-col lg:flex-row items-center justify-center">
-        <section className="relative w-full lg:w-[38%] flex flex-col items-center lg:items-start">
-
-          <section className="relative z-0 w-72 h-64 lg:w-80 lg:h-72
-              rounded-3xl overflow-hidden
-              bg-white translate-y-4 shadow-[8px_8px_20px_rgba(0,0,0,0.25)]
-            "
-          >
-            <figure className="w-full h-full">
-              <img src={ImagenInicio}
-                alt={t("hero.title")}
-                className="w-full h-full object-cover opacity-30"
-              />
-            </figure>
-          </section>
+        <section className="relative w-full flex flex-col items-center lg:items-center">
 
           <figcaption className="relative z-5
-              w-full max-w-md bg-amber-50 rounded-3xl
-              border border-gray-200
-              px-7 py-4
-              -mt-24
-              flex flex-col gap-1 text-center
+              w-full max-w-md bg-[#f7e7f9] rounded-3xl
+              border border-gray-100
+              p-15
+              flex flex-col gap-7 text-center
               mx-auto lg:mx-0 lg:ml-10
-              shadow-[8px_8px_20px_rgba(0,0,0,0.25)]
+              shadow-[0px_4px_8px_rgba(0,0,0,0.25)]
             "
           >
             <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
               {t("hero.p1")}
             </p>
-            
+
             <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
               {t("hero.p2")}
             </p>
@@ -67,7 +37,7 @@ export default function Hero() {
           </figcaption>
         </section>
 
-        <section className="w-full lg:w-[70%] flex items-center justify-center mb-6 lg:mb-0">
+        <section className="w-full lg:w-[70%] flex items-center justify-center lg:mb-0">
           <section className="w-full max-w-[650px] aspect-square">
             <GlobeExperience />
           </section>
