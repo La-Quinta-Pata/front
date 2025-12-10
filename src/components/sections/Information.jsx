@@ -4,21 +4,38 @@ import Team from "./Team.jsx"
 export default function Information() {
 
     return (
-
+        <>
+        <section className="relative w-full overflow-hidden leading-none -mb-8">
+        <svg
+          className="block w-full h-[80px] filter"
+          viewBox="0 0 1440 200"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#f7e7f9"
+            d="
+        M0,60
+        C360,0 1080,200 1440,60
+        L1440,200
+        L0,200
+        Z
+      "
+          />
+        </svg>
+      </section>
         <section
             className=" w-full
             text-center
             py-22 px-4
             flex flex-col items-center justify-center
-            bg-linear-to-b
-            from-[rgba(253,240,213,0.5)]
-            to-[#F77F00"
+           bg-[#f7e7f9]"
             role="region"
             aria-labelledby="hero-heading"
         >
 
             <Team />
-        </section>
+        </section> </>
 
 
     );
