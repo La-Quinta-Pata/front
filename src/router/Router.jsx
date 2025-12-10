@@ -9,6 +9,7 @@ import Contact from "../pages/Contact";
 import Catalog from '../pages/Catalog';
 import RegisterForm from '../components/login/RegisterForm';
 import AdminRoute from '../components/AdminRouter';
+import AboutUs from '../pages/AboutUs';
 
 function Router() {
   return (
@@ -21,7 +22,7 @@ function Router() {
             <Route path="/" element={<Home />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/catalogo" element={<Catalog />} />
-            <Route path="/quienes-somos" element={<Contact />} />
+            <Route path="/quienes-somos" element={<AboutUs />} />
             <Route
               path="/panel"
               element={
