@@ -74,7 +74,7 @@ export default function Navbar() {
                   className={mobileLinkClass}
                   onClick={() => setIsOpen(false)}
                 >
-                  {t("common.home")}
+                {t("common.home")}
                 </NavLink>
               </li>
               <li>
