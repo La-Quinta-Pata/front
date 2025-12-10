@@ -28,14 +28,6 @@ export default function Hero() {
               {t("hero.p2")}
             </p>
 
-            <button
-              className="mt-1 px-6 py-2 rounded-lg mx-auto
-                text-white font-semibold text-sm lg:text-base bg-[#003049]
-                shadow-md hover:shadow-lg hover:scale-[1.03]
-                active:scale-[0.98] transition-all duration-300 cursor-pointer"
-            >
-              {t("hero.button")}
-            </button>
           </figcaption>
         </section>
 
