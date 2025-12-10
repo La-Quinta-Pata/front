@@ -8,8 +8,8 @@ export default function Navbar() {
   const { t } = useTranslation();
 
   const linkClass = ({ isActive }) =>
-    `block px-3 py-2 text-base font-grandstander transition-colors ${
-      isActive ? "text-black" : "text-gray-700 hover:text-black"
+    `block px-3 py-2 text-lg font-fira  transition-colors ${
+      isActive ? "text-[#ffcb1f] uppercase" : "text-white uppercase hover:text-[#fcd249]"
     }`;
 
   const mobileLinkClass = ({ isActive }) =>
@@ -21,12 +21,12 @@ export default function Navbar() {
             }`;
 
   return (
-    <nav className="w-full bg-[#FCBF49]/">
+    <nav className="w-full">
       <section className="container px-0 mx-auto sm:px-4 lg:px-4">
         <section className="flex items-center justify-end lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-0 text-gray-700 hover:text-[#F77F00] focus:outline-none focus:ring-2 focus:ring-[#F77F00] cursor-pointer"
+            className="p-0 text-white hover:text-[#fcd249] focus:outline-none focus:ring-2 focus:ring-[#fcd249] cursor-pointer"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >

@@ -5,8 +5,8 @@ import logo from '../assets/images/Logo_macmm.png'
 
 function Header() {
   return (
-    <header className="bg-[#FCBF49]/30 relative">
-      <section className="w-full h-2 bg-[#FCBF49]/"></section>
+    <header className="bg-[#7e3488] shadow-xl relative z-20">
+      <section className="w-full h-2 bg-[#4b1252]/"></section>
 
       <section className="container mx-auto px-0 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-all hover:scale-105">
@@ -21,5 +21,7 @@ function Header() {
     </header>
   )
 }
+
+
 
 export default Header

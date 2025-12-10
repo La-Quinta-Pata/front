@@ -25,6 +25,10 @@ h6 {
 font-family: "Inter", sans-serif;
     font-weight: 700;}
 
+.font-fira {
+    font-family: "Fira Sans", sans-serif;
+}
+
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }

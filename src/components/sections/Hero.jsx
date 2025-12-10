@@ -5,23 +5,7 @@ import { useTranslation } from "react-i18next";
 export default function Hero() {
   const { t } = useTranslation();
   return (
-<main className="w-full min-h-[50vh] flex flex-col items-center justify-center px-6 lg:px-10 py-8 bg-white text-black">
-  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide text-center mb-8 lg:mb-12 text-[#003049] flex flex-col gap-1">
-    <span className="space-x-2">
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">M</span>{t("hero.title1")}</span>
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">A</span>{t("hero.title2")}</span>
-      <span><span className="font-black text-[1.1em] text-[#001a2e]">C</span>{t("hero.title3")}</span>
-      <span>de</span>
-    </span>
-    
-    <span className="space-x-2">
-      <span><span className="font-black text-[1.4em] text-[#001a2e]">M</span>{t("hero.title4")}</span>
-      <span><span className="font-black text-[1.4em] text-[#001a2e]">M</span>{t("hero.title5")}</span>
-    </span>
-  </h1>
-
-
-
+    <main className="w-full min-h-[50vh] flex flex-col items-center justify-center px-6 lg:px-10 py-8 bg-[#FFCBA3] text-black">
       <section className="w-full flex flex-col lg:flex-row items-center justify-center">
         <section className="relative w-full lg:w-[38%] flex flex-col items-center lg:items-start">
 
@@ -51,7 +35,7 @@ export default function Hero() {
             <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
               {t("hero.p1")}
             </p>
-            
+
             <p className="text-sm lg:text-base text-gray-800 leading-relaxed text-justify">
               {t("hero.p2")}
             </p>
