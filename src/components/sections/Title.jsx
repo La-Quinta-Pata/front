@@ -21,7 +21,7 @@ export default function Title() {
 
     <div className="relative w-full overflow-hidden leading-none -mb-8">
   <svg
-    className="block w-full h-[80px] rotate-180"
+    className="block w-full h-[80px] rotate-180 filter drop-shadow-[0_4px_10px_rgba(0,0,0,0.22)]"
     viewBox="0 0 1440 200"
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="none"

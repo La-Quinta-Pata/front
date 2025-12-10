@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 export default function Hero() {
   const { t } = useTranslation();
   return (
-    <main className="w-full min-h-[50vh] flex flex-col items-center justify-center px-6 lg:px-10 py-8 bg-[#FFCBA3] text-black">
+    <main className="w-full min-h-[50vh] flex flex-col items-center justify-center px-6 lg:px-10 py-8 bg-white text-black">
       <section className="w-full flex flex-col lg:flex-row items-center justify-center">
         <section className="relative w-full lg:w-[38%] flex flex-col items-center lg:items-start">
 
