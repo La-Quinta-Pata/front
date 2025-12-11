@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { createVideo } from "../services/videos";
-import { getAxes } from "../services/axes";
-import { getAllMigrants } from "../services/migrants";
-
 import toast from "react-hot-toast";
-import MyToast from "./MyToast";
+import MyToast from "../MyToast";
+import { getAxes } from "../../services/axes";
+import { getAllMigrants } from "../../services/migrants";
+import { createVideo } from "../../services/videos";
 
 export default function VideoForm({ onClose, onSuccess }) {
 
@@ -35,7 +34,7 @@ export default function VideoForm({ onClose, onSuccess }) {
             setAxes(axesData);
             setMigrants(migrantsData);
 
-        } catch (error) {
+        } catch {
             toast.custom(
                 <MyToast
                     title="Error al cargar datos"

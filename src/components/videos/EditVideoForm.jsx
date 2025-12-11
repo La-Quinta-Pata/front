@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import MyToast from "./MyToast";
-import { getAxes } from "../services/axes";
-import { getAllMigrants } from "../services/migrants";
+import MyToast from "../MyToast";
+import { getAxes } from "../../services/axes";
+import { getAllMigrants } from "../../services/migrants";
 
 export default function EditVideoForm({ video, onClose, onSuccess, onSubmit }) {
 

@@ -2,16 +2,16 @@ import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { getVideosByUser, updateVideo, deleteVideo } from "../services/videos.js"
+import { getVideosByUser, updateVideo, deleteVideo } from "../services/videos.js";
+import { usersApi } from "../services/user.js";
 import ConfirmToast from "../components/ConfirmToast.jsx";
 import MyToast from "../components/MyToast.jsx";
-import toast from "react-hot-toast";
-import { usersApi } from "../services/user.js";
-import EditProfileForm from "../components/EditProfileForm.jsx";
-import EditVideoForm from "../components/EditVideoForm.jsx";
 import Card from "../components/Card.jsx";
-import VideoActions from "../components/VideoActions.jsx";
-import VideoForm from "../components/VideoForm.jsx";
+import EditProfileForm from "../components/EditProfileForm.jsx";
+import EditVideoForm from "../components/videos/EditVideoForm.jsx";
+import VideoActions from "../components/videos/VideoActions.jsx";
+import VideoForm from "../components/videos/VideoForm.jsx";
+import toast from "react-hot-toast";
 
     export default function Dashboard() {
     const { user, logout } = useAuth();

@@ -1,10 +1,10 @@
 import { Pen, Trash } from "lucide-react";
 import toast from "react-hot-toast";
-import ConfirmToast from "./ConfirmToast";
+import ConfirmToast from "../ConfirmToast";
 
 export default function VideoActions({ video, onEdit, onDelete }) {
   function handleDelete() {
-    toast.custom((t) => (
+    toast.custom(() => (
       <ConfirmToast
         message={`¿Eliminar "${video.title}"?`}
         onConfirm={async () => {
