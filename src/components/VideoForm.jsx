@@ -1,6 +1,6 @@
     import { useState, useEffect } from "react";
     import { createVideo, updateVideo } from "../services/videos";
-    import { getAllAxes } from "../services/axes";
+    import { getAxes } from "../services/axes";
     import toast from "react-hot-toast";
     import MyToast from "./MyToast";
 
@@ -28,7 +28,7 @@
 
     async function loadData() {
         try {
-        const axesData = await getAllAxes();
+        const axesData = await getAxes();
         setAxes(axesData);
         } catch (error) {
         toast.custom(
@@ -341,7 +341,6 @@
                     className="block text-sm font-medium mb-1"
                     >
                     Apellido de la migrante{" "}
-                    <span className="text-red-600">*</span>
                     </label>
                     <input
                     type="text"

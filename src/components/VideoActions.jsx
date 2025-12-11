@@ -1,7 +1,6 @@
 import { Pen, Trash } from "lucide-react";
 import toast from "react-hot-toast";
 import ConfirmToast from "./ConfirmToast";
-import MyToast from "./MyToast";
 
 export default function VideoActions({ video, onEdit, onDelete }) {
   function handleDelete() {
@@ -10,13 +9,6 @@ export default function VideoActions({ video, onEdit, onDelete }) {
         message={`¿Eliminar "${video.title}"?`}
         onConfirm={async () => {
           await onDelete(video.id);
-          toast.custom(
-            <MyToast
-              title="Video eliminado"
-              message="Se borró con éxito"
-              type="success"
-            />
-          );
         }}
       />
     ));
