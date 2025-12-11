@@ -20,13 +20,17 @@ export async function updateVideo(videoId, data) {
       method: "PUT",
       headers: {
         ...getAuthHeaders(),
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     }
   );
 
-  await handleResponse(response);
+  if (!response.ok) {
+    const errorJson = await response.json();
+    throw errorJson;
+  }
+
   return response.json();
 }
 

@@ -8,9 +8,10 @@ import MyToast from "../components/MyToast.jsx";
 import toast from "react-hot-toast";
 import { usersApi } from "../services/user.js";
 import EditProfileForm from "../components/EditProfileForm.jsx";
+import EditVideoForm from "../components/EditVideoForm.jsx";
 import Card from "../components/Card.jsx";
-import VideoActions
- from "../components/VideoActions.jsx";
+import VideoActions from "../components/VideoActions.jsx";
+
 export default function Dashboard() {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [editingProfile, setEditingProfile] = useState(false);
-
+    const [editingVideo, setEditingVideo] = useState(null);
 
     const handleLogout = () => {
         logout();
@@ -70,29 +71,29 @@ export default function Dashboard() {
 
     async function handleDeleteVideo(id) {
         try {
-          await deleteVideo(id);
-      
-          setVideos(prev => prev.filter(video => video.id !== id));
-      
-          toast.custom(
-            <MyToast
-              title="Video eliminado"
-              message="Se borró correctamente"
-              type="success"
-            />
-          );
+            await deleteVideo(id);
+
+            setVideos(prev => prev.filter(video => video.id !== id));
+
+            toast.custom(
+                <MyToast
+                    title="Video eliminado"
+                    message="Se borró correctamente"
+                    type="success"
+                />
+            );
         } catch (err) {
-          console.error(err);
-          toast.custom(
-            <MyToast
-              title="Error"
-              message="No se pudo eliminar el video"
-              type="error"
-            />
-          );
+            console.error(err);
+            toast.custom(
+                <MyToast
+                    title="Error"
+                    message="No se pudo eliminar el video"
+                    type="error"
+                />
+            );
         }
-      }
-      
+    }
+
 
 
     return (
@@ -161,19 +162,32 @@ export default function Dashboard() {
 
                 <section className="bg-white shadow-sm rounded-lg p-6">
                     <h2 className="text-xl font-semibold mb-6">Videos añadidos por mí</h2>
-
+                    {editingVideo && (
+                        <EditVideoForm
+                            video={editingVideo}
+                            onClose={() => setEditingVideo(null)}
+                            onSuccess={() => {
+                                // ya que lo actualizamos localmente:
+                                getVideosByUser(user.id).then(setVideos);
+                            }}
+                            onSubmit={updateVideo}
+                        />
+                    )}
                     {videos.length === 0 && (
                         <p className="text-gray-500">Todavía no has añadido videos.</p>
                     )}
 
                     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        {videos.map((video) => (
+                        {videos.map((video) => {
+                            console.log("video =>", video);
+                            return (
+
                             <Card
                                 key={video.id}
                                 image={video.thumbnailUrl}
                                 author={video.title}
                                 description={video.description}
-                                onClick={() => setSelectedVideo(video)}
+                                onClick={() => {}}
                                 actions={
                                     <VideoActions
                                         video={video}
@@ -184,7 +198,7 @@ export default function Dashboard() {
                                     />
                                 }
                             />
-                        ))}
+                        )})}
                     </section>
                 </section>
 
