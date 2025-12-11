@@ -33,8 +33,8 @@ function Catalog() {
   }, []);
 
   const filteredCatalog = selectedAxis
-  ? catalog.filter(item => item.axisType === selectedAxis)
-  : catalog;
+    ? catalog.filter(item => item.axisType === selectedAxis)
+    : catalog;
 
   const totalPages = Math.ceil(filteredCatalog.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -73,19 +73,53 @@ function Catalog() {
               />
             ))}
           </section>
+        </section>
+
+        {totalPages > 1 && (
+          <section className="flex justify-center items-center gap-3 mt-10">
+            <button
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(prev => prev - 1)}
+              className={`px-3 py-1 rounded ${currentPage === 1
+                  ? "text-[#4b1252] font-fira uppercase cursor-not-allowed"
+                  : "text-[#4b1252] font-fira uppercase cursor-pointer hover:bg-[#f7e7f9]"
+                }`}
+            >
+              Anterior
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(num => (
+              <button
+                key={num}
+                onClick={() => setCurrentPage(num)}
+                className={`px-3 py-1 rounded ${currentPage === num
+                    ? "text-[#4b1252] font-fira"
+                    : "bg-[#f7e7f9] cursor-pointer hover:bg-[#fcd249]/70"
+                  }`}
+              >
+                {num}
+              </button>
+            ))}
+
+            <button
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage(prev => prev + 1)}
+              className={`px-3 py-1 rounded ${currentPage === totalPages
+                  ? "text-[#4b1252] font-fira uppercase cursor-not-allowed"
+                  : "text-[#4b1252] font-fira uppercase cursor-pointer hover:bg-[#f7e7f9]"
+                }`}
+            >
+              Siguiente
+            </button>
           </section>
+        )}
 
-          {totalPages > 1 && (
-            <section className="flex justify-center items-center gap-3 mt-10">
-            </section>
-          )}
-
-          {selectedVideo && (
-            <VideoModal
-              video={selectedVideo}
-              onClose={() => setSelectedVideo(null)}
-            />
-          )}
+        {selectedVideo && (
+          <VideoModal
+            video={selectedVideo}
+            onClose={() => setSelectedVideo(null)}
+          />
+        )}
       </section>
     </>
   );
