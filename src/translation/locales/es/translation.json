@@ -41,6 +41,9 @@
 },
 "contact": {
     "heading": "¿Dónde nos encuentras?"
+},
+"aboutUs": {
+  "team" : "equipo"
 }
 
 }
