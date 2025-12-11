@@ -40,17 +40,14 @@ font-family: "Inter", sans-serif;
     animation: shake 0.3s ease-in-out;
 }
 
-/* Allow 3D transformations */
 .perspective {
   perspective: 1000px;
 }
 
-/* Hide backside */
 .backface-hidden {
   backface-visibility: hidden;
 }
 
-/* Rotation utilities */
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
