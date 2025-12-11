@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card.Jsx";
 import { getCatalog } from "../services/catalogService";
-import VideoModal from "../components/VideoModal";
+import VideoModal from "../components/videos/VideoModal";
 import PageBanner from "../layout/PageBanner";
 import Wave from "../components/Wave";
 import AxisSidebar from "../components/AxisSidebar";

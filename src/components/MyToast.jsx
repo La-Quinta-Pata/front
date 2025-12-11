@@ -14,36 +14,51 @@ function MyToast({ title, message, type = "success", duration = 1000  }) {
   }, [duration]);
   
   return (
-    <div
-      className={`
-        max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5
-        ${type === "success" ? "border-green-500" : "border-red-500"}
-      `}
-    >
-      <div className="flex-1 w-0 p-4">
-        <div className="flex items-start">
-          <div className="flex-shrink-0 pt-0.5">
-            {type === "success" ? (
-              <span className="text-green-600 text-xl">✔️</span>
-            ) : (
-              <span className="text-red-600 text-xl">❌</span>
-            )}
-          </div>
+<aside
+  role={type === "success" ? "status" : "alert"}
+  aria-live={type === "success" ? "polite" : "assertive"}
+  className={`
+    max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto 
+    ring-1 ring-black ring-opacity-5
+    ${type === "success" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"}
+    p-4
+    grid grid-cols-[auto_1fr_auto] gap-3 items-start
+    sm:p-5 sm:gap-4
+  `}
+>
+  <span
+    className={`
+      text-xl pt-0.5 flex-shrink-0
+      ${type === "success" ? "text-green-600" : "text-red-600"}
+    `}
+    aria-hidden="true"
+  >
+    {type === "success" ? "✔️" : "❌"}
+  </span>
 
-          <div className="ml-3 flex-1">
-            <p className="text-sm font-semibold text-gray-900">{title}</p>
-            <p className="mt-1 text-sm text-gray-600">{message}</p>
-          </div>
+  <section className="min-w-0">
+    <h2 className="text-sm font-semibold text-gray-900 sm:text-base">
+      {title}
+    </h2>
+    <p className="mt-1 text-sm text-gray-600 break-words sm:text-base">
+      {message}
+    </p>
+  </section>
 
-          <button
-            onClick={() => toast.dismiss()}
-            className="ml-4 flex-shrink-0 text-gray-400 hover:text-gray-600"
-          >
-            <X size={18} />
-          </button>
-        </div>
-      </div>
-    </div>
+  <button
+    onClick={() => toast.dismiss()}
+    className="
+      flex-shrink-0 text-gray-400 hover:text-gray-600 
+      focus:outline-none focus:ring-2 focus:ring-offset-2 
+      focus:ring-blue-500 rounded
+      transition-colors duration-200
+      p-1 -mt-1 -mr-1
+    "
+    aria-label={`Cerrar notificación: ${title}`}
+  >
+    <X size={18} className="sm:w-5 sm:h-5" />
+  </button>
+</aside>
   );
 }
 

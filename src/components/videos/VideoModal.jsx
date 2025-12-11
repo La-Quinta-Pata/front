@@ -1,4 +1,4 @@
-import getEmbedUrl from "../utils/getEmbedUrl";
+import getEmbedUrl from "../../utils/getEmbedUrl";
 
 export default function VideoModal({ video, onClose }) {
     if (!video) return null;
