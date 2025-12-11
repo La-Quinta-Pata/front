@@ -13,16 +13,16 @@
     "footer" : {
     },
     "hero":{
-        "title": "MEMÒRIES MIGRANTS",
-        "subtitle": "Un projecte col·laboratiu que connecta històries, cultura i creativitat. El nostre globus representa visualment les rutes migratòries des d'Amèrica Llatina fins a Barcelona.",
+        "title": "SOBRE L'ARXIU",
+        "subtitle": "L’Arxiu Comunitari de Memòries Migrants (ACMM) és un espai col·lectiu per reflexionar juntes sobre migració, racisme, fronteres, gènere i diversitats. Un lloc des d’on alcem la veu i reclamem el nostre dret a existir, narrar-nos i ser part visible i legítima de la ciutat que habitem. El globus del costat és la representació visual de les històries explicades en aquesta pàgina des de l’origen fins a Barcelona",
         "button" : "Saber més",
          "title1" : "ostra",
         "title2" : "rxiu",
         "title3" : "omunitari",
         "title4" : "emòries",
         "title5" : "igrants",
-        "p1" : "Un projecte col·laboratiu que connecta històries, cultura i creativitat",
-        "p2" : "El nostre globus és la representació visual de les històries explicades en aquesta pàgina des de l’origen – diferents països d’Amèrica Llatina – fins a Barcelona."
+        "p1" : "L’Arxiu Comunitari de Memòries Migrants (ACMM) és un espai col·lectiu per reflexionar juntes sobre migració, racisme, fronteres, gènere i diversitats. Un lloc des d’on alcem la veu i reclamem el nostre dret a existir, narrar-nos i ser part visible i legítima de la ciutat que habitem.",
+        "p2" : "El globus del costat és la representació visual de les històries explicades en aquesta pàgina des de l’origen fins a Barcelona."
     },
     "team": {
   "catalog": {

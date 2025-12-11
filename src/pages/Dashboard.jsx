@@ -117,18 +117,16 @@
             </section>
         </header>
 
-        <section className="max-w-7xl mx-auto px-6 py-10 flex flex-col gap-10">
-            <article className="bg-white shadow-sm rounded-lg p-8 flex flex-col items-center text-center">
-            <h2 className="text-xl font-semibold mb-4">Mi perfil</h2>
+            <section className="max-w-7xl mx-auto px-6 py-10 flex flex-col gap-10">
 
-            <section className="space-y-2 mb-6">
-                <p>
-                <strong>Nombre:</strong> {user?.name}
-                </p>
-                <p>
-                <strong>Email:</strong> {user?.email}
-                </p>
-            </section>
+                <article className="bg-white shadow-sm rounded-lg p-8 flex flex-col items-center text-center">
+                    <h2 className="text-xl font-semibold mb-4">Mi perfil</h2>
+                    
+                    <section className="space-y-2 mb-6">
+                    <p><strong>Nombre:</strong> {user?.name}</p>
+                    <p><strong>Email:</strong> {user?.email}</p>
+                    
+                    </section>
 
             <section className="flex flex-col sm:flex-row gap-3 mb-6">
                 <button
