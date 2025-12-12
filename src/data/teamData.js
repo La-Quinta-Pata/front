@@ -4,15 +4,15 @@ import logo5pata from "/logo5_pata.png"
   export const team = [
     {
       "id": 1,
-      "name": "María José Rosero",
-      "role": " Producción",
+      name: "María José Rosero",
+      roleKey: "team.maria.role", //"Producción"
       "image": mariaJoseR,
       "description": "Descripción breve."
     },
     {
       "id": 2,
       "name": " Silvina Merino",
-      "role": "Coordinación general",
+      "role": "team.silvina.role", //"Coordinación general",
       "image": logo5pata,
       "description": "Descripción breve."
     },

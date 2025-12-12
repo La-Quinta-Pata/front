@@ -19,16 +19,16 @@ export default function Team() {
                 border border-gray-300 rounded-xl 
                 flex flex-col items-center overflow-hidden">
             <img src="/src/assets/images/book.png"
-              alt={t("team.catalog.title")}
+              alt={t("catalogSection.title")}
               className="w-10 h-10 mt-4
               filter grayscale sepia hue-rotate-[-25deg] saturate-[300%] brightness-90
 " />
             <section className="p-2 text-center">
               <h3 className="text-sm font-semibold text-black mb-1">
-                {t("team.catalog.title")}
+                {t("catalogSection.title")}
               </h3>
               <p className="text-xs text-gray-700 leading-tight">
-                {t("team.catalog.desc")}</p>
+                {t("catalogSection.desc")}</p>
             </section>
           </section>
         </section>
@@ -43,16 +43,16 @@ export default function Team() {
                 flex flex-col items-center overflow-hidden">
             <img
               src="/src/assets/images/us.png"
-              alt={t("team.about.title")}
+              alt={t("aboutSection.title")}
               className="w-10 h-10 mt-4
               filter grayscale sepia hue-rotate-[-25deg] saturate-[300%] brightness-90
 "
             />
             <section className="p-2 text-center">
               <h3 className="text-sm font-semibold text-black mb-1">
-                {t("team.about.title")} </h3>
+                {t("aboutSection.title")} </h3>
               <p className="text-xs text-gray-700 leading-tight">
-                {t("team.about.desc")}</p>
+                {t("aboutSection.desc")}</p>
             </section>
           </section>
         </section>
@@ -68,17 +68,17 @@ export default function Team() {
                 flex flex-col items-center overflow-hidden">
             <img
               src="/src/assets/images/contact.png"
-              alt={t("team.contact.title")}
+              alt={t("contactSection.title")}
               className="w-10 h-10 mt-4
               filter grayscale sepia hue-rotate-[-25deg] saturate-[300%] brightness-90
               "
             />
             <div className="p-2 text-center">
               <h3 className="text-sm font-semibold text-black mb-1">
-                {t("team.contact.title")}
+                {t("contactSection.title")}
               </h3>
               <p className="text-xs text-gray-700 leading-tight">
-                {t("team.contact.desc")}
+                {t("contactSection.desc")}
               </p>
             </div>
           </section>

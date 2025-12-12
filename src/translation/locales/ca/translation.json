@@ -17,20 +17,6 @@
         "p1" : "L'Arxiu Comunitari de Memòries Migrants (ACMM) és un espai col·lectiu per reflexionar juntes sobre migració, racisme, fronteres, gènere i diversitats. Un lloc des d'on alcem la veu i reclamem el nostre dret a existir, narrar-nos i ser part visible i legítima de la ciutat que habitem.",
         "p2" : "El globus del costat és la representació visual de les històries explicades en aquesta pàgina des de l'origen fins a Barcelona."
     },
-    "team": {
-        "catalog": {
-            "title": "Catàleg",
-            "desc": "Accedeix a les Memòries Migrants"
-        },
-        "about": {
-            "title": "Coneix-nos",
-            "desc": "Coneix l'equip de la Quinta Pata"
-        },
-        "contact": {
-            "title": "Contacte",
-            "desc": "Envia'ns un missatge si vols compartir la teva història"
-        }
-    },
     "description": {
         "title": "El nostre arxiu de memòries",
         "p1": "Construïm aquest projecte des de la interculturalitat, el feminisme i la descolonialitat, com un acte polític i afectiu enfront del silenci i la invisibilització que han marcat històricament les nostres vides.",

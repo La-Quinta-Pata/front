@@ -17,20 +17,6 @@
         "p1" : "El Archivo Comunitario de Memorias Migrantes (ACMM) es un espacio colectivo para reflexionar juntas sobre migración, racismo, fronteras, género y diversidades. Un lugar desde donde alzamos la voz y reclamamos nuestro derecho a existir, narrarnos y ser parte visible y legítima de la ciudad que habitamos.",
         "p2" : "El globo al lado es la representación visual de las historias contadas en este página desde la origen hacia Barcelona."
     },
-    "team": {
-        "catalog": {
-            "title": "Catálogo",
-            "desc": "Accede a las Memorias Migrantes"
-        },
-        "about": {
-            "title": "Conócenos",
-            "desc": "Conoce al equipo de la Quinta Pata"
-        },
-        "contact": {
-            "title": "Contacto",
-            "desc": "Envíanos un mensaje si quieres compartir tu historia"
-        }
-    },
     "description": {
         "title": "Nuestro archivo de memorias",
         "p1": "Construimos este proyecto desde la interculturalidad, el feminismo y la descolonialidad, como un acto político y afectivo frente al silencio y la invisibilización que han marcado históricamente nuestras vidas.",
