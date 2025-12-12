@@ -4,7 +4,7 @@ import { getCatalog } from "../services/catalogService";
 import VideoModal from "../components/videos/VideoModal";
 import PageBanner from "../layout/PageBanner";
 import Wave from "../components/Wave";
-import AxisSidebar from "../components/AxisSidebar";
+import AxisSidebar from "../components/videos/AxisSidebar";
 
 const ITEMS_PER_PAGE = 12;
 

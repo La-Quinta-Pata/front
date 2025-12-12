@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { AuthProvider } from '../context/AuthProvider';
-import PrivateRoute from '../components/PrivateRoute';
+import PrivateRoute from '../components/login/PrivateRoute';
+import AdminRoute from '../components/login/AdminRouter';
 import Layout from '../layout/Layout';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
@@ -8,7 +9,6 @@ import Dashboard from '../pages/Dashboard';
 import Contact from "../pages/Contact";
 import Catalog from '../pages/Catalog';
 import RegisterForm from '../components/login/RegisterForm';
-import AdminRoute from '../components/AdminRouter';
 import AboutUs from '../pages/AboutUs';
 
 function Router() {
@@ -37,7 +37,6 @@ function Router() {
             element={<AdminRoute>
               <RegisterForm />
             </AdminRoute>} />
-
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

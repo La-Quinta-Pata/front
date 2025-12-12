@@ -1,8 +1,8 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import MyToast from "./MyToast";
-import { usersApi } from "../services/user";
-import { useAuth } from "../hooks/useAuth";
+import MyToast from "../MyToast";
+import { usersApi } from "../../services/user";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function EditProfileForm({ user, onClose, onSuccess }) {
   const { setUser } = useAuth();
