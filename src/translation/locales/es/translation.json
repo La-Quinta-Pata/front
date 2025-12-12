@@ -45,5 +45,29 @@
         "manifesto1": "Porque contar nuestras historias es resistir.",
         "manifesto2": "Porque la memoria migrante es un territorio que defendemos juntas.",
         "manifesto3": "Porque existir también es hacer historia."
-    }
+    },
+  "catalog": {
+    "title": "Catálogo",
+    "desc": "Accede a las Memorias Migrantes"
+  },
+  "about": {
+    "title": "Conócenos",
+    "desc": "Conoce al equipo de la Quinta Pata"
+  },
+  "contact": {
+    "title": "Contacto",
+    "desc": "Envíanos un mensaje si quieres compartir tu historia"
+  }
+},
+"contact": {
+    "heading": "¿Dónde nos encuentras?"
+},
+"aboutUs": {
+  "whoAreWe" : "Quiénes Somos",
+  "description": "La Quinta Pata es una Asociación Cultural que desde 2009 impulsa proyectos de pedagogía crítica a través del arte y la acción colectiva en torno a los temas de racismo, fronteras y género. Trabajamos con una mirada feminista, intercultural y decolonial, comprometidas con la Economía Social y Solidaria y la defensa de los Derechos Humanos.\nDesde el corazón del Raval creamos espacios de resistencia para transformar experiencias migrantes en fuerza colectiva. Creemos en la cultura como herramienta política de transformación, memoria y justicia.",
+  "team" : "Equipo",
+  "academicCollaboration" : "Colaboración Académica",
+  "webDesign" : "Diseño Web"
+}
+
 }
