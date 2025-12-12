@@ -40,7 +40,7 @@ describe("LoginForm", () => {
     expect(screen.getByLabelText(/contraseña/i, { selector: "input" })).toBeInTheDocument();
   });
 
-  it("deshabilita el botón cuando los inputs son inválidos", () => {
+  it("mantiene el botón deshabilitado cuando los inputs son inválidos", async () => {
     setup();
 
     const button = screen.getByRole("button", { name: /entrar/i });
@@ -49,35 +49,51 @@ describe("LoginForm", () => {
     const emailInput = screen.getByLabelText(/email/i, { selector: "input" });
     const passwordInput = screen.getByLabelText(/contraseña/i, { selector: "input" });
 
-    fireEvent.change(emailInput, { target: { value: "malformato" } });
-    fireEvent.change(passwordInput, { target: { value: "123" } });
+    await act(async () => {
+      fireEvent.change(emailInput, { target: { value: "malformato" } });
+      fireEvent.blur(emailInput);
 
+      fireEvent.change(passwordInput, { target: { value: "123" } });
+      fireEvent.blur(passwordInput);
+    });
+
+    // El botón sigue deshabilitado
     expect(button).toBeDisabled();
+
+    // Verificamos que los valores se actualizaron
+    expect(emailInput.value).toBe("malformato");
+    expect(passwordInput.value).toBe("123");
   });
 
-  it("habilita botón cuando email y password son válidos", () => {
+  it("habilita el botón cuando email y password son válidos", async () => {
     setup();
 
     const emailInput = screen.getByLabelText(/email/i, { selector: "input" });
     const passwordInput = screen.getByLabelText(/contraseña/i, { selector: "input" });
 
-    fireEvent.change(emailInput, { target: { value: "test@mail.com" } });
-    fireEvent.change(passwordInput, { target: { value: "12345678" } });
+    await act(async () => {
+      fireEvent.change(emailInput, { target: { value: "test@mail.com" } });
+      fireEvent.change(passwordInput, { target: { value: "12345678" } });
+    });
 
     const button = screen.getByRole("button", { name: /entrar/i });
     expect(button).not.toBeDisabled();
   });
 
-  it("toggle de mostrar/ocultar contraseña funciona", () => {
+  it("toggle de mostrar/ocultar contraseña funciona", async () => {
     setup();
 
     const passwordInput = screen.getByLabelText(/contraseña/i, { selector: "input" });
     const toggleButton = screen.getByRole("button", {
-      name: /mostrar contraseña/i,
+      name: /mostrar contraseña/i
     });
 
     expect(passwordInput.type).toBe("password");
-    fireEvent.click(toggleButton);
+
+    await act(async () => {
+      fireEvent.click(toggleButton);
+    });
+
     expect(passwordInput.type).toBe("text");
   });
 
