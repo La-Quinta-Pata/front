@@ -6,7 +6,7 @@ import FormModal from "./FormModal";
 import { getVideoFormFields } from "../../utils/videoFormConfig";
 import { parseServerErrors } from "../../utils/videoHelpers";
 import toast from "react-hot-toast";
-import MyToast from "../MyToast";
+import MyToast from "../../components/toasts/MyToast";
 
 export default function EditVideoForm({ video, onClose, onSuccess, onSubmit }) {
   const { axes, migrants, loading: loadingData } = useVideoFormData();

@@ -6,7 +6,7 @@ import SelectField from "./SelectField";
 import FormHeader from "./FormHeader";
 import FormActions from "./FormActions";
 import ErrorMessage from "./ErrorMessage";
-import MyToast from "../MyToast";
+import MyToast from "../../components/toasts/MyToast";
 import toast from "react-hot-toast";
 
 const ROLE_OPTIONS = [
@@ -58,7 +58,6 @@ export default function RegisterForm({ onCancel }) {
     const { name, value } = target;
     setFormData(prev => ({ ...prev, [name]: value }));
 
-    // Live validation
     if (name === "name") setFieldErrors(prev => ({ ...prev, name: validateName(value) }));
     if (name === "email") setFieldErrors(prev => ({ ...prev, email: validateEmail(value) }));
     if (name === "password") setFieldErrors(prev => ({ ...prev, password: validatePassword(value) }));

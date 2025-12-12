@@ -1,6 +1,6 @@
 import { createVideo } from "../../services/videos";
 import useVideoFormData from "../../hooks/useVideoFormData";
-import useVideoForm from "../../hooks/useVideoForm";  // ← AGREGAR ESTA LÍNEA
+import useVideoForm from "../../hooks/useVideoForm";
 import FormField from "./FormField";
 import FormButtons from "./FormButtons";
 import FormModal from "./FormModal";
@@ -8,7 +8,7 @@ import { getVideoFormFields } from "../../utils/videoFormConfig";
 
 export default function VideoForm({ onClose, onSuccess }) {
     const { axes, migrants, loading: loadingData } = useVideoFormData();
-    const { formData, errors, loading, handleChange, handleUrlChange, handleSubmit } = useVideoForm();  // ← CAMBIAR A useVideoForm()
+    const { formData, errors, loading, handleChange, handleUrlChange, handleSubmit } = useVideoForm();
 
     const fields = getVideoFormFields(axes, migrants);
 

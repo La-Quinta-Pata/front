@@ -5,8 +5,6 @@
         "contact" : "Contacte",
         "about" : "Coneix-nos"
     },
-    "nav":{},
-    "footer" : {},
     "hero":{
         "title": "SOBRE L'ARXIU",
         "subtitle": "L'Arxiu Comunitari de Memòries Migrants (ACMM) és un espai col·lectiu per reflexionar juntes sobre migració, racisme, fronteres, gènere i diversitats. Un lloc des d'on alcem la veu i reclamem el nostre dret a existir, narrar-nos i ser part visible i legítima de la ciutat que habitem. El globus del costat és la representació visual de les històries explicades en aquesta pàgina des de l'origen fins a Barcelona",
@@ -33,9 +31,6 @@
             "desc": "Envia'ns un missatge si vols compartir la teva història"
         }
     },
-    "contact" : {
-        "heading" : "On ens trobes?"
-    },
     "description": {
         "title": "El nostre arxiu de memòries",
         "p1": "Construïm aquest projecte des de la interculturalitat, el feminisme i la descolonialitat, com un acte polític i afectiu enfront del silenci i la invisibilització que han marcat històricament les nostres vides.",
@@ -45,5 +40,31 @@
         "manifesto1": "Perquè explicar les nostres històries és resistir.",
         "manifesto2": "Perquè la memòria migrant és un territori que defensem juntes.",
         "manifesto3": "Perquè existir també és fer història."
+    },
+  "catalogSection": {
+    "title": "Catàleg",
+    "desc": "Accedeix a les Memòries Migrants"
+  },
+  "aboutSection": {
+    "title": "Coneix-nos",
+    "desc": "Coneix l'equip de la Quinta Pata"
+  },
+  "contactSection": {
+    "title": "Contacte",
+    "desc": "Envia'ns un missatge si vols compartir la teva història"
+  },
+  "collaborationSection" :{
+    "title": "Col·laboradors"
+  },
+"aboutUsPage": {
+  "whoAreWe": "Qui Som",
+  "intro": "La Quinta Pata és una Associació Cultural que des del 2009 impulsa projectes de pedagogia crítica a través de l'art i l'acció col·lectiva en temes de racisme, fronteres i gènere. Treballem amb una mirada feminista, intercultural i decolonial, compromeses amb l'Economia Social i Solidària i la defensa dels Drets Humans.\nDes del cor del Raval creem espais de resistència per transformar les experiències migratòries en força col·lectiva. Creiem en la cultura com a eina política de transformació, memòria i justícia.",
+  "team": "Equip",
+  "academicCollaboration": "Col·laboració Acadèmica",
+  "webDesign": "Disseny Web"
+},
+ "contactPage" : {
+        "heading" : "On ens trobes?"
     }
+
 }

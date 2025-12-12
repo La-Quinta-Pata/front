@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import MyToast from "../MyToast";
+import MyToast from "../../components/toasts/MyToast";
 import { usersApi } from "../../services/user";
 import { useAuth } from "../../hooks/useAuth";
 

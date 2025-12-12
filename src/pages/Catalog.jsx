@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Card from "../components/Card.Jsx";
+import Card from "../components/videos/Card.jsx";
 import { getCatalog } from "../services/catalogService";
 import VideoModal from "../components/videos/VideoModal";
 import PageBanner from "../layout/PageBanner";
-import Wave from "../components/Wave";
+import Wave from "../layout/Wave.jsx";
 import AxisSidebar from "../components/videos/AxisSidebar";
 
 const ITEMS_PER_PAGE = 12;

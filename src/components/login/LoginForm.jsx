@@ -108,11 +108,11 @@ export default function LoginForm() {
         <main className="flex items-center justify-center min-h-screen bg-gray-50 px-4 py-6 sm:px-6 sm:py-8 md:px-8">
             <section className="w-full max-w-md sm:max-w-lg md:max-w-xl flex flex-col items-center">
                 
-                <header className="mb-6 sm:mb-8 md:mb-10 w-full">
-                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center text-[#003049] leading-tight px-2">
+                <section className="mb-6 sm:mb-8 md:mb-10 w-full">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center text-[#003049] leading-tight px-2">
                         MEMORIAS MIGRANTES
-                    </h1>
-                </header>
+                    </h2>
+                </section>
 
                 <form
                     onSubmit={handleSubmit}
@@ -155,7 +155,7 @@ export default function LoginForm() {
                         onTogglePassword={() => setShowPassword(!showPassword)}
                     />
 
-                    <footer className="flex justify-center mt-5 sm:mt-6 md:mt-8">
+                    <section className="flex justify-center mt-5 sm:mt-6 md:mt-8">
                         <Button
                             type="submit"
                             loading={loading}
@@ -163,7 +163,7 @@ export default function LoginForm() {
                         >
                             Entrar
                         </Button>
-                    </footer>
+                    </section>
                 </form>
             </section>
         </main>
