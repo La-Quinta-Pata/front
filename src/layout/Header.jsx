@@ -10,7 +10,7 @@ function Header() {
 
       <section className="container mx-auto px-0 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-all hover:scale-105 font-fira text-xl text-[#fcd249]">
-          ACMM
+          <img src={logo} alt="Logo Macmm" className="h-30"/> 
         </Link>
         <Navbar />
       </section>
