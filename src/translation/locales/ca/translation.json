@@ -4,41 +4,46 @@
         "catalog" : "Catàleg",
         "contact" : "Contacte",
         "about" : "Coneix-nos"
-
     },
-    "nav":{
-        
-        
-    },
-    "footer" : {
-    },
+    "nav":{},
+    "footer" : {},
     "hero":{
         "title": "SOBRE L'ARXIU",
-        "subtitle": "L’Arxiu Comunitari de Memòries Migrants (ACMM) és un espai col·lectiu per reflexionar juntes sobre migració, racisme, fronteres, gènere i diversitats. Un lloc des d’on alcem la veu i reclamem el nostre dret a existir, narrar-nos i ser part visible i legítima de la ciutat que habitem. El globus del costat és la representació visual de les històries explicades en aquesta pàgina des de l’origen fins a Barcelona",
+        "subtitle": "L'Arxiu Comunitari de Memòries Migrants (ACMM) és un espai col·lectiu per reflexionar juntes sobre migració, racisme, fronteres, gènere i diversitats. Un lloc des d'on alcem la veu i reclamem el nostre dret a existir, narrar-nos i ser part visible i legítima de la ciutat que habitem. El globus del costat és la representació visual de les històries explicades en aquesta pàgina des de l'origen fins a Barcelona",
         "button" : "Saber més",
-         "title1" : "ostra",
+        "title1" : "ostra",
         "title2" : "rxiu",
         "title3" : "omunitari",
         "title4" : "emòries",
         "title5" : "igrants",
-        "p1" : "L’Arxiu Comunitari de Memòries Migrants (ACMM) és un espai col·lectiu per reflexionar juntes sobre migració, racisme, fronteres, gènere i diversitats. Un lloc des d’on alcem la veu i reclamem el nostre dret a existir, narrar-nos i ser part visible i legítima de la ciutat que habitem.",
-        "p2" : "El globus del costat és la representació visual de les històries explicades en aquesta pàgina des de l’origen fins a Barcelona."
+        "p1" : "L'Arxiu Comunitari de Memòries Migrants (ACMM) és un espai col·lectiu per reflexionar juntes sobre migració, racisme, fronteres, gènere i diversitats. Un lloc des d'on alcem la veu i reclamem el nostre dret a existir, narrar-nos i ser part visible i legítima de la ciutat que habitem.",
+        "p2" : "El globus del costat és la representació visual de les històries explicades en aquesta pàgina des de l'origen fins a Barcelona."
     },
     "team": {
-  "catalog": {
-    "title": "Catàleg",
-    "desc": "Accedeix a les Memòries Migrants"
-  },
-  "about": {
-    "title": "Coneix-nos",
-    "desc": "Coneix l’equip de la Quinta Pata"
-  },
-  "contact": {
-    "title": "Contacte",
-    "desc": "Envia’ns un missatge si vols compartir la teva història"
-  }
-},
-"contact" : {
-    "heading" : "on ens Trobes?"
-}
+        "catalog": {
+            "title": "Catàleg",
+            "desc": "Accedeix a les Memòries Migrants"
+        },
+        "about": {
+            "title": "Coneix-nos",
+            "desc": "Coneix l'equip de la Quinta Pata"
+        },
+        "contact": {
+            "title": "Contacte",
+            "desc": "Envia'ns un missatge si vols compartir la teva història"
+        }
+    },
+    "contact" : {
+        "heading" : "On ens trobes?"
+    },
+    "description": {
+        "title": "El nostre arxiu de memòries",
+        "p1": "Construïm aquest projecte des de la interculturalitat, el feminisme i la descolonialitat, com un acte polític i afectiu enfront del silenci i la invisibilització que han marcat històricament les nostres vides.",
+        "p2": "L'Arxiu és un exercici historiogràfic i testimonial subversiu enfront de la narrativa unilateral i hegemònica de la ciutat i enfront de la memòria oficial, selectiva i excloent. Aquí, les persones participants es reconeixen com a autores i subjectes polítics capaços de qüestionar els discursos que perpetuen estereotips i exclusions. A través de narracions autobiogràfiques reconstruïm, en primera persona, la història de la migració i democratitzem la memòria urbana, trencant silencis històrics i visibilitzant els territoris com a espais de disputa entorn de la migració, el racisme, el gènere i l'ús de l'espai públic.",
+        "p3": "L'Arxiu neix del recorregut de Microhistòries Migrants, un programa impulsat fa 14 anys que cada any reuneix 12 persones migrades per explicar les seves experiències a la diàspora. Actualment reunim 77 testimonis i més de 350 vídeos organitzats en cinc eixos: autobiografia, objectes, discriminació per origen i gènere, i resistència, conformant un retrat col·lectiu que enriqueix la memòria de Barcelona i resignifica el lloc social de les persones migrants.",
+        "p4": "Posem l'Arxiu a disposició pública a través del web i xarxes socials, acompanyat per la 1a Mostra Comunitària de Microhistòries Migrants, amb projeccions i trobades obertes.",
+        "manifesto1": "Perquè explicar les nostres històries és resistir.",
+        "manifesto2": "Perquè la memòria migrant és un territori que defensem juntes.",
+        "manifesto3": "Perquè existir també és fer història."
+    }
 }
