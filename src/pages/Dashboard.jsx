@@ -7,7 +7,7 @@
     import ConfirmToast from "../components/ConfirmToast.jsx";
     import MyToast from "../components/MyToast.jsx";
     import Card from "../components/Card.jsx";
-    import EditProfileForm from "../components/EditProfileForm.jsx";
+    import EditProfileForm from "../components/login/EditProfileForm.jsx";
     import EditVideoForm from "../components/videos/EditVideoForm.jsx";
     import VideoActions from "../components/videos/VideoActions.jsx";
     import VideoForm from "../components/videos/VideoForm.jsx";
