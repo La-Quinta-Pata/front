@@ -11,21 +11,21 @@ export default function Contact() {
       <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 py-8 sm:px-6 lg:px-8 gap-6 sm:gap-8">
         
         <header className="text-center">
-          <h2 className="text-base mb-6 sm:text-2xl md:text-2xl lg:text-3xl font-bold text-[#003049] tracking-tight">
+          <h2 className="text-base mb-6 sm:text-2xl md:text-2xl lg:text-3xl font-bold text-[#350E3A] tracking-tight">
             {t("contactPage.heading")}
           </h2>
         </header>
 
         <article
-          className="w-full max-w-md bg-linear-to-br from-[#FFF8DC] to-[#FFE4B5]
-          border-t-8 border-[#D62828] rounded-[3rem] shadow-xl
+          className="w-full max-w-md bg-linear-to-br from-[#F7E7F9] to-[#F7E7F9]
+          border-t-8 border-[#7E3488] rounded-[3rem] shadow-xl
           p-8 sm:p-10 md:p-10"
           aria-labelledby="location-heading"
         >
           <header className="text-center mb-8 sm:mb-12">
             <h3
               id="location-heading"
-              className="text-lg sm:text-2xl md:text-2xl lg:text-2xl font-bold text-[#003049] tracking-tight"
+              className="text-lg sm:text-2xl md:text-2xl lg:text-2xl font-bold text-[#350E3A] tracking-tight"
             >
               Barcelona
             </h3>
@@ -36,7 +36,7 @@ export default function Contact() {
 
               <li className="flex items-center gap-4 sm:gap-6">
                 <MapPin
-                  className="w-7 md:w-10 h-auto text-[#003049] shrink-0"
+                  className="w-7 md:w-10 h-auto text-[#350E3A] shrink-0"
                   aria-hidden="true"
                 />
                 <span className="text-base">Carrer Robador 25-27 Raval</span>
@@ -44,7 +44,7 @@ export default function Contact() {
 
               <li className="flex items-center gap-4 sm:gap-6">
                 <Phone
-                  className="w-7 md:w-10 h-auto text-[#003049] shrink-0"
+                  className="w-7 md:w-10 h-auto text-[#350E3A] shrink-0"
                   aria-hidden="true"
                 />
                 <a
@@ -57,7 +57,7 @@ export default function Contact() {
 
               <li className="flex items-center gap-4 sm:gap-6">
                 <Mail
-                  className="w-7 md:w-10 h-auto text-[#003049] shrink-0"
+                  className="w-7 md:w-10 h-auto text-[#350E3A] shrink-0"
                   aria-hidden="true"
                 />
                 <a
