@@ -42,6 +42,11 @@
     "heading" : "on ens Trobes?"
 },
 "aboutUs": {
-  "team" : "equip"
+  "whoAreWe": "Qui Som",
+  "description": "La Quinta Pata és una Associació Cultural que des del 2009 impulsa projectes de pedagogia crítica a través de l'art i l'acció col·lectiva en temes de racisme, fronteres i gènere. Treballem amb una mirada feminista, intercultural i decolonial, compromeses amb l'Economia Social i Solidària i la defensa dels Drets Humans.\nDes del cor del Raval creem espais de resistència per transformar les experiències migratòries en força col·lectiva. Creiem en la cultura com a eina política de transformació, memòria i justícia.",
+  "team": "Equip",
+  "academicCollaboration": "Col·laboració Acadèmica",
+  "webDesign": "Disseny Web"
 }
+
 }
