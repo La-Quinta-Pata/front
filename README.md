@@ -242,6 +242,8 @@ The project uses feature branch workflow:
 - `fix/*` - Bug fix branches
 - `chore/*` - Maintenance and polish branches
 
+i18n (translation)
+
 
 ## 👥 Team Members
 
