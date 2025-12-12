@@ -1,6 +1,6 @@
 import { Pen, Trash } from "lucide-react";
 import toast from "react-hot-toast";
-import ConfirmToast from "../ConfirmToast";
+import ConfirmToast from "../../components/toasts/ConfirmToast";
 
 export default function VideoActions({ video, onEdit, onDelete }) {
   function handleDelete() {

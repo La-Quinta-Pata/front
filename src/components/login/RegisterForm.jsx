@@ -6,7 +6,7 @@ import SelectField from "./SelectField";
 import FormHeader from "./FormHeader";
 import FormActions from "./FormActions";
 import ErrorMessage from "./ErrorMessage";
-import MyToast from "../MyToast";
+import MyToast from "../../components/toasts/MyToast";
 import toast from "react-hot-toast";
 
 const ROLE_OPTIONS = [

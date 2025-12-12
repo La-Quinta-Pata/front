@@ -4,9 +4,9 @@
     import { Link } from "react-router";
     import { getVideosByUser, updateVideo, deleteVideo } from "../services/videos.js";
     import { usersApi } from "../services/user.js";
-    import ConfirmToast from "../components/ConfirmToast.jsx";
-    import MyToast from "../components/MyToast.jsx";
-    import Card from "../components/Card.jsx";
+    import ConfirmToast from "../components/toasts/ConfirmToast.jsx";
+    import MyToast from "../components/toasts/MyToast.jsx";
+    import Card from "../components/videos/Card.jsx";
     import EditProfileForm from "../components/login/EditProfileForm.jsx";
     import EditVideoForm from "../components/videos/EditVideoForm.jsx";
     import VideoActions from "../components/videos/VideoActions.jsx";

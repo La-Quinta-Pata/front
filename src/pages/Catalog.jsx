@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Card from "../components/Card.Jsx";
+import Card from "../components/videos/Card.jsx";
 import { getCatalog } from "../services/catalogService";
 import VideoModal from "../components/videos/VideoModal";
 import PageBanner from "../layout/PageBanner";
