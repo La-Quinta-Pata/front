@@ -58,7 +58,6 @@ export default function RegisterForm({ onCancel }) {
     const { name, value } = target;
     setFormData(prev => ({ ...prev, [name]: value }));
 
-    // Live validation
     if (name === "name") setFieldErrors(prev => ({ ...prev, name: validateName(value) }));
     if (name === "email") setFieldErrors(prev => ({ ...prev, email: validateEmail(value) }));
     if (name === "password") setFieldErrors(prev => ({ ...prev, password: validatePassword(value) }));
