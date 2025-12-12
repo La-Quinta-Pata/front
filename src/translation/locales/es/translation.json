@@ -5,8 +5,6 @@
         "contact" : "Contacto",
         "about" : "Conócenos"
     },
-    "nav":{},
-    "footer" : {},
     "hero":{
         "title": "SOBRE EL ARCHIVO",
         "subtitle": "El Archivo Comunitario de Memorias Migrantes (ACMM) es un espacio colectivo para reflexionar juntas sobre migración, racismo, fronteras, género y diversidades. Un lugar desde donde alzamos la voz y reclamamos nuestro derecho a existir, narrarnos y ser parte visible y legítima de la ciudad que habitamos. El globo al lado es la representación visual de las historias contadas en este página desde la origen hacia Barcelona.",
@@ -33,9 +31,6 @@
             "desc": "Envíanos un mensaje si quieres compartir tu historia"
         }
     },
-    "contact": {
-        "heading": "¿Dónde nos encuentras?"
-    },
     "description": {
         "title": "Nuestro archivo de memorias",
         "p1": "Construimos este proyecto desde la interculturalidad, el feminismo y la descolonialidad, como un acto político y afectivo frente al silencio y la invisibilización que han marcado históricamente nuestras vidas.",
@@ -46,28 +41,30 @@
         "manifesto2": "Porque la memoria migrante es un territorio que defendemos juntas.",
         "manifesto3": "Porque existir también es hacer historia."
     },
-  "catalog": {
+  "catalogSection": {
     "title": "Catálogo",
     "desc": "Accede a las Memorias Migrantes"
   },
-  "about": {
+  "aboutSection": {
     "title": "Conócenos",
     "desc": "Conoce al equipo de la Quinta Pata"
   },
-  "contact": {
+  "contactSection": {
     "title": "Contacto",
     "desc": "Envíanos un mensaje si quieres compartir tu historia"
-  }
-},
-"contact": {
-    "heading": "¿Dónde nos encuentras?"
-},
-"aboutUs": {
+  },
+  "collaborationSection" :{
+    "title": "Colaboradores"
+  },
+"aboutUsPage": {
   "whoAreWe" : "Quiénes Somos",
-  "description": "La Quinta Pata es una Asociación Cultural que desde 2009 impulsa proyectos de pedagogía crítica a través del arte y la acción colectiva en torno a los temas de racismo, fronteras y género. Trabajamos con una mirada feminista, intercultural y decolonial, comprometidas con la Economía Social y Solidaria y la defensa de los Derechos Humanos.\nDesde el corazón del Raval creamos espacios de resistencia para transformar experiencias migrantes en fuerza colectiva. Creemos en la cultura como herramienta política de transformación, memoria y justicia.",
+  "intro": "La Quinta Pata es una Asociación Cultural que desde 2009 impulsa proyectos de pedagogía crítica a través del arte y la acción colectiva en torno a los temas de racismo, fronteras y género. Trabajamos con una mirada feminista, intercultural y decolonial, comprometidas con la Economía Social y Solidaria y la defensa de los Derechos Humanos.\nDesde el corazón del Raval creamos espacios de resistencia para transformar experiencias migrantes en fuerza colectiva. Creemos en la cultura como herramienta política de transformación, memoria y justicia.",
   "team" : "Equipo",
   "academicCollaboration" : "Colaboración Académica",
   "webDesign" : "Diseño Web"
-}
+},
+"contactPage": {
+        "heading": "¿Dónde nos encuentras?"
+    }
 
 }

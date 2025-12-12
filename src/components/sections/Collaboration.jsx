@@ -1,10 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Collaboration({collaboration}) {
+  const {t} = useTranslation();
   return (
     <section className="w-full py-12 bg-white">
 <div className="max-w-6xl mx-auto px-6">
-<h2 className="text-3xl font-semibold mb-10 text-gray-800">Colaboradores</h2>
+<h2 className="text-3xl font-semibold mb-10 text-gray-800">{t("collaborationSection.title")}</h2>
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 {collaboration.map((item) => (
 <a

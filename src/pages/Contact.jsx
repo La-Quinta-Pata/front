@@ -12,7 +12,7 @@ export default function Contact() {
         
         <header className="text-center">
           <h2 className="text-base mb-6 sm:text-2xl md:text-2xl lg:text-3xl font-bold text-[#003049] tracking-tight">
-            {t("contact.heading")}
+            {t("contactPage.heading")}
           </h2>
         </header>
 
