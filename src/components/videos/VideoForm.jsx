@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import toast from "react-hot-toast";
-import MyToast from "../MyToast";
-import { getAxes } from "../../services/axes";
-import { getAllMigrants } from "../../services/migrants";
-import { createVideo } from "../../services/videos";
+    import { useState } from "react";
+    import toast from "react-hot-toast";
+    import MyToast from "../MyToast";
+    import { createVideo } from "../../services/videos";
+    import useVideoFormData from "../../hooks/useVideoFormData";
+    import FormField from "./FormField";
+    import FormButtons from "./FormButtons";
+    import { mapToOptions, extractYouTubeId, validateVideoForm } from "../../utils/videoHelpers";
 
-export default function VideoForm({ onClose, onSuccess }) {
-
-    const [axes, setAxes] = useState([]);
-    const [migrants, setMigrants] = useState([]);
+    export default function VideoForm({ onClose, onSuccess }) {
+    const { axes, migrants, loading: loadingData } = useVideoFormData();
 
     const [formData, setFormData] = useState({
         title: "",
@@ -22,253 +22,168 @@ export default function VideoForm({ onClose, onSuccess }) {
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({});
 
-    useEffect(() => {
-        loadData();
-    }, []);
-
-    async function loadData() {
-        try {
-            const axesData = await getAxes();
-            const migrantsData = await getAllMigrants();
-
-            setAxes(axesData);
-            setMigrants(migrantsData);
-
-        } catch {
-            toast.custom(
-                <MyToast
-                    title="Error al cargar datos"
-                    message="No se pudieron cargar los datos necesarios"
-                    type="error"
-                />
-            );
-        }
-    }
-
-    function extractYouTubeId(url) {
-        const patterns = [
-            /(?:youtube\.com\/watch\?v=)([^&\n?#]+)/,
-            /(?:youtu\.be\/)([^&\n?#]+)/,
-            /(?:youtube\.com\/embed\/)([^&\n?#]+)/,
-            /(?:youtube\.com\/live\/)([^&\n?#]+)/,
-        ];
-
-        for (const pattern of patterns) {
-            const match = url.match(pattern);
-            if (match) return match[1];
-        }
-        return null;
+    function handleChange(e) {
+        setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+        });
     }
 
     function handleUrlChange(e) {
         const url = e.target.value;
         const videoId = extractYouTubeId(url);
         const thumbnailUrl = videoId
-            ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
-            : "";
+        ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+        : "";
 
         setFormData({
-            ...formData,
-            url,
-            thumbnailUrl,
+        ...formData,
+        url,
+        thumbnailUrl,
         });
     }
-
-    function validateForm() {
-        const newErrors = {};
-
-        if (!formData.title.trim()) {
-            newErrors.title = "El título es obligatorio";
-        } else if (formData.title.length > 100) {
-            newErrors.title = "El título no debe tener más de 100 caracteres";
-        }
-
-        if (!formData.description.trim()) {
-            newErrors.description = "La descripción es obligatoria";
-        } else if (formData.description.length > 500) {
-            newErrors.description =
-                "La descripción no debe tener más de 500 caracteres";
-        }
-
-        if (!formData.url.trim()) {
-            newErrors.url = "La URL del video es obligatoria";
-        } else if (!extractYouTubeId(formData.url)) {
-            newErrors.url = "Ingresa una URL válida de YouTube";
-        }
-
-        if (!formData.axisId) {
-            newErrors.axisId = "Debes seleccionar un eje";
-        }
-        if (!formData.migrantId)
-            newErrors.migrantId = "Selecciona una migrante";
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    }
-
 
     async function handleSubmit(e) {
         e.preventDefault();
 
-        if (!validateForm()) return;
+        const validationErrors = validateVideoForm(formData);
+        
+        if (Object.keys(validationErrors).length > 0) {
+        setErrors(validationErrors);
+        return;
+        }
 
         setLoading(true);
 
         try {
-            const payload = {
-                title: formData.title,
-                description: formData.description,
-                url: formData.url,
-                thumbnailUrl: formData.thumbnailUrl,
-                axisId: Number(formData.axisId),
-                migrantId: formData.migrantId,
-            };
+        const payload = {
+            title: formData.title,
+            description: formData.description,
+            url: formData.url,
+            thumbnailUrl: formData.thumbnailUrl,
+            axisId: Number(formData.axisId),
+            migrantId: formData.migrantId,
+        };
 
-            await createVideo(payload);
+        await createVideo(payload);
 
-            toast.custom(
-                <MyToast
-                    title="Video añadido"
-                    message="El video se ha añadido correctamente"
-                    type="success"
-                />
-            );
+        toast.custom(
+            <MyToast
+            title="Video añadido"
+            message="El video se ha añadido correctamente"
+            type="success"
+            />
+        );
 
-            setTimeout(() => {
-                onSuccess();
-                onClose();
-            }, 700);
-
+        setTimeout(() => {
+            onSuccess();
+            onClose();
+        }, 700);
         } catch (error) {
-            toast.custom(
-                <MyToast
-                    title="Error"
-                    message={error.message || "No se pudo añadir el video"}
-                    type="error"
-                />
-            );
+        toast.custom(
+            <MyToast
+            title="Error"
+            message={error.message || "No se pudo añadir el video"}
+            type="error"
+            />
+        );
         } finally {
-            setLoading(false);
+        setLoading(false);
         }
     }
 
     return (
         <section
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50"
-            onClick={onClose}
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+        onClick={onClose}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="video-form-title"
         >
-            <section
-                className="bg-white rounded-xl shadow-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
-                onClick={(e) => e.stopPropagation()}
-            >
-                <h2 className="text-2xl font-semibold mb-6">Añadir nuevo video</h2>
+        <article
+            className="bg-white rounded-xl shadow-xl p-4 sm:p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+        >
+            <header className="mb-6">
+            <h2 id="video-form-title" className="text-xl sm:text-2xl font-semibold">
+                Añadir nuevo video
+            </h2>
+            </header>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+            {loadingData ? (
+            <p className="text-center py-8">Cargando datos...</p>
+            ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <FormField
+                label="Título"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                error={errors.title}
+                required
+                />
 
-                    <div>
-                        <label className="block font-medium">Título *</label>
-                        <input
-                            className="w-full border rounded p-2"
-                            value={formData.title}
-                            onChange={(e) =>
-                                setFormData({ ...formData, title: e.target.value })
-                            }
-                        />
-                        {errors.title && <p className="text-red-600 text-sm">{errors.title}</p>}
-                    </div>
+                <FormField
+                label="Descripción"
+                name="description"
+                type="textarea"
+                value={formData.description}
+                onChange={handleChange}
+                error={errors.description}
+                rows={3}
+                required
+                />
 
-                    <div>
-                        <label className="block font-medium">Descripción *</label>
-                        <textarea
-                            className="w-full border rounded p-2"
-                            rows={3}
-                            value={formData.description}
-                            onChange={(e) =>
-                                setFormData({ ...formData, description: e.target.value })
-                            }
-                        />
-                        {errors.description && <p className="text-red-600 text-sm">{errors.description}</p>}
-                    </div>
+                <FormField
+                label="URL de YouTube"
+                name="url"
+                value={formData.url}
+                onChange={handleUrlChange}
+                error={errors.url}
+                placeholder="https://www.youtube.com/watch?v=..."
+                required
+                />
 
-                    <div>
-                        <label className="block font-medium">URL de YouTube *</label>
-                        <input
-                            className="w-full border rounded p-2"
-                            value={formData.url}
-                            onChange={handleUrlChange}
-                            placeholder="https://www.youtube.com/watch?v=..."
-                        />
-                        {errors.url && <p className="text-red-600 text-sm">{errors.url}</p>}
-                    </div>
+                <FormField
+                label="Thumbnail URL"
+                name="thumbnailUrl"
+                value={formData.thumbnailUrl}
+                onChange={handleChange}
+                error={errors.thumbnailUrl}
+                />
 
-                    <div>
-                        <label className="block font-medium">Thumbnail URL</label>
-                        <input
-                            className="w-full border rounded p-2"
-                            value={formData.thumbnailUrl}
-                            onChange={(e) =>
-                                setFormData({ ...formData, thumbnailUrl: e.target.value })
-                            }
-                        />
-                    </div>
+                <FormField
+                label="Eje temático"
+                name="axisId"
+                type="select"
+                value={formData.axisId}
+                onChange={handleChange}
+                error={errors.axisId}
+                options={mapToOptions(axes, "id", "type")}
+                placeholder="Selecciona un eje"
+                required
+                />
 
-                    <div>
-                        <label className="block font-medium">Eje temático *</label>
-                        <select
-                            className="w-full border rounded p-2"
-                            value={formData.axisId}
-                            onChange={(e) =>
-                                setFormData({ ...formData, axisId: e.target.value })
-                            }
-                        >
-                            <option value="">Selecciona un eje</option>
-                            {axes.map((axis) => (
-                                <option key={axis.id} value={axis.id}>
-                                    {axis.type}
-                                </option>
-                            ))}
-                        </select>
-                        {errors.axisId && <p className="text-red-600 text-sm">{errors.axisId}</p>}
-                    </div>
+                <FormField
+                label="Migrante"
+                name="migrantId"
+                type="select"
+                value={formData.migrantId}
+                onChange={handleChange}
+                error={errors.migrantId}
+                options={mapToOptions(migrants)}
+                placeholder="Selecciona una migrante"
+                required
+                />
 
-                    <div>
-                        <label className="block font-medium">Migrante *</label>
-                        <select
-                            className="w-full border rounded p-2"
-                            value={formData.migrantId}
-                            onChange={(e) =>
-                                setFormData({ ...formData, migrantId: e.target.value })
-                            }
-                        >
-                            <option value="">Selecciona una migrante</option>
-                            {migrants.map((m) => (
-                                <option key={m.id} value={m.id}>
-                                    {m.name}
-                                </option>
-                            ))}
-                        </select>
-                        {errors.migrantId && <p className="text-red-600 text-sm">{errors.migrantId}</p>}
-                    </div>
-
-                    <section className="flex gap-3 pt-4">
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className="flex-1 px-4 py-2 bg-[#003049] text-white rounded hover:bg-blue-600 cursor-pointer"
-                        >
-                            {loading ? "Guardando..." : "Guardar video"}
-                        </button>
-
-                        <button
-                            type="button"
-                            disabled={loading}
-                            onClick={onClose}
-                            className="flex-1 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer"
-                        >
-                            Cancelar
-                        </button>
-                    </section>
-                </form>
-            </section>
+                <FormButtons
+                onCancel={onClose}
+                submitText="Guardar video"
+                loading={loading}
+                />
+            </form>
+            )}
+        </article>
         </section>
     );
-}
+    }
