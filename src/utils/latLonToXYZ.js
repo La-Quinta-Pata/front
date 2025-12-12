@@ -1,12 +1,8 @@
 import * as THREE from "three";
 
-/**
- * Conversión Lat/Lon → XYZ en esfera 3D
- * Incluye ajustes para textura vintage (desplazada a la derecha ~13°)
- */
 export function latLonToXYZ(lat, lon, radius = 2, offsets = {}) {
   const {
-    lonOffsetDeg = 13, // calibración perfecta para tu mapa
+    lonOffsetDeg = 13, 
     latOffsetDeg = 0,
     rotationDeg = 0,
     radiusScale = 1,

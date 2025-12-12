@@ -1,31 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import MyToast from "../MyToast";
-import { getAxes } from "../../services/axes";
-import { getAllMigrants } from "../../services/migrants";
+import useVideoFormData from "../../hooks/useVideoFormData";
+import FormField from "./FormField";
+import FormButtons from "./FormButtons";
+import { mapToOptions, parseServerErrors } from "../../utils/videoHelpers";
 
 export default function EditVideoForm({ video, onClose, onSuccess, onSubmit }) {
-
-  const [axes, setAxes] = useState([]);
-  const [migrants, setMigrants] = useState([]);
+  const { axes, migrants, loading: loadingData } = useVideoFormData();
 
   const [form, setForm] = useState({
     title: video.title || "",
     description: video.description || "",
     url: video.url || "",
     thumbnailUrl: video.thumbnailUrl || "",
-    axisId: video.axisId || null,
-
+    axisId: video.axisId || "",
     migrantId: video.migrantId || "",
   });
 
   const [errors, setErrors] = useState({});
-
-  useEffect(() => {
-    getAxes().then(setAxes);
-    getAllMigrants().then(setMigrants);
-  }, []);
-
+  const [loading, setLoading] = useState(false);
 
   function handleChange(e) {
     setForm({
@@ -37,13 +31,10 @@ export default function EditVideoForm({ video, onClose, onSuccess, onSubmit }) {
   async function handleSubmit(e) {
     e.preventDefault();
     setErrors({});
-
-    const payload = {
-      ...form,
-    };
+    setLoading(true);
 
     try {
-      await onSubmit(video.id, payload);
+      await onSubmit(video.id, form);
 
       toast.custom(
         <MyToast
@@ -56,124 +47,113 @@ export default function EditVideoForm({ video, onClose, onSuccess, onSubmit }) {
       onSuccess?.();
       onClose();
     } catch (err) {
-      console.log("ERR", err);
-
       if (err.details) {
-        const mapped = {};
-        err.details.split(", ").forEach(entry => {
-          const [field, msg] = entry.split(": ");
-          mapped[field] = msg;
-        });
-        setErrors(mapped);
-        return;
+        setErrors(parseServerErrors(err.details));
+      } else {
+        toast.custom(
+          <MyToast
+            title="Error"
+            message="No se pudo actualizar el video"
+            type="error"
+          />
+        );
       }
-
-      toast.error("Error inesperado");
+    } finally {
+      setLoading(false);
     }
   }
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-xl">
-        <h2 className="text-xl font-semibold mb-4">Editar video</h2>
+    <section
+      className="fixed inset-0 bg-black/40 flex items-center justify-center p-4 z-50"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="edit-video-title"
+    >
+      <article
+        className="bg-white w-full max-w-md sm:max-w-lg p-4 sm:p-6 rounded-lg shadow-xl max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <header className="mb-4">
+          <h2 id="edit-video-title" className="text-xl font-semibold">
+            Editar video
+          </h2>
+        </header>
 
-        <form className="space-y-4" onSubmit={handleSubmit}>
-
-          <div>
-            <label className="block mb-1 font-medium">Título</label>
-            <input
+        {loadingData ? (
+          <p className="text-center py-8">Cargando datos...</p>
+        ) : (
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <FormField
+              label="Título"
               name="title"
               value={form.title}
               onChange={handleChange}
-              className="w-full border rounded p-2"
+              error={errors.title}
+              required
             />
-            {errors.title && <p className="text-red-600 text-sm">{errors.title}</p>}
-          </div>
 
-          <div>
-            <label className="block mb-1 font-medium">Descripción</label>
-            <textarea
+            <FormField
+              label="Descripción"
               name="description"
-              rows={3}
+              type="textarea"
               value={form.description}
               onChange={handleChange}
-              className="w-full border rounded p-2"
+              error={errors.description}
+              rows={3}
+              required
             />
-            {errors.description && <p className="text-red-600 text-sm">{errors.description}</p>}
-          </div>
 
-          <div>
-            <label className="block mb-1 font-medium">URL del video</label>
-            <input
+            <FormField
+              label="URL del video"
               name="url"
               value={form.url}
               onChange={handleChange}
-              className="w-full border rounded p-2"
+              error={errors.url}
+              required
             />
-            {errors.url && <p className="text-red-600 text-sm">{errors.url}</p>}
-          </div>
 
-          <div>
-            <label className="block mb-1 font-medium">Thumbnail URL</label>
-            <input
+            <FormField
+              label="Thumbnail URL"
               name="thumbnailUrl"
               value={form.thumbnailUrl}
               onChange={handleChange}
-              className="w-full border rounded p-2"
+              error={errors.thumbnailUrl}
             />
-            {errors.thumbnailUrl && <p className="text-red-600 text-sm">{errors.thumbnailUrl}</p>}
-          </div>
 
-          <div>
-            <label className="block mb-1 font-medium">Eje</label>
-            <select
+            <FormField
+              label="Eje"
               name="axisId"
+              type="select"
               value={form.axisId}
               onChange={handleChange}
-              className="w-full border rounded p-2"
-            >
-              <option value="">Seleccione un eje</option>
-              {axes.map(axis => (
-                <option key={axis.id} value={axis.id}>
-                  {axis.type}
-                </option>
-              ))}
-            </select>
-            {errors.axisId && <p className="text-red-600 text-sm">{errors.axisId}</p>}
-          </div>
+              error={errors.axisId}
+              options={mapToOptions(axes, "id", "type")}
+              placeholder="Seleccione un eje"
+              required
+            />
 
-          <div>
-            <label className="block mb-1 font-medium">Migrante</label>
-            <select
+            <FormField
+              label="Migrante"
               name="migrantId"
+              type="select"
               value={form.migrantId}
               onChange={handleChange}
-            >
-              <option value="">Seleccione una migrante</option>
-              {migrants.map(m => (
-                <option key={m.id} value={m.id}>
-                  {m.name}
-                </option>
-              ))}
-            </select>
-            {errors.migrantId && <p className="text-red-600 text-sm">{errors.migrantId}</p>}
-          </div>
+              error={errors.migrantId}
+              options={mapToOptions(migrants)}
+              placeholder="Seleccione una migrante"
+              required
+            />
 
-          <div className="flex justify-end gap-3">
-            <button type="button" onClick={onClose} className="px-4 py-2 bg-gray-200 rounded">
-              Cancelar
-            </button>
-
-            <button
-              type="submit"
-              className="px-4 py-2 bg-[#003049] text-white rounded hover:bg-blue-600"
-            >
-              Guardar cambios
-            </button>
-          </div>
-
-        </form>
-      </div>
-    </div>
+            <FormButtons
+              onCancel={onClose}
+              submitText="Guardar cambios"
+              loading={loading}
+            />
+          </form>
+        )}
+      </article>
+    </section>
   );
 }
