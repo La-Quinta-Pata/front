@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next'
 export default function Collaboration({collaboration}) {
   const {t} = useTranslation();
   return (
-    <section className="w-full py-12 bg-white">
-<div className="max-w-6xl mx-auto px-6">
+    <article className="w-full py-12 bg-white">
+<section className="max-w-6xl mx-auto px-6">
 <h2 className="text-3xl font-semibold mb-10 text-gray-800">{t("collaborationSection.title")}</h2>
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+<s className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 {collaboration.map((item) => (
 <a
 key={item.id}
@@ -23,8 +23,8 @@ className="w-40 h-auto filter grayscale group-hover:grayscale-0 transition-all d
 />
 </a>
 ))}
-</div>
-</div>
+</s>
 </section>
+</article>
   )
 }
