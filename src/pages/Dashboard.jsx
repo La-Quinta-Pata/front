@@ -1,17 +1,17 @@
-import { useAuth } from "../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { Link } from "react-router";
-import { getVideosByUser, updateVideo, deleteVideo } from "../services/videos.js";
-import { usersApi } from "../services/user.js";
-import ConfirmToast from "../components/ConfirmToast.jsx";
-import MyToast from "../components/MyToast.jsx";
-import Card from "../components/Card.jsx";
-import EditProfileForm from "../components/EditProfileForm.jsx";
-import EditVideoForm from "../components/videos/EditVideoForm.jsx";
-import VideoActions from "../components/videos/VideoActions.jsx";
-import VideoForm from "../components/videos/VideoForm.jsx";
-import toast from "react-hot-toast";
+    import { useAuth } from "../hooks/useAuth";
+    import { useNavigate } from "react-router-dom";
+    import { useState, useEffect } from "react";
+    import { Link } from "react-router";
+    import { getVideosByUser, updateVideo, deleteVideo } from "../services/videos.js";
+    import { usersApi } from "../services/user.js";
+    import ConfirmToast from "../components/ConfirmToast.jsx";
+    import MyToast from "../components/MyToast.jsx";
+    import Card from "../components/Card.jsx";
+    import EditProfileForm from "../components/EditProfileForm.jsx";
+    import EditVideoForm from "../components/videos/EditVideoForm.jsx";
+    import VideoActions from "../components/videos/VideoActions.jsx";
+    import VideoForm from "../components/videos/VideoForm.jsx";
+    import toast from "react-hot-toast";
 
     export default function Dashboard() {
     const { user, logout } = useAuth();
@@ -28,7 +28,6 @@ import toast from "react-hot-toast";
 
     useEffect(() => {
         if (!user?.id) return;
-
         getVideosByUser(user.id).then(setVideos);
     }, [user]);
 
@@ -52,9 +51,7 @@ import toast from "react-hot-toast";
                 setTimeout(() => {
                 window.location.href = "/";
                 }, 1200);
-            } catch (err) {
-                console.error("Error al borrar la cuenta:", err);
-
+            } catch {
                 toast.custom(
                 <MyToast
                     title="Error al borrar la cuenta"
@@ -77,30 +74,26 @@ import toast from "react-hot-toast";
 
     async function handleDeleteVideo(id) {
         try {
-            await deleteVideo(id);
+        await deleteVideo(id);
+        setVideos(prev => prev.filter(video => video.id !== id));
 
-            setVideos(prev => prev.filter(video => video.id !== id));
-
-            toast.custom(
-                <MyToast
-                    title="Video eliminado"
-                    message="Se borró correctamente"
-                    type="success"
-                />
-            );
-        } catch (err) {
-            console.error(err);
-            toast.custom(
-                <MyToast
-                    title="Error"
-                    message="No se pudo eliminar el video"
-                    type="error"
-                />
-            );
+        toast.custom(
+            <MyToast
+            title="Video eliminado"
+            message="Se borró correctamente"
+            type="success"
+            />
+        );
+        } catch {
+        toast.custom(
+            <MyToast
+            title="Error"
+            message="No se pudo eliminar el video"
+            type="error"
+            />
+        );
         }
     }
-
-
 
     return (
         <main className="min-h-screen bg-gray-50">
@@ -112,16 +105,14 @@ import toast from "react-hot-toast";
             </section>
         </header>
 
-            <section className="max-w-7xl mx-auto px-6 py-10 flex flex-col gap-10">
+        <section className="max-w-7xl mx-auto px-6 py-10 flex flex-col gap-10">
+            <article className="bg-white shadow-sm rounded-lg p-8 flex flex-col items-center text-center">
+            <h2 className="text-xl font-semibold mb-4">Mi perfil</h2>
 
-                <article className="bg-white shadow-sm rounded-lg p-8 flex flex-col items-center text-center">
-                    <h2 className="text-xl font-semibold mb-4">Mi perfil</h2>
-
-                    <section className="space-y-2 mb-6">
-                        <p><strong>Nombre:</strong> {user?.name}</p>
-                        <p><strong>Email:</strong> {user?.email}</p>
-
-                    </section>
+            <section className="space-y-2 mb-6">
+                <p><strong>Nombre:</strong> {user?.name}</p>
+                <p><strong>Email:</strong> {user?.email}</p>
+            </section>
 
             <section className="flex flex-col sm:flex-row gap-3 mb-6">
                 <button
@@ -147,6 +138,7 @@ import toast from "react-hot-toast";
                 </Link>
                 )}
             </section>
+
             <button
                 onClick={handleDelete}
                 className="mt-4 text-sm text-center text-red-600 underline cursor-pointer"
@@ -171,10 +163,11 @@ import toast from "react-hot-toast";
             )}
 
             {editingVideo && (
-            <VideoForm
+            <EditVideoForm
                 video={editingVideo}
                 onClose={() => setEditingVideo(null)}
                 onSuccess={handleVideoAdded}
+                onSubmit={updateVideo}
             />
             )}
 
@@ -188,48 +181,31 @@ import toast from "react-hot-toast";
                 Añadir video
                 </button>
             </section>
-                    {editingVideo && (
-                        <EditVideoForm
-                            video={editingVideo}
-                            onClose={() => setEditingVideo(null)}
-                            onSuccess={() => {
-                                // ya que lo actualizamos localmente:
-                                getVideosByUser(user.id).then(setVideos);
-                            }}
-                            onSubmit={updateVideo}
-                        />
-                    )}
+
             {videos.length === 0 && (
                 <p className="text-gray-500">Todavía no has añadido videos.</p>
             )}
 
-                    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        {videos.map((video) => {
-                            console.log("video =>", video);
-                            return (
-
-                            <Card
-                                key={video.id}
-                                image={video.thumbnailUrl}
-                                author={video.title}
-                                description={video.description}
-                                onClick={() => {}}
-                                actions={
-                                    <VideoActions
-                                        video={video}
-                                        onEdit={() => {
-                                            setEditingVideo(video);
-                                        }}
-                                        onDelete={handleDeleteVideo}
-                                    />
-                                }
-                            />
-                        )})}
-                    </section>
-                </section>
-
+            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {videos.map((video) => (
+                <Card
+                    key={video.id}
+                    image={video.thumbnailUrl}
+                    author={video.title}
+                    description={video.description}
+                    onClick={() => {}}
+                    actions={
+                    <VideoActions
+                        video={video}
+                        onEdit={() => setEditingVideo(video)}
+                        onDelete={handleDeleteVideo}
+                    />
+                    }
+                />
+                ))}
             </section>
-
+            </section>
+        </section>
         </main>
     );
     }
