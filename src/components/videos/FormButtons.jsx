@@ -6,7 +6,7 @@
     disabled = false,
     }) {
     return (
-        <footer className="flex flex-col sm:flex-row gap-3 pt-4">
+        <section className="flex flex-col sm:flex-row gap-3 pt-4">
         <button
             type="submit"
             disabled={loading || disabled}
@@ -24,6 +24,6 @@
         >
             {cancelText}
         </button>
-        </footer>
+        </section>
     );
     }
