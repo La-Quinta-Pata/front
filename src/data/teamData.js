@@ -1,55 +1,51 @@
 import mariaJoseR from  "../assets/images/team/mariaJoseR.png"
-import logo5pata from "/logo5_pata.png"
+import team1 from "../assets/images/team/team1.png"
+import team2 from "../assets/images/team/team2.png"
+import team3 from "../assets/images/team/team3.png"
+import team4 from "../assets/images/team/team4.png"
 
   export const team = [
     {
-      "id": 1,
+      id: 1,
+      name: " Silvina Merino",
+      roleKey: "team.silvinaM.role", 
+      image: team1
+    },
+    {
+      id: 2,
+      name: "Raquel García",
+      roleKey: "team.raquelG.role",
+      image: team2
+    },
+    {
+      id: 3,
       name: "María José Rosero",
-      roleKey: "team.maria.role", //"Producción"
-      "image": mariaJoseR,
-      "description": "Descripción breve."
+      roleKey: "team.mariaJ.role", 
+      image: mariaJoseR
     },
     {
-      "id": 2,
-      "name": " Silvina Merino",
-      "role": "team.silvina.role", //"Coordinación general",
-      "image": logo5pata,
-      "description": "Descripción breve."
+      id: 4,
+      name: "Carmen Mena",
+      roleKey: "team.carmenM.role",
+      image: team3
     },
     {
-      "id": 3,
-      "name": "Raquel García",
-      "role": "Documentalista",
-      "image": logo5pata,
-      "description": "Descripción breve."
+      id: 5,
+      name: "Diego Falconi",
+      roleKey: "team.diegoF.role",
+      image: team4
     },
     {
-      "id": 4,
-      "name": "Carmen Mena",
-      "role": "Comunicadora",
-      "image": logo5pata,
-      "description": "Descripción breve."
+      id: 6,
+      name: "Elizabeth Montero Santa",
+      roleKey: "team.elizabethM.role",
+      image: team1
     },
     {
-      "id": 5,
-      "name": "Diego Falconi",
-      "role": "Curador",
-      "image": logo5pata,
-      "description": "Descripción breve."
-    },
-    {
-      "id": 6,
-      "name": "Elizabeth Montero Santa",
-      "role": "Diseñadora",
-      "image": logo5pata,
-      "description": "Descripción breve."
-    },
-    {
-      "id": 7,
-      "name": "Larissa",
-      "role": "Desarrolladora web",
-      "image": logo5pata,
-      "description": "Descripción breve."
+      id: 7,
+      name: "Larissa",
+      roleKey: "team.larissa.role",
+      image: team2
     }
   ];
 

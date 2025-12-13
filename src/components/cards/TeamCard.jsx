@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AboutUsCard({ image, name, role, description }) {
+export default function TeamCard({ image, name, role, description }) {
   const [flipped, setFlipped] = useState(false);
   const [hoverColor, setHoverColor] = useState(null);
 
@@ -34,7 +34,7 @@ export default function AboutUsCard({ image, name, role, description }) {
       role="button"
       aria-pressed={flipped}
       aria-label={`Tarjeta de ${name}, ${role}. Click para ver más información`}
-      className="w-full max-w-[16rem] h-72 sm:h-80 md:h-96 perspective cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-xl mx-auto"
+      className="w-full max-w-[16rem] h-72 sm:h-80 md:h-80 perspective cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-xl mx-auto"
     >
       <section
         className={`relative w-full h-full transition-transform duration-500 ${
@@ -43,7 +43,7 @@ export default function AboutUsCard({ image, name, role, description }) {
         style={{ transformStyle: "preserve-3d" }}
       >
         <figure
-          className="absolute inset-0 backface-hidden border-2 border-purple-700 rounded-xl p-4 sm:p-6 flex flex-col items-center justify-center text-center transition-colors duration-300"
+          className="absolute inset-0 backface-hidden border-2 border-purple-700 rounded-xl p-4 sm:p-6 flex flex-col items-center justify-center text-center transition-colors duration-800"
           style={{
             backgroundColor: hoverColor || "white",
             color: hoverColor ? "white" : "black",
@@ -52,7 +52,7 @@ export default function AboutUsCard({ image, name, role, description }) {
           <img
             src={image}
             alt={`Foto de ${name}`}
-            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-cover rounded-full mb-4 sm:mb-6"
+            className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 object-cover rounded-full mb-4 sm:mb-6"
           />
           <figcaption className="font-semibold text-base sm:text-lg">
             {name}
@@ -60,7 +60,7 @@ export default function AboutUsCard({ image, name, role, description }) {
         </figure>
 
         <section
-          className="absolute inset-0 backface-hidden rotate-y-180 border-2 border-purple-700 rounded-xl p-4 sm:p-6 flex flex-col items-center justify-center text-center transition-colors duration-300"
+          className="absolute inset-0 backface-hidden rotate-y-180 border-2 border-purple-700 rounded-xl p-4 sm:p-6 flex flex-col items-center justify-center text-center transition-colors duration-700"
           style={{ backgroundColor: hoverColor || "#55155D", color: "white" }}
         >
           <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">

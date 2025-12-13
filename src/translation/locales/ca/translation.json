@@ -51,6 +51,49 @@
 },
  "contactPage" : {
         "heading" : "On ens trobes?"
-    }
+    },
+"team" :{
+  "silvinaM":{
+    "role" : "Coordinació general"
+  },
+  "raquelG": {
+    "role" : "Documentalista"
+  },
+  "mariaJ": {
+    "role" : "Producció"
+  },
+  "carmenM": {
+    "role": "Comunicadora"
+  },
+  "diegoF":{
+    "role" : "Comissari"
+  },
+  "elizabethM":{
+    "role": "Dissenyadora"
+  },
+  "larissa" :{
+    "role":"Desarrolladora web"
+  }
+},
+"AcademicCollaborationMember": {
+  "ConstancaP":{
+    "role" : "Arxivista"
+},
+ "IreneF":{
+    "role" : "Antropologia"
+},
+"AndreaDeS" :{
+    "role" : "Gènere"
+},
+"NataliaM" :{
+    "role" : "Gènere"
+},
+"ElisabethH" :{
+    "role" : "Gènere"
+},
+"NataliaG" :{
+    "role" : "Gènere"
+}
+}
 
 }
