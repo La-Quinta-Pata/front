@@ -2,7 +2,7 @@ export const webDesign = [
     {
       id: 1,
       name: "Ana Aguilera",
-      github: "(https://github.com/AnaAguileraMorales88",
+      github: "https://github.com/AnaAguileraMorales88",
       linkedin: "https://www.linkedin.com/in/ana-aguilera-morales-011b1a238/"
     },
     {
@@ -21,7 +21,7 @@ export const webDesign = [
       id: 4,
       name: "Montserrat Muñoz",
       github: "https://github.com/Montc027",
-      linkedin: "https://www.linkedin.com/in/montse-mu%C3%B1oz-ba202b227/"
+      linkedin: "https://www.linkedin.com/in/montserrat-munoz-cabrera-ba202b227/"
     },
     {
       id: 5,
