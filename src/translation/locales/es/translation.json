@@ -49,8 +49,51 @@
   "academicCollaboration" : "Colaboración Académica",
   "webDesign" : "Diseño Web"
 },
+
 "contactPage": {
         "heading": "¿Dónde nos encuentras?"
-    }
-
+    },
+"team" :{
+  "silvinaM":{
+    "role" : "Coordinación general"
+  },
+  "raquelG": {
+    "role" : "Documentalista"
+  },
+  "mariaJ": {
+    "role" : "Producción"
+  },
+  "carmenM": {
+    "role": "Comunicadora"
+  },
+  "diegoF":{
+    "role" : "Curador"
+  },
+  "elizabethM":{
+    "role": "Diseñadora"
+  },
+  "larissa" :{
+    "role":"Desarrolladora web"
+  }
+},
+"AcademicCollaborationMember": {
+  "ConstancaP":{
+    "role" : "Archivistica"
+},
+ "IreneF":{
+    "role" : "Antropologìa"
+},
+"AndreaDeS" :{
+    "role" : "Gènero"
+},
+"NataliaM" :{
+    "role" : "Gènero"
+},
+"ElisabethH" :{
+    "role" : "Gènero"
+},
+"NataliaG" :{
+    "role" : "Gènero"
+}
+}
 }
